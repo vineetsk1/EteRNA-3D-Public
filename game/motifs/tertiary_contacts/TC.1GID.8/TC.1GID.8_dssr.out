@@ -1,0 +1,137 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.1GID.8.pdb --non-pair -o=TC.1GID.8_dssr.out
+Date and time: Sun Jun 29 15:51:43 2014
+File name: TC.1GID.8.pdb
+    no. of DNA/RNA chains: 1 [B=16]
+    no. of nucleotides:    16
+    no. of atoms:          344
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 6 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 B.G110           B.A183           G-A              00-n/a    cSW cm-W
+   2 B.G110           B.C211           G-C WC           19-XIX    cWW cW-W
+   3 B.G111           B.C209           G-C WC           19-XIX    cWW cW-W
+   4 B.G134           B.C189           G-C WC           19-XIX    cWW cW-W
+   5 B.U135           B.A187           U+A Hoogsteen    23-XXIII  cWH cW+M
+   6 B.A136           B.U182           A-U WC           20-XX     cWW cW-W
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 GAC B.G110,B.A183,B.C211
+
+****************************************************************************
+List of 2 helices
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=2
+      strand-1 5'-GG-3'
+       bp-type    ||
+      strand-2 5'-CC-3'
+      helix-form  x
+   1 B.G110           B.C211           G-C WC           19-XIX    cWW cW-W
+   2 B.G111           B.C209           G-C WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#2[0] bps=3
+      strand-1 5'-GUA-3'
+       bp-type    |.|
+      strand-2 5'-CAU-3'
+      helix-form  xx
+   1 B.G134           B.C189           G-C WC           19-XIX    cWW cW-W
+   2 B.U135           B.A187           U+A Hoogsteen    23-XXIII  cWH cW+M
+   3 B.A136           B.U182           A-U WC           20-XX     cWW cW-W
+
+****************************************************************************
+List of 4 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 B.G110           B.C211           G-C WC           19-XIX    cWW cW-W
+  -2 B.G111           B.C209           G-C WC           19-XIX    cWW cW-W
+  -3 B.G134           B.C189           G-C WC           19-XIX    cWW cW-W
+  -4 B.A136           B.U182           A-U WC           20-XX     cWW cW-W
+
+****************************************************************************
+List of 7 non-pairing interactions
+   1 B.G110           B.A184          base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'*O4'[2.82]"
+   2 B.A136           B.A187          base-overlap-area=0.6(0.6)   H-bonds[0]: ""
+   3 B.U182           B.A186          base-overlap-area=1.2(0.0)   H-bonds[1]: "O2(carbonyl)-O2'(hydroxyl)[2.92]"
+   4 B.U182           B.G188          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[3.10]"
+   5 B.A183           B.A184          base-overlap-area=5.7(3.6)   H-bonds[0]: ""
+   6 B.A187           B.C189          base-overlap-area=8.0(3.6)   H-bonds[0]: ""
+   7 B.C209           B.C211          base-overlap-area=0.2(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[3.15]"
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 bulge
+   1 bulge: nts=5; [0,1]; linked by [#-1,#-2]
+     nts=5 GGCAC B.G110,B.G111,B.C209,B.A210,B.C211
+       nts=0
+       nts=1 A B.A210
+
+****************************************************************************
+List of 1 internal loop
+   1 asymmetric internal loop: nts=11; [1,6]; linked by [#-3,#-4]
+     nts=11 GUAUAAUAAGC B.G134,B.U135,B.A136,B.U182,B.A183,B.A184,B.U185,B.A186,B.A187,B.G188,B.C189
+       nts=1 U B.U135
+       nts=6 AAUAAG B.A183,B.A184,B.U185,B.A186,B.A187,B.G188
+
+****************************************************************************
+List of 1 A-minor motif
+   1  type=II A/G-C	B.A183 vs B.G110+B.C211 [WC]
+        -B.G110	H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[2.73],N3-O2'(hydroxyl)[2.82]"
+        +B.C211	H-bonds[0]: ""
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.1GID.8 nts=16 [whole]
+GG&GUA&UAAUAAGC&CAC
+((&(.(&)......)&).)
+>TC.1GID.8-B #1 nts=16 [chain] RNA*
+GGGUAUAAUAAGCCAC
+(((.()......)).)
+
+****************************************************************************
+List of 7 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   4 dssr-2ndstrs.ct -- secondary structures in the connect format
+   5 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   6 dssr-torsions.dat -- Backbone torsion angles and suite names
+   7 dssr-Aminors.pdb -- MODEL/ENDMDL delineated A minor motifs (type I/II)

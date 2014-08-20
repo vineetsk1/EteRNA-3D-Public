@@ -1,0 +1,85 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TWOWAY.2GDI.6.pdb --non-pair -o=TWOWAY.2GDI.6_dssr.out
+Date and time: Thu Jul 17 15:06:36 2014
+File name: TWOWAY.2GDI.6.pdb
+    no. of DNA/RNA chains: 1 [Y=10]
+    no. of nucleotides:    10
+    no. of atoms:          217
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 3 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 Y.U20            Y.A45            U-A WC           20-XX     cWW cW-W
+   2 Y.G21            Y.C38            G-C WC           19-XIX    cWW cW-W
+   3 Y.U39            Y.A43            U-A rHoogsteen   24-XXIV   tWH tW-M
+
+****************************************************************************
+List of 2 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 Y.U20            Y.A45            U-A WC           20-XX     cWW cW-W
+  -2 Y.G21            Y.C38            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 9 non-pairing interactions
+   1 Y.U20            Y.A43           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O3'[3.10]"
+   2 Y.U20            Y.A44           base-overlap-area=0.9(0.2)   H-bonds[0]: ""
+   3 Y.G21            Y.A43           base-overlap-area=5.9(4.0)   H-bonds[1]: "N7-O2'(hydroxyl)[2.67]"
+   4 Y.C38            Y.U39           base-overlap-area=1.8(0.5)   H-bonds[0]: ""
+   5 Y.U39            Y.G40           base-overlap-area=4.1(2.3)   H-bonds[0]: ""
+   6 Y.G40            Y.G42           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.76]"
+   7 Y.G40            Y.A43           base-overlap-area=0.0(0.0)   H-bonds[2]: "N2(amino)-O5'[2.96],N2(amino)-O4'[3.24]"
+   8 Y.A41            Y.G42           base-overlap-area=6.2(4.4)   H-bonds[0]: ""
+   9 Y.A44            Y.A45           base-overlap-area=0.2(0.0)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 bulge
+   1 bulge: nts=10; [0,6]; linked by [#-1,#-2]
+     nts=10 UGCUGAGAAA Y.U20,Y.G21,Y.C38,Y.U39,Y.G40,Y.A41,Y.G42,Y.A43,Y.A44,Y.A45
+       nts=0
+       nts=6 UGAGAA Y.U39,Y.G40,Y.A41,Y.G42,Y.A43,Y.A44
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TWOWAY.2GDI.6 nts=10 [whole]
+UG&CUGAGAAA
+((&)......)
+>TWOWAY.2GDI.6-Y #1 nts=10 [chain] RNA*
+UGCUGAGAAA
+(()......)
+
+****************************************************************************
+List of 4 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-2ndstrs.ct -- secondary structures in the connect format
+   3 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   4 dssr-torsions.dat -- Backbone torsion angles and suite names

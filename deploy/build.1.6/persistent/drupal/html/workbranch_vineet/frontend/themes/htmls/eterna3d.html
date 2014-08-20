@@ -1,0 +1,934 @@
+<block name="page">
+  <div id="pages" style="width: 980px; margin-left: auto; margin-right: auto;"></div>
+</block>
+
+<block url="/web/eterna3/sols/">
+  <div id="bg"></div>
+
+  <div id="header" style="position: absolute; left: 0;">
+      <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+           <span id="puzname">Solutions Browser</span>
+      </div>
+    <a href="#">
+      <div id="name">
+           <span>Development Build</span>
+      </div>
+    </a>
+
+    <div id="navbar" class="rounded">
+      <a href="#">
+        <div class="nav link"><span class="link multi">Me</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">My Feed</div></a>
+            <a href="#"><div class="popupLink">My Profile</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">Roadmap</div></a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Puzzles</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Tutorials</div></a>
+            <a href="#"><div class="popupLink">Challenges</div></a>
+            <a href="#"><div class="popupLink">Player Puzzles</div></a>
+            <a href="#"><div class="popupLink">EteRNA Scripts</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Cloud Lab</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Active Labs</div></a>
+            <a href="#"><div class="popupLink">Proposals</div></a>
+            <a href="#"><div class="popupLink">Archives</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Community</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">News</div></a>
+            <a href="#"><div class="popupLink">Players</div></a>
+            <a href="#"><div class="popupLink">Forums</div></a>
+            <a href="#"><div class="popupLink">Developer Blog</div></a>
+            <a href="#"><div class="popupLink">Groups</div></a>
+            <a href="#"><div class="popupLink">Strategy Guides</div></a>
+            <a href="#"><div class="popupLink">Wiki</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">About EteRNA</div></a>
+    </div>
+  </div>
+
+  <div id="chat" class="rounded" style="height: 160px;">
+      <div style="position: relative; top: 10px; font-size: 14px; text-align: center; border-bottom: 2px solid rgb(254, 201, 66); width: 100%; padding-bottom: 10px;">
+        Puzzle Details
+      </div>
+
+      <div id="authorDetails" style="margin-top: 20px; margin-left: 5px; margin-right: 5px; font-size: 13px;">Author: asdf</div>
+      <div id="timeDetails" style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Time Submitted:&nbsp;1.00</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">RNA Length:&nbsp;<span id="RNALength" style="color: rgb(240, 50, 100);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Helices Length:&nbsp;<span id="HelixLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Motifs Length:&nbsp;<span id="MotifLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+  </div>
+
+  <div id="details" class="rounded">
+    <div id="detailsHeader">Selection Details</div>
+    <span id="detailsZoom" class="detailsText"></span>
+    <span id="detailsPosition" class="detailsText">Make a Selection</span>
+    <span id="detailsType" class="detailsText"></span>
+    <span id="detailsMol" class="detailsText"></span>
+  </div>
+
+  <div class="rounded" style=" top: 435px; position: fixed; right: 25px; width: 230px; height: 150px;">
+      <div style="position: relative; top: 10px; font-size: 14px; text-align: center; border-bottom: 2px solid rgb(254, 201, 66); width: 100%; padding-bottom: 10px;">
+        Submissions List
+      </div>
+      <ol id="submissions" style="height: 90px; margin-left: 10px; margin-top: 20px; padding-bottom: 10px; overflow-y: scroll;">
+      </ol>
+  </div>
+
+  <div style="z-index: 20; top: 75px; left: 250px; position: fixed; width: 150px; height: 85px; background-color: rgba(18, 80, 100, 0.5);" class="rounded">
+    <div id="detailsHeader">Puzzle Distance</div>
+    <span id="currentScore" class="detailsText" style="margin-top: 10px; color: rgb(240, 50, 100);">Current Score: 1E8</span>
+    <span id="targetScore" class="detailsText">Target Score: 7</span>
+  </div>
+
+  <div id="controls" class="rounded" style="height: 170px; top: 250px;">
+
+    <div class="controlBox">
+      <div id="lessZoom" class="zoomButton"> - </div>
+      <div id="zoomControlDesc">Zoom</div>
+      <div id="moreZoom" class="zoomButton"> + </div>
+    </div>
+
+    <div class="controlBox">
+      <div id="displayInfo1" style="text-align: center;">Display: Bonds</div>
+      <div id="toggleDisplayContainer">
+        <div id="show_a" class="toggleDisplayType"></div>
+        <div id="show_b" class="toggleDisplayType active"></div>
+        <div id="show_ab" class="toggleDisplayType"></div>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleRotateDesc" class="toggleDesc" style="margin-left: 5px;">Toggle Color</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleRotate" name="check"></input>
+        <label for="toggleRotate"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleBoneDesc" class="toggleDesc" style="margin-left: 5px;">Backbone</div>
+      <div class="roundedCheckbox" style="float: left; margin-left: 15px;">
+        <input type="checkbox" id="toggleBone" name="check" checked></input>
+        <label for="toggleBone"></label>
+      </div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="controlBox" style="position: relative; left: 50%; margin-left: -50px; margin-top: -20px;">
+      <div id="leftArrow">
+        <div class="triangle left"></div>
+        <div class="horizRect"></div>
+      </div>
+
+      <div id="vertArrowContainer">
+        <div id="upArrow">
+          <div class="triangle up"></div>
+          <div class="vertRect"></div>
+        </div>
+        <div id="downArrow">
+          <div class="vertRect"></div>
+          <div class="triangle down"></div>
+        </div>
+      </div>
+
+      <div id="rightArrow">
+        <div class="horizRect"></div>
+        <div class="triangle right"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="sidebar" class="rounded">
+      <div style="height: 35px; border-bottom: 1px solid white;">
+        <div id="motifHeader" style="float: left;">Used Motifs List</div>
+      </div>
+
+      <div id="loadingMotif" class="fadeOut" style="top: 35px; height: 365px;">
+        <div id="loadingMotifText">Loading Motifs...</div>
+      </div>
+
+      <div id="scrollbar_container" style="display: block;">  
+          <div id="scrollbar_track"><div id="scrollbar_handle"></div></div> 
+          <div id="scrollbar_content" style="height: 356px;"></div>  
+      </div>  
+  </div>
+
+<div class="webgl overlay" id="submiterroroverlay" style="display: none;"></div>
+<div class="webgl container" id="submiterrorcontainer" style="display: none;">
+  <div class="webgl title"><b>Submission Warning</b></div>
+  <div class="webgl description"> Your puzzle did not meet the puzzle requirements: you can still submit your solution, but it might not be synthesized as a solution on EteRNA.</div>
+  <div class="webgl button bgRed white" onclick="document.getElementById('submiterroroverlay').style.display='none'; document.getElementById('submiterrorcontainer').style.display='none'; document.getElementById('submitoverlay').style.display = 'block'; document.getElementById('submitcontainer').style.display = 'block';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="puzzlecompleteoverlay" style="display: none;"></div>
+<div class="webgl container" id="puzzlecompletecontainer" style="display: none;">
+  <div class="webgl title"><b>Puzzle completed!</b></div>
+  <div class="webgl description" id="puzzlecompletedesc"></div>
+  <div class="webgl button bgGreen white" onclick="document.getElementById('puzzlecompleteoverlay').style.display='none'; document.getElementById('puzzlecompletecontainer').style.display='none';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="submitoverlay" style="display: none;"></div>
+<div class="webgl container" id="submitcontainer" style="display: none;">
+  <div class="webgl title"><b>Submit Sequence</b></div>
+  <div style="font: 17px 'Source Sans Pro'; margin-left: 15px; color: black; margin-top: 20px; float: left;">Main Username: </div>
+  <input id="submitusername" placeholder="username" style="float: left; border: 1px solid rgb(200, 200, 200); padding: 10px; background: rgb(242, 242, 242); box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0, 0, 0, 0.1); margin-top: 10px; margin-left: 10px; color: black; margin-top: 10px; width: 200px; font: 15px 'Source Sans Pro';"></input>
+  <div style="clear: both;font: 13px 'Source Sans Pro'; color: rgb(180, 180, 180); margin-left: 15px; margin-top: -10px;">Enter the username for your account on the main Eterna server.</div>
+  <div id="submitbutton" class="webgl button bgGreen white">Submit</div>
+</div>
+
+  <div id="main" style="position: absolute; top: 75px; left: 250px;">
+  </div>
+
+  <div id="sequenceContainer" style="font-size: 13px; position: fixed; bottom: 15px; width: 600px; height: 75px; left: 50%; margin-left: -300px; line-height: 50px; display: none;" class="rounded"> 
+    <div style="float: left; margin-left: 10px;line-height: 75px;">Final Solution:</div>
+    <div id="fullsequence" style="float: left;margin-left: 10px; letter-spacing:3px; width: 420px; overflow-x: scroll;">ggauaugcgcagaagg</div>
+    <div id="fullsecondarystructure" style="float: left;margin-left: 10px; letter-spacing:7px; width: 420px; overflow-x: scroll; white-space: nowrap; margin-top: -20px;">(((..(((((((((((((((....))))))))())))).))))</div>
+
+    <div id="scrollSequenceLeft" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -35px;">&lt;</div>
+    <div id="scrollSequenceRight" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -35px;">&gt;</div>
+  </div>
+</block>
+
+<block url="/web/eterna3/puz1/">
+  <div id="bg"></div>
+
+  <div id="header" style="position: absolute; left: 0;">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span id="puzname">P4-P5 Tutorial</span>
+        </div>
+      <a href="/web/eterna3/puz2/">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span class="link">Tetraloop Receptor Puzzle</span>
+        </div>
+      </a>
+      <a href="/web/eterna3/puz3/">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span class="link">FMN Puzzle</span>
+        </div>
+      </a>
+      <a href="#">
+        <div id="name">
+             <span>Development Build</span>
+        </div>
+      </a>
+
+    <div id="navbar" class="rounded">
+      <a href="#">
+        <div class="nav link"><span class="link multi">Me</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">My Feed</div></a>
+            <a href="#"><div class="popupLink">My Profile</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">Roadmap</div></a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Puzzles</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Tutorials</div></a>
+            <a href="#"><div class="popupLink">Challenges</div></a>
+            <a href="#"><div class="popupLink">Player Puzzles</div></a>
+            <a href="#"><div class="popupLink">EteRNA Scripts</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Cloud Lab</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Active Labs</div></a>
+            <a href="#"><div class="popupLink">Proposals</div></a>
+            <a href="#"><div class="popupLink">Archives</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Community</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">News</div></a>
+            <a href="#"><div class="popupLink">Players</div></a>
+            <a href="#"><div class="popupLink">Forums</div></a>
+            <a href="#"><div class="popupLink">Developer Blog</div></a>
+            <a href="#"><div class="popupLink">Groups</div></a>
+            <a href="#"><div class="popupLink">Strategy Guides</div></a>
+            <a href="#"><div class="popupLink">Wiki</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">About EteRNA</div></a>
+    </div>
+  </div>
+
+  <div id="chat" class="rounded">
+      <div style="position: relative; top: 10px; font-size: 14px; text-align: center; border-bottom: 2px solid rgb(254, 201, 66); width: 100%; padding-bottom: 10px;">
+        Puzzle Requirements
+      </div>
+
+      <div style="margin-top: 20px; margin-left: 5px; margin-right: 5px; font-size: 13px;">Use the various RNA structures on the sidebar to the left to form a stable structure. Test out the various RNA motifs and assemble them together to connect the two highlighted ends of the puzzle.</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">RNA Length: <span id="RNALength" style="color: rgb(240, 50, 100);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Helices Length: <span id="HelixLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Motifs Length: <span id="MotifLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementOne" style="color:rgb(240, 50, 100);">Requirement 1</span>: The RNA length should be less than 90 nucleotides to be synthesized in the lab.</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementTwo" style="color:rgb(50, 200, 70);">Requirement 2</span>: The helices length should be greater than the length of the motifs.</div>
+  </div>
+
+  <div id="details" class="rounded">
+    <div id="detailsHeader">Selection Details</div>
+    <span id="detailsZoom" class="detailsText"></span>
+    <span id="detailsPosition" class="detailsText">Make a Selection</span>
+    <span id="detailsType" class="detailsText"></span>
+    <span id="detailsMol" class="detailsText"></span>
+  </div>
+
+  <div style="z-index: 20; top: 75px; left: 250px; position: fixed; width: 150px; height: 85px; background-color: rgba(18, 80, 100, 0.5);" class="rounded">
+    <div id="detailsHeader">Puzzle Distance</div>
+    <span id="currentScore" class="detailsText" style="margin-top: 10px; color: rgb(240, 50, 100);">Current Score: 1E8</span>
+    <span id="targetScore" class="detailsText">Target Score: 7</span>
+  </div>
+
+  <div id="controls" class="rounded">
+
+    <div class="controlBox">
+      <div id="lessZoom" class="zoomButton"> - </div>
+      <div id="zoomControlDesc">Zoom</div>
+      <div id="moreZoom" class="zoomButton"> + </div>
+    </div>
+
+    <div class="controlBox">
+      <div id="displayInfo1" style="text-align: center;">Display: Bonds</div>
+      <div id="toggleDisplayContainer">
+        <div id="show_a" class="toggleDisplayType"></div>
+        <div id="show_b" class="toggleDisplayType active"></div>
+        <div id="show_ab" class="toggleDisplayType"></div>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleRotateDesc" class="toggleDesc" style="margin-left: 5px;">Toggle Color</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleRotate" name="check"></input>
+        <label for="toggleRotate"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="undo" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Undo</div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleBoneDesc" class="toggleDesc" style="margin-left: 5px;">Backbone</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleBone" name="check" checked></input>
+        <label for="toggleBone"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="submit" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Submit</div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+   <div class="controlBox" style="width: 125px; float: left;">
+      <div class="zoomButton" id="incrementGhost" style="margin-top: 0px;  margin-right: 10px; float: left; margin-left: 5px;">+</div>
+      <div style="font-size: 14px; line-height: 20px; margin-right: 0px; float:left;">Hints</div>
+      <div class="zoomButton" id="hideAllGhost" style="margin-top: 0px;margin-left: 10px; float: left; font-size: 12px; width: 40px;">Hide</div>
+   </div>
+
+    <div class="controlBox" style="float: left; margin-top: -10px; margin-left: -10px;">
+      <div id="leftArrow">
+        <div class="triangle left"></div>
+        <div class="horizRect"></div>
+      </div>
+
+      <div id="vertArrowContainer">
+        <div id="upArrow">
+          <div class="triangle up"></div>
+          <div class="vertRect"></div>
+        </div>
+        <div id="downArrow">
+          <div class="vertRect"></div>
+          <div class="triangle down"></div>
+        </div>
+      </div>
+
+      <div id="rightArrow">
+        <div class="horizRect"></div>
+        <div class="triangle right"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+<div id="sidebar" class="rounded">
+      <div style="height: 75px; border-bottom: 1px solid white;">
+        <div id="motifHeader" style="float: left;">Motifs</div>
+        <div id="viewSelected" class="zoomButton" style="width: 50px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px; float: right; border: 1px solid rgba(0, 125, 125, 0.5); background-color: inherit;">Used</div>
+        <input id="search" placeholder="Search" class="searchbox" style="margin-top: 5px;"></input>
+      </div>
+
+      <div id="usedMotifs" style="position: absolute; top: 75px; width: 200px; height: 325px; z-index: 100; display: none;">
+        <div id="usedMotifsText" style="margin-left: 15px; font-size: 15px; margin-top: 20px; height: 290px; margin-right: 15px; overflow-y: scroll;">
+        </div>
+      </div>
+
+      <div id="loadingMotif" class="fadeOut">
+        <div id="loadingMotifText">Loading Motifs...</div>
+      </div>
+
+      <div id="scrollbar_container" style="display: block;">  
+          <div id="scrollbar_track"><div id="scrollbar_handle"></div></div> 
+          <div id="scrollbar_content"></div>  
+      </div>  
+  </div>
+
+<div class="webgl overlay" id="submiterroroverlay" style="display: none;"></div>
+<div class="webgl container" id="submiterrorcontainer" style="display: none;">
+  <div class="webgl title"><b>Submission Warning</b></div>
+  <div class="webgl description"> Your puzzle did not meet the puzzle requirements: you can still submit your solution, but it might not be synthesized as a solution on EteRNA.</div>
+  <div class="webgl button bgRed white" onclick="document.getElementById('submiterroroverlay').style.display='none'; document.getElementById('submiterrorcontainer').style.display='none'; document.getElementById('submitoverlay').style.display = 'block'; document.getElementById('submitcontainer').style.display = 'block';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="puzzlecompleteoverlay" style="display: none;"></div>
+<div class="webgl container" id="puzzlecompletecontainer" style="display: none;">
+  <div class="webgl title"><b>Puzzle completed!</b></div>
+  <div class="webgl description" id="puzzlecompletedesc"></div>
+  <div class="webgl button bgGreen white" onclick="document.getElementById('puzzlecompleteoverlay').style.display='none'; document.getElementById('puzzlecompletecontainer').style.display='none';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="submitoverlay" style="display: none;"></div>
+<div class="webgl container" id="submitcontainer" style="display: none;">
+  <div class="webgl title"><b>Submit Sequence</b></div>
+  <div style="font: 17px 'Source Sans Pro'; margin-left: 15px; color: black; margin-top: 20px; float: left;">Main Username: </div>
+  <input id="submitusername" placeholder="username" style="float: left; border: 1px solid rgb(200, 200, 200); padding: 10px; background: rgb(242, 242, 242); box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0, 0, 0, 0.1); margin-top: 10px; margin-left: 10px; color: black; margin-top: 10px; width: 200px; font: 15px 'Source Sans Pro';"></input>
+  <div style="clear: both;font: 13px 'Source Sans Pro'; color: rgb(180, 180, 180); margin-left: 15px; margin-top: -10px;">Enter the username for your account on the main Eterna server.</div>
+  <div id="submitbutton" class="webgl button bgGreen white">Submit</div>
+</div>
+
+  <div id="main" style="position: absolute; top: 75px; left: 250px;">
+  </div>
+
+ <div id="sequenceContainer" style="font-size: 13px; position: fixed; bottom: 15px; width: 600px; height: 75px; left: 50%; margin-left: -300px; line-height: 50px; display: none;" class="rounded"> 
+    <div style="float: left; margin-left: 10px;line-height: 75px;">Previous Solution:</div>
+    <div id="fullsequence" style="float: left;margin-left: 10px; letter-spacing:3px; width: 420px; overflow-x: scroll;">ggauaugcgcagaagg</div>
+    <div id="fullsecondarystructure" style="float: left;margin-left: 10px; letter-spacing:7px; width: 420px; overflow-x: scroll; white-space: nowrap; margin-top: -20px;">(((..(((((((((((((((....))))))))())))).))))</div>
+
+    <div id="scrollSequenceLeft" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -45px;">&lt;</div>
+    <div id="scrollSequenceRight" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -45px;">&gt;</div>
+  </div>
+
+</block>
+
+<block url="/web/eterna3/puz2/">
+  <div id="bg"></div>
+
+  <div id="header" style="position: absolute; left: 0;">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span id="puzname">Tetraloop Receptor Puzzle</span>
+        </div>
+      <a href="/web/eterna3/puz1/">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span class="link">P4-P5 Tutorial</span>
+        </div>
+      </a>
+      <a href="/web/eterna3/puz3/">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span class="link">FMN Puzzle</span>
+        </div>
+      </a>
+      <a href="#">
+        <div id="name">
+             <span>Development Build</span>
+        </div>
+      </a>
+
+    <div id="navbar" class="rounded">
+      <a href="#">
+        <div class="nav link"><span class="link multi">Me</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">My Feed</div></a>
+            <a href="#"><div class="popupLink">My Profile</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">Roadmap</div></a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Puzzles</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Tutorials</div></a>
+            <a href="#"><div class="popupLink">Challenges</div></a>
+            <a href="#"><div class="popupLink">Player Puzzles</div></a>
+            <a href="#"><div class="popupLink">EteRNA Scripts</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Cloud Lab</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Active Labs</div></a>
+            <a href="#"><div class="popupLink">Proposals</div></a>
+            <a href="#"><div class="popupLink">Archives</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Community</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">News</div></a>
+            <a href="#"><div class="popupLink">Players</div></a>
+            <a href="#"><div class="popupLink">Forums</div></a>
+            <a href="#"><div class="popupLink">Developer Blog</div></a>
+            <a href="#"><div class="popupLink">Groups</div></a>
+            <a href="#"><div class="popupLink">Strategy Guides</div></a>
+            <a href="#"><div class="popupLink">Wiki</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">About EteRNA</div></a>
+    </div>
+  </div>
+
+  <div id="chat" class="rounded">
+      <div style="position: relative; top: 10px; font-size: 14px; text-align: center; border-bottom: 2px solid rgb(254, 201, 66); width: 100%; padding-bottom: 10px;">
+        Puzzle Requirements
+      </div>
+
+      <div style="margin-top: 20px; margin-left: 5px; margin-right: 5px; font-size: 13px;">Use the various RNA structures on the sidebar to the left to form a stable structure. Test out the various RNA motifs and assemble them together to connect the two highlighted ends of the puzzle.</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">RNA Length: <span id="RNALength" style="color: rgb(240, 50, 100);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Helices Length: <span id="HelixLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Motifs Length: <span id="MotifLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementOne" style="color:rgb(240, 50, 100);">Requirement 1</span>: The RNA length should be less than 90 nucleotides to be synthesized in the lab.</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementTwo" style="color:rgb(50, 200, 70);">Requirement 2</span>: The helices length should be greater than the length of the motifs.</div>
+  </div>
+
+  <div id="details" class="rounded">
+    <div id="detailsHeader">Selection Details</div>
+    <span id="detailsZoom" class="detailsText"></span>
+    <span id="detailsPosition" class="detailsText">Make a Selection</span>
+    <span id="detailsType" class="detailsText"></span>
+    <span id="detailsMol" class="detailsText"></span>
+  </div>
+
+  <div style="z-index: 20; top: 75px; left: 250px; position: fixed; width: 150px; height: 85px; background-color: rgba(18, 80, 100, 0.5);" class="rounded">
+    <div id="detailsHeader">Puzzle Distance</div>
+    <span id="currentScore" class="detailsText" style="margin-top: 10px; color: rgb(240, 50, 100);">Current Score: 1E8</span>
+    <span id="targetScore" class="detailsText">Target Score: 7</span>
+  </div>
+
+  <div id="controls" class="rounded">
+
+    <div class="controlBox">
+      <div id="lessZoom" class="zoomButton"> - </div>
+      <div id="zoomControlDesc">Zoom</div>
+      <div id="moreZoom" class="zoomButton"> + </div>
+    </div>
+
+    <div class="controlBox">
+      <div id="displayInfo1" style="text-align: center;">Display: Bonds</div>
+      <div id="toggleDisplayContainer">
+        <div id="show_a" class="toggleDisplayType"></div>
+        <div id="show_b" class="toggleDisplayType active"></div>
+        <div id="show_ab" class="toggleDisplayType"></div>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleRotateDesc" class="toggleDesc" style="margin-left: 5px;">Toggle Color</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleRotate" name="check"></input>
+        <label for="toggleRotate"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="undo" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Undo</div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleBoneDesc" class="toggleDesc" style="margin-left: 5px;">Backbone</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleBone" name="check" checked></input>
+        <label for="toggleBone"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="submit" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Submit</div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+   <div class="controlBox" style="width: 125px; float: left;">
+      <div class="zoomButton" id="incrementGhost" style="margin-top: 0px;  margin-right: 10px; float: left; margin-left: 5px;">+</div>
+      <div style="font-size: 14px; line-height: 20px; margin-right: 0px; float:left;">Hints</div>
+      <div class="zoomButton" id="hideAllGhost" style="margin-top: 0px;margin-left: 10px; float: left; font-size: 12px; width: 40px;">Hide</div>
+   </div>
+
+    <div class="controlBox" style="float: left; margin-top: -10px; margin-left: -10px;">
+      <div id="leftArrow">
+        <div class="triangle left"></div>
+        <div class="horizRect"></div>
+      </div>
+
+      <div id="vertArrowContainer">
+        <div id="upArrow">
+          <div class="triangle up"></div>
+          <div class="vertRect"></div>
+        </div>
+        <div id="downArrow">
+          <div class="vertRect"></div>
+          <div class="triangle down"></div>
+        </div>
+      </div>
+
+      <div id="rightArrow">
+        <div class="horizRect"></div>
+        <div class="triangle right"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+<div id="sidebar" class="rounded">
+      <div style="height: 75px; border-bottom: 1px solid white;">
+        <div id="motifHeader" style="float: left;">Motifs</div>
+        <div id="viewSelected" class="zoomButton" style="width: 50px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px; float: right; border: 1px solid rgba(0, 125, 125, 0.5); background-color: inherit;">Used</div>
+        <input id="search" placeholder="Search" class="searchbox" style="margin-top: 5px;"></input>
+      </div>
+
+      <div id="usedMotifs" style="position: absolute; top: 75px; width: 200px; height: 325px; z-index: 100; display: none;">
+        <div id="usedMotifsText" style="margin-left: 15px; font-size: 15px; margin-top: 20px; height: 290px; margin-right: 15px; overflow-y: scroll;">
+        </div>
+      </div>
+
+      <div id="loadingMotif" class="fadeOut">
+        <div id="loadingMotifText">Loading Motifs...</div>
+      </div>
+
+      <div id="scrollbar_container" style="display: block;">  
+          <div id="scrollbar_track"><div id="scrollbar_handle"></div></div> 
+          <div id="scrollbar_content"></div>  
+      </div>  
+  </div>
+
+<div class="webgl overlay" id="submiterroroverlay" style="display: none;"></div>
+<div class="webgl container" id="submiterrorcontainer" style="display: none;">
+  <div class="webgl title"><b>Submission Warning</b></div>
+  <div class="webgl description"> Your puzzle did not meet the puzzle requirements: you can still submit your solution, but it might not be synthesized as a solution on EteRNA.</div>
+  <div class="webgl button bgRed white" onclick="document.getElementById('submiterroroverlay').style.display='none'; document.getElementById('submiterrorcontainer').style.display='none'; document.getElementById('submitoverlay').style.display = 'block'; document.getElementById('submitcontainer').style.display = 'block';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="puzzlecompleteoverlay" style="display: none;"></div>
+<div class="webgl container" id="puzzlecompletecontainer" style="display: none;">
+  <div class="webgl title"><b>Puzzle completed!</b></div>
+  <div class="webgl description" id="puzzlecompletedesc"></div>
+  <div class="webgl button bgGreen white" onclick="document.getElementById('puzzlecompleteoverlay').style.display='none'; document.getElementById('puzzlecompletecontainer').style.display='none';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="submitoverlay" style="display: none;"></div>
+<div class="webgl container" id="submitcontainer" style="display: none;">
+  <div class="webgl title"><b>Submit Sequence</b></div>
+  <div style="font: 17px 'Source Sans Pro'; margin-left: 15px; color: black; margin-top: 20px; float: left;">Main Username: </div>
+  <input id="submitusername" placeholder="username" style="float: left; border: 1px solid rgb(200, 200, 200); padding: 10px; background: rgb(242, 242, 242); box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0, 0, 0, 0.1); margin-top: 10px; margin-left: 10px; color: black; margin-top: 10px; width: 200px; font: 15px 'Source Sans Pro';"></input>
+  <div style="clear: both;font: 13px 'Source Sans Pro'; color: rgb(180, 180, 180); margin-left: 15px; margin-top: -10px;">Enter the username for your account on the main Eterna server.</div>
+  <div id="submitbutton" class="webgl button bgGreen white">Submit</div>
+</div>
+
+  <div id="main" style="position: absolute; top: 75px; left: 250px;">
+  </div>
+
+ <div id="sequenceContainer" style="font-size: 13px; position: fixed; bottom: 15px; width: 600px; height: 75px; left: 50%; margin-left: -300px; line-height: 50px; display: none;" class="rounded"> 
+    <div style="float: left; margin-left: 10px;line-height: 75px;">Previous Solution:</div>
+    <div id="fullsequence" style="float: left;margin-left: 10px; letter-spacing:3px; width: 420px; overflow-x: scroll;">ggauaugcgcagaagg</div>
+    <div id="fullsecondarystructure" style="float: left;margin-left: 10px; letter-spacing:7px; width: 420px; overflow-x: scroll; white-space: nowrap; margin-top: -20px;">(((..(((((((((((((((....))))))))())))).))))</div>
+
+    <div id="scrollSequenceLeft" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -45px;">&lt;</div>
+    <div id="scrollSequenceRight" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -45px;">&gt;</div>
+  </div>
+
+</block>
+
+<block url="/web/eterna3/puz3/">
+  <div id="bg"></div>
+
+  <div id="header" style="position: absolute; left: 0;">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span id="puzname">FMN Puzzle</span>
+        </div>
+      <a href="/web/eterna3/puz1/">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span class="link">P4-P5 Tutorial</span>
+        </div>
+      </a>
+      <a href="/web/eterna3/puz2/">
+        <div id="title">
+           <img src="http://vineet.eternadev.org/workbranch_vineet/frontend/jscripts/eterna3/puzzle.png" id="titleImg"></img>
+             <span class="link">Tetraloop Receptor Puzzle</span>
+        </div>
+      </a>
+      <a href="#">
+        <div id="name">
+             <span>Development Build</span>
+        </div>
+      </a>
+
+    <div id="navbar" class="rounded">
+      <a href="#">
+        <div class="nav link"><span class="link multi">Me</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">My Feed</div></a>
+            <a href="#"><div class="popupLink">My Profile</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">Roadmap</div></a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Puzzles</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Tutorials</div></a>
+            <a href="#"><div class="popupLink">Challenges</div></a>
+            <a href="#"><div class="popupLink">Player Puzzles</div></a>
+            <a href="#"><div class="popupLink">EteRNA Scripts</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Cloud Lab</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Active Labs</div></a>
+            <a href="#"><div class="popupLink">Proposals</div></a>
+            <a href="#"><div class="popupLink">Archives</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Community</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">News</div></a>
+            <a href="#"><div class="popupLink">Players</div></a>
+            <a href="#"><div class="popupLink">Forums</div></a>
+            <a href="#"><div class="popupLink">Developer Blog</div></a>
+            <a href="#"><div class="popupLink">Groups</div></a>
+            <a href="#"><div class="popupLink">Strategy Guides</div></a>
+            <a href="#"><div class="popupLink">Wiki</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">About EteRNA</div></a>
+    </div>
+  </div>
+
+  <div id="chat" class="rounded">
+      <div style="position: relative; top: 10px; font-size: 14px; text-align: center; border-bottom: 2px solid rgb(254, 201, 66); width: 100%; padding-bottom: 10px;">
+        Puzzle Requirements
+      </div>
+
+      <div style="margin-top: 20px; margin-left: 5px; margin-right: 5px; font-size: 13px;">Use the various RNA structures on the sidebar to the left to form a stable structure. Test out the various RNA motifs and assemble them together to connect the two highlighted ends of the puzzle.</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">RNA Length: <span id="RNALength" style="color: rgb(240, 50, 100);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Helices Length: <span id="HelixLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Motifs Length: <span id="MotifLength" style="color:rgb(50, 200, 70);">0</span>&nbsp;Nucleotides</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementOne" style="color:rgb(240, 50, 100);">Requirement 1</span>: The RNA length should be less than 90 nucleotides to be synthesized in the lab.</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementTwo" style="color:rgb(50, 200, 70);">Requirement 2</span>: The helices length should be greater than the length of the motifs.</div>
+  </div>
+
+  <div id="details" class="rounded">
+    <div id="detailsHeader">Selection Details</div>
+    <span id="detailsZoom" class="detailsText"></span>
+    <span id="detailsPosition" class="detailsText">Make a Selection</span>
+    <span id="detailsType" class="detailsText"></span>
+    <span id="detailsMol" class="detailsText"></span>
+  </div>
+
+  <div style="z-index: 20; top: 75px; left: 250px; position: fixed; width: 150px; height: 85px; background-color: rgba(18, 80, 100, 0.5);" class="rounded">
+    <div id="detailsHeader">Puzzle Distance</div>
+    <span id="currentScore" class="detailsText" style="margin-top: 10px; color: rgb(240, 50, 100);">Current Score: 1E8</span>
+    <span id="targetScore" class="detailsText">Target Score: 7</span>
+  </div>
+
+  <div id="controls" class="rounded">
+
+    <div class="controlBox">
+      <div id="lessZoom" class="zoomButton"> - </div>
+      <div id="zoomControlDesc">Zoom</div>
+      <div id="moreZoom" class="zoomButton"> + </div>
+    </div>
+
+    <div class="controlBox">
+      <div id="displayInfo1" style="text-align: center;">Display: Bonds</div>
+      <div id="toggleDisplayContainer">
+        <div id="show_a" class="toggleDisplayType"></div>
+        <div id="show_b" class="toggleDisplayType active"></div>
+        <div id="show_ab" class="toggleDisplayType"></div>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleRotateDesc" class="toggleDesc" style="margin-left: 5px;">Toggle Color</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleRotate" name="check"></input>
+        <label for="toggleRotate"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="undo" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Undo</div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <div id="toggleBoneDesc" class="toggleDesc" style="margin-left: 5px;">Backbone</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleBone" name="check" checked></input>
+        <label for="toggleBone"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="submit" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Submit</div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+   <div class="controlBox" style="width: 125px; float: left;">
+      <div class="zoomButton" id="incrementGhost" style="margin-top: 0px;  margin-right: 10px; float: left; margin-left: 5px;">+</div>
+      <div style="font-size: 14px; line-height: 20px; margin-right: 0px; float:left;">Hints</div>
+      <div class="zoomButton" id="hideAllGhost" style="margin-top: 0px;margin-left: 10px; float: left; font-size: 12px; width: 40px;">Hide</div>
+   </div>
+
+    <div class="controlBox" style="float: left; margin-top: -10px; margin-left: -10px;">
+      <div id="leftArrow">
+        <div class="triangle left"></div>
+        <div class="horizRect"></div>
+      </div>
+
+      <div id="vertArrowContainer">
+        <div id="upArrow">
+          <div class="triangle up"></div>
+          <div class="vertRect"></div>
+        </div>
+        <div id="downArrow">
+          <div class="vertRect"></div>
+          <div class="triangle down"></div>
+        </div>
+      </div>
+
+      <div id="rightArrow">
+        <div class="horizRect"></div>
+        <div class="triangle right"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+<div id="sidebar" class="rounded">
+      <div style="height: 75px; border-bottom: 1px solid white;">
+        <div id="motifHeader" style="float: left;">Motifs</div>
+        <div id="viewSelected" class="zoomButton" style="width: 50px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px; float: right; border: 1px solid rgba(0, 125, 125, 0.5); background-color: inherit;">Used</div>
+        <input id="search" placeholder="Search" class="searchbox" style="margin-top: 5px;"></input>
+      </div>
+
+      <div id="usedMotifs" style="position: absolute; top: 75px; width: 200px; height: 325px; z-index: 100; display: none;">
+        <div id="usedMotifsText" style="margin-left: 15px; font-size: 15px; margin-top: 20px; height: 290px; margin-right: 15px; overflow-y: scroll;">
+        </div>
+      </div>
+
+      <div id="loadingMotif" class="fadeOut">
+        <div id="loadingMotifText">Loading Motifs...</div>
+      </div>
+
+      <div id="scrollbar_container" style="display: block;">  
+          <div id="scrollbar_track"><div id="scrollbar_handle"></div></div> 
+          <div id="scrollbar_content"></div>  
+      </div>  
+  </div>
+
+<div class="webgl overlay" id="submiterroroverlay" style="display: none;"></div>
+<div class="webgl container" id="submiterrorcontainer" style="display: none;">
+  <div class="webgl title"><b>Submission Warning</b></div>
+  <div class="webgl description"> Your puzzle did not meet the puzzle requirements: you can still submit your solution, but it might not be synthesized as a solution on EteRNA.</div>
+  <div class="webgl button bgRed white" onclick="document.getElementById('submiterroroverlay').style.display='none'; document.getElementById('submiterrorcontainer').style.display='none'; document.getElementById('submitoverlay').style.display = 'block'; document.getElementById('submitcontainer').style.display = 'block';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="puzzlecompleteoverlay" style="display: none;"></div>
+<div class="webgl container" id="puzzlecompletecontainer" style="display: none;">
+  <div class="webgl title"><b>Puzzle completed!</b></div>
+  <div class="webgl description" id="puzzlecompletedesc"></div>
+  <div class="webgl button bgGreen white" onclick="document.getElementById('puzzlecompleteoverlay').style.display='none'; document.getElementById('puzzlecompletecontainer').style.display='none';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="submitoverlay" style="display: none;"></div>
+<div class="webgl container" id="submitcontainer" style="display: none;">
+  <div class="webgl title"><b>Submit Sequence</b></div>
+  <div style="font: 17px 'Source Sans Pro'; margin-left: 15px; color: black; margin-top: 20px; float: left;">Main Username: </div>
+  <input id="submitusername" placeholder="username" style="float: left; border: 1px solid rgb(200, 200, 200); padding: 10px; background: rgb(242, 242, 242); box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0, 0, 0, 0.1); margin-top: 10px; margin-left: 10px; color: black; margin-top: 10px; width: 200px; font: 15px 'Source Sans Pro';"></input>
+  <div style="clear: both;font: 13px 'Source Sans Pro'; color: rgb(180, 180, 180); margin-left: 15px; margin-top: -10px;">Enter the username for your account on the main Eterna server.</div>
+  <div id="submitbutton" class="webgl button bgGreen white">Submit</div>
+</div>
+
+  <div id="main" style="position: absolute; top: 75px; left: 250px;">
+  </div>
+
+ <div id="sequenceContainer" style="font-size: 13px; position: fixed; bottom: 15px; width: 600px; height: 75px; left: 50%; margin-left: -300px; line-height: 50px; display: none;" class="rounded"> 
+    <div style="float: left; margin-left: 10px;line-height: 75px;">Previous Solution:</div>
+    <div id="fullsequence" style="float: left;margin-left: 10px; letter-spacing:3px; width: 420px; overflow-x: scroll;">ggauaugcgcagaagg</div>
+    <div id="fullsecondarystructure" style="float: left;margin-left: 10px; letter-spacing:7px; width: 420px; overflow-x: scroll; white-space: nowrap; margin-top: -20px;">(((..(((((((((((((((....))))))))())))).))))</div>
+
+    <div id="scrollSequenceLeft" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -45px;">&lt;</div>
+    <div id="scrollSequenceRight" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -45px;">&gt;</div>
+  </div>
+
+</block>

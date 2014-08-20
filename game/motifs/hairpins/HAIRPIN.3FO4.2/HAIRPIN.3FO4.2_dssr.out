@@ -1,0 +1,80 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=HAIRPIN.3FO4.2.pdb --non-pair -o=HAIRPIN.3FO4.2_dssr.out
+Date and time: Sun Jun 29 15:54:24 2014
+File name: HAIRPIN.3FO4.2.pdb
+    no. of DNA/RNA chains: 1 [A=8]
+    no. of nucleotides:    8
+    no. of atoms:          165
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 2 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.G46            A.C53            G-C WC           19-XIX    cWW cW-W
+   2 A.U47            A.U51            U-U Calcutta     00-n/a    tWH tW-M
+
+****************************************************************************
+List of 1 lone WC/wobble pair
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.G46            A.C53            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 6 non-pairing interactions
+   1 A.G46            A.U47           base-overlap-area=3.7(2.0)   H-bonds[0]: ""
+   2 A.U47            A.U49           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[3.14]"
+   3 A.U47            A.A52           base-overlap-area=0.0(0.0)   H-bonds[1]: "O4(carbonyl)-N6(amino)[3.14]"
+   4 A.C50            A.U51           base-overlap-area=4.7(2.5)   H-bonds[0]: ""
+   5 A.U51            A.A52           base-overlap-area=1.2(0.4)   H-bonds[0]: ""
+   6 A.A52            A.C53           base-overlap-area=5.7(2.4)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=8; [6]; linked by [#-1]
+     nts=8 GUUUCUAC A.G46,A.U47,A.U48,A.U49,A.C50,A.U51,A.A52,A.C53
+       nts=6 UUUCUA A.U47,A.U48,A.U49,A.C50,A.U51,A.A52
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>HAIRPIN.3FO4.2 nts=8 [whole]
+GUUUCUAC
+(......)
+>HAIRPIN.3FO4.2-A #1 nts=8 [chain] RNA
+GUUUCUAC
+(......)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

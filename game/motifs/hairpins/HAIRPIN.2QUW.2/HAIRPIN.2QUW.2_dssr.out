@@ -1,0 +1,78 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=HAIRPIN.2QUW.2.pdb --non-pair -o=HAIRPIN.2QUW.2_dssr.out
+Date and time: Sun Jun 29 15:54:01 2014
+File name: HAIRPIN.2QUW.2.pdb
+    no. of DNA/RNA chains: 1 [B=6]
+    no. of nucleotides:    6
+    no. of atoms:          128
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 2 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 B.C32            B.G37            C-G WC           19-XIX    cWW cW-W
+   2 B.U33            B.A35            U-A              00-n/a    ... t...
+
+****************************************************************************
+List of 1 lone WC/wobble pair
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 B.C32            B.G37            C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 4 non-pairing interactions
+   1 B.C32            B.U33           base-overlap-area=2.8(0.0)   H-bonds[0]: ""
+   2 B.C32            B.U36           base-overlap-area=4.2(1.6)   H-bonds[1]: "O2'(hydroxyl)-O4(carbonyl)[2.65]"
+   3 B.G34            B.A35           base-overlap-area=6.4(4.4)   H-bonds[0]: ""
+   4 B.U36            B.G37           base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=6; [4]; linked by [#-1]
+     nts=6 CUGAUG B.C32,B.U33,B.G34,B.A35,B.U36,B.G37
+       nts=4 UGAU B.U33,B.G34,B.A35,B.U36
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>HAIRPIN.2QUW.2 nts=6 [whole]
+CUGAUG
+(....)
+>HAIRPIN.2QUW.2-B #1 nts=6 [chain] RNA
+CUGAUG
+(....)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

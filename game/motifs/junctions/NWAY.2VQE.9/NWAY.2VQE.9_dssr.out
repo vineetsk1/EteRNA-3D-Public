@@ -1,0 +1,107 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=NWAY.2VQE.9.pdb --non-pair -o=NWAY.2VQE.9_dssr.out
+Date and time: Sun Jun 29 15:54:10 2014
+File name: NWAY.2VQE.9.pdb
+    no. of DNA/RNA chains: 1 [A=18]
+    no. of nucleotides:    18
+    no. of atoms:          379
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 9 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.C990           A.G1215          C-G WC           19-XIX    cWW cW-W
+   2 A.U992           A.A996           U+A              00-n/a    t.. t.+.
+   3 A.G993           A.C1045          G-C              00-n/a    cWW cW-W
+   4 A.C995           A.A1046          C-A              00-n/a    cWS cW-m
+   5 A.A996           A.C1045          A-C              00-n/a    cWS cW-m
+   6 A.U997           A.A1044          U-A WC           20-XX     cWW cW-W
+   7 A.A1046          A.U1211          A-U              00-n/a    tHW tM-W
+   8 A.A1046          A.A1213          A+A              00-n/a    tWW tW+W
+   9 A.G1047          A.C1210          G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 2 multiplets
+   1 nts=3 GAC A.G993,A.A996,A.C1045
+   2 nts=4 CAUA A.C995,A.A1046,A.U1211,A.A1213
+
+****************************************************************************
+List of 3 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.C990           A.G1215          C-G WC           19-XIX    cWW cW-W
+  -2 A.U997           A.A1044          U-A WC           20-XX     cWW cW-W
+  -3 A.G1047          A.C1210          G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 17 non-pairing interactions
+   1 A.C990           A.U991          base-overlap-area=5.9(2.5)   H-bonds[0]: ""
+   2 A.U991           A.U992          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[2.82]"
+   3 A.U991           A.G993          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.89]"
+   4 A.U991           A.U1212         base-overlap-area=0.0(0.0)   H-bonds[1]: "O4(carbonyl)-O2'(hydroxyl)[2.76]"
+   5 A.U991           A.A1213         base-overlap-area=0.0(0.0)   H-bonds[1]: "N3(imino)-N7[3.35]"
+   6 A.U992           A.G993          base-overlap-area=1.7(0.0)   H-bonds[0]: ""
+   7 A.U992           A.C1045         base-overlap-area=0.9(0.0)   H-bonds[0]: ""
+   8 A.G993           A.A1046         base-overlap-area=1.7(0.5)   H-bonds[0]: ""
+   9 A.A994           A.C995          base-overlap-area=2.0(1.2)   H-bonds[0]: ""
+  10 A.A994           A.G1047         base-overlap-area=0.0(0.0)   H-bonds[1]: "N6(amino)-O4'[3.36]"
+  11 A.A996           A.U997          base-overlap-area=4.0(2.6)   H-bonds[0]: ""
+  12 A.A1046          A.G1047         base-overlap-area=2.7(1.2)   H-bonds[0]: ""
+  13 A.G1047          A.G1215         base-overlap-area=0.0(0.0)   H-bonds[3]: "O2'(hydroxyl)-O3'[3.12],O2'(hydroxyl)-O2'(hydroxyl)[2.97],N2(amino)-O4'[3.07]"
+  14 A.C1210          A.U1211         base-overlap-area=3.0(1.2)   H-bonds[0]: ""
+  15 A.U1212          A.A1213         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[2.44]"
+  16 A.A1213          A.C1214         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[2.90]"
+  17 A.A1213          A.G1215         base-overlap-area=4.4(2.7)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 junction
+   1 3-way junctions: nts=18; [6,2,4]; linked by [#-1,#-2,#-3]
+     nts=18 CUUGACAUACAGCUUACG A.C990,A.U991,A.U992,A.G993,A.A994,A.C995,A.A996,A.U997,A.A1044,A.C1045,A.A1046,A.G1047,A.C1210,A.U1211,A.U1212,A.A1213,A.C1214,A.G1215
+       nts=6 UUGACA A.U991,A.U992,A.G993,A.A994,A.C995,A.A996
+       nts=2 CA A.C1045,A.A1046
+       nts=4 UUAC A.U1211,A.U1212,A.A1213,A.C1214
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>NWAY.2VQE.9 nts=18 [whole]
+CUUGACAU&ACAG&CUUACG
+(......(&)..(&)....)
+>NWAY.2VQE.9-A #1 nts=18 [chain] RNA*
+CUUGACAUACAGCUUACG
+(......()..()....)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

@@ -1,0 +1,145 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.1S72.20.pdb --non-pair -o=TC.1S72.20_dssr.out
+Date and time: Sun Jun 29 15:52:34 2014
+File name: TC.1S72.20.pdb
+    no. of DNA/RNA chains: 1 [0=22]
+    no. of nucleotides:    22
+    no. of atoms:          476
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 9 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 0.C789           0.G856           C-G WC           19-XIX    cWW cW-W
+   2 0.A790           0.G824           A-G Sheared      11-XI     tHS tM-m
+   3 0.A790           0.G1709          A-G              00-n/a    cWS cW-m
+   4 0.A791           0.U823           A-U WC           20-XX     cWW cW-W
+   5 0.A827           0.G854           A-G Sheared      11-XI     tHS tM-m
+   6 0.G828           0.C853           G-C WC           19-XIX    cWW cW-W
+   7 0.C1705          0.G1713          C-G WC           19-XIX    cWW cW-W
+   8 0.G1706          0.A1712          G-A Sheared      11-XI     tSH cm-M
+   9 0.G1707          0.A1711          G-A Sheared      11-XI     tSH cm-M
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 AGG 0.A790,0.G824,0.G1709
+
+****************************************************************************
+List of 2 helices
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=4
+      strand-1 5'-UGAG-3'
+       bp-type    |..|
+      strand-2 3'-AAGC-5'
+      helix-form  .x.
+   1 0.U823           0.A791           U-A WC           20-XX     cWW cW-W
+   2 0.G824           0.A790           G-A Sheared      11-XI     tSH tm-M
+   3 0.A827           0.G854           A-G Sheared      11-XI     tHS tM-m
+   4 0.G828           0.C853           G-C WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#2[0] bps=3
+      strand-1 5'-CGG-3'
+       bp-type    |..
+      strand-2 3'-GAA-5'
+      helix-form  ..
+   1 0.C1705          0.G1713          C-G WC           19-XIX    cWW cW-W
+   2 0.G1706          0.A1712          G-A Sheared      11-XI     tSH cm-M
+   3 0.G1707          0.A1711          G-A Sheared      11-XI     tSH cm-M
+
+****************************************************************************
+List of 4 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 0.C789           0.G856           C-G WC           19-XIX    cWW cW-W
+  -2 0.A791           0.U823           A-U WC           20-XX     cWW cW-W
+  -3 0.G828           0.C853           G-C WC           19-XIX    cWW cW-W
+  -4 0.C1705          0.G1713          C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 12 non-pairing interactions
+   1 0.C789           0.U826          base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-N3(imino)[2.86],O2'(hydroxyl)-O4(carbonyl)[2.91]"
+   2 0.C789           0.U855          base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+   3 0.A790           0.U826          base-overlap-area=0.9(0.0)   H-bonds[0]: ""
+   4 0.A791           0.G824          base-overlap-area=0.3(0.0)   H-bonds[0]: ""
+   5 0.A791           0.C1708         base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[2.76],O2'(hydroxyl)-O2(carbonyl)[2.56]"
+   6 0.G824           0.G854          base-overlap-area=7.3(3.3)   H-bonds[0]: ""
+   7 0.U826           0.A827          base-overlap-area=0.8(0.2)   H-bonds[0]: ""
+   8 0.U826           0.A1710         base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[3.09],O2'(hydroxyl)-N3[2.73]"
+   9 0.U855           0.G856          base-overlap-area=3.1(0.0)   H-bonds[0]: ""
+  10 0.G1707          0.G1709         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.95]"
+  11 0.C1708          0.G1709         base-overlap-area=7.6(3.3)   H-bonds[0]: ""
+  12 0.G1709          0.A1711         base-overlap-area=5.8(2.9)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=9; [7]; linked by [#-4]
+     nts=9 CGGCGAAAG 0.C1705,0.G1706,0.G1707,0.C1708,0.G1709,0.A1710,0.A1711,0.A1712,0.G1713
+       nts=7 GGCGAAA 0.G1706,0.G1707,0.C1708,0.G1709,0.A1710,0.A1711,0.A1712
+
+****************************************************************************
+List of 1 junction
+   1 3-way junctions: nts=13; [1,4,2]; linked by [#-1,#-2,#-3]
+     nts=13 CAAUGUUAGCGUG 0.C789,0.A790,0.A791,0.U823,0.G824,0.U825,0.U826,0.A827,0.G828,0.C853,0.G854,0.U855,0.G856
+       nts=1 A 0.A790
+       nts=4 GUUA 0.G824,0.U825,0.U826,0.A827
+       nts=2 GU 0.G854,0.U855
+
+****************************************************************************
+List of 1 ribose zipper
+   1 nts=4 AACG 0.A790,0.A791,0.C1708,0.G1709
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.1S72.20 nts=22 [whole]
+CAA&UGUUAG&CGUG&CGGCGAAAG
+(.(&)....(&)..)&(.......)
+>TC.1S72.20-0 #1 nts=22 [chain] RNA*
+CAAUGUUAGCGUGCGGCGAAAG
+(.()....()..)(.......)
+
+****************************************************************************
+List of 7 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   4 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   5 dssr-2ndstrs.ct -- secondary structures in the connect format
+   6 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   7 dssr-torsions.dat -- Backbone torsion angles and suite names

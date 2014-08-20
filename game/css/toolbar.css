@@ -1,0 +1,197 @@
+#controls {
+    top: 400px;
+    position: fixed;
+    right: 25px;
+    width: 230px;
+    height: 250px;
+}
+
+.controlBox {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  height: 50px;
+  float: left;
+  width: 100px;
+}
+
+.controlBox:last-of-type {
+  margin-left: 0px;
+}
+
+.controlBox:first-of-type {
+  margin-left: 10px;
+}
+
+#displayInfo1, #displayInfo2, #displayInfo3 {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.toggleDesc { 
+  font-size: 13px; 
+  float: left; 
+  line-height: 24px; 
+}
+
+#toggleDisplayContainer {
+  width: 58px;
+  position: relative; left: 50%;
+  margin-left: -29px; margin-top: 10px;
+}
+
+.toggleDisplayType {
+  width: 14px; height: 14px; 
+  -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; 
+  border: 1px solid white; 
+  float: left; 
+  margin-left: 5px; 
+  cursor: pointer;
+}
+
+.toggleDisplayType.active {
+  background-color: rgb(20, 70, 140);
+}
+
+.toggleDisplayType:first-of-type {
+  margin-left: 0px;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.roundedCheckbox {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  float: right;
+  margin-right: 5px; margin-top: 2px;
+}
+
+.roundedCheckbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  left: 1px;
+  top: 1px;
+}
+
+.roundedCheckbox label:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: rgb(20, 70, 140);
+
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  top: 1px;
+  left: 1px;
+}
+
+.roundedCheckbox label:hover::after { opacity: 0.3; }
+.roundedCheckbox input[type=checkbox]:checked + label:after { opacity: 1; }
+
+#zoomControlDesc, #modelControlDesc {
+  font-size: 14px;
+  float: left; margin-left: 10px;
+  line-height: 50px;
+}
+
+.zoomButton {
+  background-color: rgba(0, 125, 125, 0.5);
+  height: 20px;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 15px;
+  text-align: center;
+  width: 20px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 2px;
+}
+
+.zoomButton#moreZoom, .zoomButton#increaseMotifPreview{
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.zoomButton#increaseMotifPreview { font-size: 15px; }
+.zoomButton#decreaseMotifPreview { font-size: 12px; }
+
+#leftArrow, #rightArrow {
+  float: left;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#vertArrowContainer {
+  float: left;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+#upArrow, #downArrow { cursor: pointer; }
+
+#leftArrow { margin-left: 13px; }
+#downArrow { margin-top: 5px; }
+
+.triangle {
+  height: 0;
+  width: 0;
+}
+
+.triangle.left {
+  float: left;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid white;
+}
+
+.triangle.right {
+  float: left;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid white;
+}
+
+.triangle.up {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+}
+
+.triangle.down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+}
+
+.horizRect {
+  float: left;
+  width: 15px;
+  height: 2px;
+  margin-top: 4px;
+  background-color: white;
+}
+
+.vertRect {
+  height: 15px;
+  width: 2px;
+  margin-left: 4px;
+  background-color: white;
+}

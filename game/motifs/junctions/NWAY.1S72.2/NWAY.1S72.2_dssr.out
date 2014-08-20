@@ -1,0 +1,194 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=NWAY.1S72.2.pdb --non-pair -o=NWAY.1S72.2_dssr.out
+Date and time: Sun Jun 29 15:52:00 2014
+File name: NWAY.1S72.2.pdb
+    no. of DNA/RNA chains: 1 [0=36]
+    no. of nucleotides:    36
+    no. of atoms:          779
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 18 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 0.G41            0.A151           G+A              00-n/a    tSW tm+W
+   2 0.G41            0.C440           G-C WC           19-XIX    cWW cW-W
+   3 0.C42            0.G149           C-G WC           19-XIX    cWW cW-W
+   4 0.A152           0.G185           A-G Imino        08-VIII   cWW cW-W
+   5 0.A152           0.C440           A-C              00-n/a    ... c...
+   6 0.C153           0.G184           C-G WC           19-XIX    cWW cW-W
+   7 0.C153           0.A439           C-A              00-n/a    ... c...
+   8 0.G185           0.A439           G+A              00-n/a    tSW tm+W
+   9 0.G190           0.A435           G-A              00-n/a    tWH tW-M
+  10 0.A191           0.A236           A-A              00-n/a    cWS cW-m
+  11 0.A191           0.U434           A-U rHoogsteen   24-XXIV   tHW tM-W
+  12 0.A192           0.G203           A-G Sheared      11-XI     tHS cM-m
+  13 0.A194           0.U202           A-U WC           20-XX     cWW cW-W
+  14 0.A204           0.A436           A+A              01-I      tWW tW+W
+  15 0.U205           0.A437           U+A rWC          21-XXI    tWW tW+W
+  16 0.G206           0.U233           G-U Wobble       28-XXVIII cWW cW-W
+  17 0.A236           0.U434           A+U              00-n/a    ... t...
+  18 0.G237           0.C433           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 4 multiplets
+   1 nts=3 GAC 0.G41,0.A151,0.C440
+   2 nts=3 AGC 0.A152,0.G185,0.C440
+   3 nts=3 CGA 0.C153,0.G184,0.A439
+   4 nts=3 AAU 0.A191,0.A236,0.U434
+
+****************************************************************************
+List of 2 helices
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=2
+      strand-1 5'-AC-3'
+       bp-type    .|
+      strand-2 3'-GG-5'
+      helix-form  .
+   1 0.A152           0.G185           A-G Imino        08-VIII   cWW cW-W
+   2 0.C153           0.G184           C-G WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#2[0] bps=6
+      strand-1 5'-UAAGAG-3'
+       bp-type    |....|
+      strand-2 3'-GUAAUC-5'
+      helix-form  xxx.x
+   1 0.U233           0.G206           U-G Wobble       28-XXVIII cWW cW-W
+   2 0.A437           0.U205           A+U rWC          21-XXI    tWW tW+W
+   3 0.A204           0.A436           A+A              01-I      tWW tW+W
+   4 0.G190           0.A435           G-A              00-n/a    tWH tW-M
+   5 0.A191           0.U434           A-U rHoogsteen   24-XXIV   tHW tM-W
+   6 0.G237           0.C433           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 6 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 0.G41            0.C440           G-C WC           19-XIX    cWW cW-W
+  -2 0.C42            0.G149           C-G WC           19-XIX    cWW cW-W
+  -3 0.C153           0.G184           C-G WC           19-XIX    cWW cW-W
+  -4 0.A194           0.U202           A-U WC           20-XX     cWW cW-W
+  -5 0.G206           0.U233           G-U Wobble       28-XXVIII cWW cW-W
+  -6 0.G237           0.C433           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 38 non-pairing interactions
+   1 0.G41            0.C42           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[3.30]"
+   2 0.G41            0.G185          base-overlap-area=2.5(0.2)   H-bonds[0]: ""
+   3 0.C42            0.G184          base-overlap-area=1.3(0.0)   H-bonds[0]: ""
+   4 0.G149           0.G150          base-overlap-area=6.1(3.9)   H-bonds[0]: ""
+   5 0.G150           0.A151          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.71]"
+   6 0.G150           0.G184          base-overlap-area=0.0(0.0)   H-bonds[1]: "N1(imino)-O6(carbonyl)[3.30]"
+   7 0.G150           0.G185          base-overlap-area=0.0(0.0)   H-bonds[1]: "N2(amino)-O6(carbonyl)[2.96]"
+   8 0.A151           0.A152          base-overlap-area=7.3(5.4)   H-bonds[0]: ""
+   9 0.C153           0.C440          base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'*O4'[3.04]"
+  10 0.G184           0.A186          base-overlap-area=0.0(0.0)   H-bonds[4]: "O2'(hydroxyl)-O3'[3.05],O2'(hydroxyl)-O2'(hydroxyl)[2.73],N2(amino)-N3[2.96],N3-O2'(hydroxyl)[2.89]"
+  11 0.G185           0.A186          base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'-O2'(hydroxyl)[3.04]"
+  12 0.A186           0.A187          base-overlap-area=5.0(2.7)   H-bonds[0]: ""
+  13 0.A186           0.A439          base-overlap-area=5.1(3.9)   H-bonds[0]: ""
+  14 0.A187           0.C188          base-overlap-area=6.5(3.9)   H-bonds[0]: ""
+  15 0.A187           0.C438          base-overlap-area=0.0(0.0)   H-bonds[1]: "N6(amino)-N3[3.31]"
+  16 0.C188           0.A189          base-overlap-area=1.8(1.1)   H-bonds[0]: ""
+  17 0.A189           0.G190          base-overlap-area=6.6(4.7)   H-bonds[0]: ""
+  18 0.A189           0.U205          base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[2.85],N3-O2'(hydroxyl)[2.75]"
+  19 0.G190           0.A204          base-overlap-area=0.0(0.0)   H-bonds[3]: "O3'-O2'(hydroxyl)[3.18],O2'(hydroxyl)-O2'(hydroxyl)[2.68],O2'(hydroxyl)-N3[2.74]"
+  20 0.G190           0.U205          base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'*O4'[3.22]"
+  21 0.G190           0.U434          base-overlap-area=6.4(3.3)   H-bonds[0]: ""
+  22 0.A191           0.A204          base-overlap-area=4.8(2.8)   H-bonds[0]: ""
+  23 0.A191           0.G237          base-overlap-area=3.6(2.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.59]"
+  24 0.A192           0.A193          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O3'[3.31]"
+  25 0.A192           0.A194          base-overlap-area=2.6(1.1)   H-bonds[1]: "O2'(hydroxyl)-O4'[3.32]"
+  26 0.U202           0.G203          base-overlap-area=6.5(3.5)   H-bonds[0]: ""
+  27 0.G206           0.A437          base-overlap-area=3.6(2.2)   H-bonds[0]: ""
+  28 0.G206           0.C438          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N3[2.58]"
+  29 0.U233           0.A234          base-overlap-area=5.5(3.0)   H-bonds[0]: ""
+  30 0.U233           0.A437          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O2'(hydroxyl)[2.66]"
+  31 0.A234           0.C235          base-overlap-area=5.5(2.4)   H-bonds[0]: ""
+  32 0.A234           0.A436          base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[3.00],O2'(hydroxyl)-N3[2.75]"
+  33 0.A234           0.A437          base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'*O4'[3.14]"
+  34 0.C235           0.A435          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N1[2.75]"
+  35 0.A236           0.A435          base-overlap-area=5.9(3.3)   H-bonds[1]: "O2'(hydroxyl)-N6(amino)[2.97]"
+  36 0.A437           0.C438          base-overlap-area=3.6(2.2)   H-bonds[0]: ""
+  37 0.C438           0.A439          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[3.12]"
+  38 0.A439           0.C440          base-overlap-area=5.6(4.5)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 junction
+   1 6-way junctions: nts=36; [0,3,9,3,3,6]; linked by [#-1,#-2,#-3,#-4,#-5,#-6]
+     nts=36 GCGGAACGGAACAGAAAAUGAUGUACAGCUAAACAC 0.G41,0.C42,0.G149,0.G150,0.A151,0.A152,0.C153,0.G184,0.G185,0.A186,0.A187,0.C188,0.A189,0.G190,0.A191,0.A192,0.A193,0.A194,0.U202,0.G203,0.A204,0.U205,0.G206,0.U233,0.A234,0.C235,0.A236,0.G237,0.C433,0.U434,0.A435,0.A436,0.A437,0.C438,0.A439,0.C440
+       nts=0
+       nts=3 GAA 0.G150,0.A151,0.A152
+       nts=9 GAACAGAAA 0.G185,0.A186,0.A187,0.C188,0.A189,0.G190,0.A191,0.A192,0.A193
+       nts=3 GAU 0.G203,0.A204,0.U205
+       nts=3 ACA 0.A234,0.C235,0.A236
+       nts=6 UAAACA 0.U434,0.A435,0.A436,0.A437,0.C438,0.A439
+
+****************************************************************************
+List of 2 A-minor motifs
+   1  type=II A/G-C	0.A152 vs 0.G41+0.C440 [WC]
+        +0.G41	H-bonds[0]: ""
+        -0.C440	H-bonds[3]: "O2'(hydroxyl)-O3'[3.18],O2'(hydroxyl)-O2'(hydroxyl)[2.73],N3-O2'(hydroxyl)[2.71]"
+   2  type=II A/C-G	0.A439 vs 0.C153+0.G184 [WC]
+        -0.C153	H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[2.74],N3-O2'(hydroxyl)[2.80]"
+        +0.G184	H-bonds[0]: ""
+
+****************************************************************************
+List of 3 ribose zippers
+   1 nts=4 ACAC 0.A152,0.C153,0.A439,0.C440
+   2 nts=4 AGAU 0.A189,0.G190,0.A204,0.U205
+   3 nts=4 UAAA 0.U233,0.A234,0.A436,0.A437
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>NWAY.1S72.2 nts=36 [whole]
+GC&GGAAC&GGAACAGAAAA&UGAUG&UACAG&CUAAACAC
+((&)...(&).........(&)...(&)...(&)......)
+>NWAY.1S72.2-0 #1 nts=36 [chain] RNA*
+GCGGAACGGAACAGAAAAUGAUGUACAGCUAAACAC
+(()...().........()...()...()......)
+
+****************************************************************************
+List of 7 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   4 dssr-2ndstrs.ct -- secondary structures in the connect format
+   5 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   6 dssr-torsions.dat -- Backbone torsion angles and suite names
+   7 dssr-Aminors.pdb -- MODEL/ENDMDL delineated A minor motifs (type I/II)

@@ -1,0 +1,127 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.2VQE.10.pdb --non-pair -o=TC.2VQE.10_dssr.out
+Date and time: Sun Jun 29 15:54:13 2014
+File name: TC.2VQE.10.pdb
+    no. of DNA/RNA chains: 1 [A=17]
+    no. of nucleotides:    17
+    no. of atoms:          362
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 6 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.U12            A.G22            U-G Wobble       28-XXVIII cWW cW-W
+   2 A.U13            A.U20            U-U Calcutta     00-n/a    tHW tM-W
+   3 A.A16            A.A1080          A-A              00-n/a    ... c...
+   4 A.U17            A.G1079          U-G              00-n/a    cSS cm-m
+   5 A.C1076          A.G1081          C-G WC           19-XIX    cWW cW-W
+   6 A.G1077          A.A1080          G-A              00-n/a    tSH tm-M
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 AGA A.A16,A.G1077,A.A1080
+
+****************************************************************************
+List of 1 helix
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=2
+      strand-1 5'-CG-3'
+       bp-type    |.
+      strand-2 3'-GA-5'
+      helix-form  .
+   1 A.C1076          A.G1081          C-G WC           19-XIX    cWW cW-W
+   2 A.G1077          A.A1080          G-A              00-n/a    tSH tm-M
+
+****************************************************************************
+List of 2 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.U12            A.G22            U-G Wobble       28-XXVIII cWW cW-W
+  -2 A.C1076          A.G1081          C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 15 non-pairing interactions
+   1 A.U13            A.G21           base-overlap-area=0.4(0.0)   H-bonds[0]: ""
+   2 A.U14            A.A16           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.63]"
+   3 A.G15            A.A16           base-overlap-area=4.9(3.4)   H-bonds[0]: ""
+   4 A.A16            A.U17           base-overlap-area=2.9(1.5)   H-bonds[0]: ""
+   5 A.U17            A.C18           base-overlap-area=3.3(0.7)   H-bonds[0]: ""
+   6 A.U17            A.A1080         base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'*O4'[3.05]"
+   7 A.C18            A.C19           base-overlap-area=1.6(0.6)   H-bonds[0]: ""
+   8 A.C18            A.U1078         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N3(imino)[2.88]"
+   9 A.C19            A.U20           base-overlap-area=0.7(0.2)   H-bonds[0]: ""
+  10 A.U20            A.G21           base-overlap-area=1.7(1.0)   H-bonds[0]: ""
+  11 A.G21            A.G22           base-overlap-area=1.2(0.2)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.60]"
+  12 A.G1077          A.G1079         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.81]"
+  13 A.G1077          A.G1081         base-overlap-area=5.0(2.2)   H-bonds[0]: ""
+  14 A.U1078          A.G1079         base-overlap-area=6.3(3.4)   H-bonds[0]: ""
+  15 A.G1079          A.A1080         base-overlap-area=3.9(1.2)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 2 hairpin loops
+   1 hairpin loop: nts=11; [9]; linked by [#-1]
+     nts=11 UUUGAUCCUGG A.U12,A.U13,A.U14,A.G15,A.A16,A.U17,A.C18,A.C19,A.U20,A.G21,A.G22
+       nts=9 UUGAUCCUG A.U13,A.U14,A.G15,A.A16,A.U17,A.C18,A.C19,A.U20,A.G21
+   2 hairpin loop: nts=6; [4]; linked by [#-2]
+     nts=6 CGUGAG A.C1076,A.G1077,A.U1078,A.G1079,A.A1080,A.G1081
+       nts=4 GUGA A.G1077,A.U1078,A.G1079,A.A1080
+
+****************************************************************************
+List of 1 ribose zipper
+   1 nts=4 AUGA A.A16,A.U17,A.G1079,A.A1080
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.2VQE.10 nts=17 [whole]
+UUUGAUCCUGG&CGUGAG
+(.........)&(....)
+>TC.2VQE.10-A #1 nts=17 [chain] RNA*
+UUUGAUCCUGGCGUGAG
+(.........)(....)
+
+****************************************************************************
+List of 7 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   4 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   5 dssr-2ndstrs.ct -- secondary structures in the connect format
+   6 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   7 dssr-torsions.dat -- Backbone torsion angles and suite names

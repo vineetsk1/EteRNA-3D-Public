@@ -1,0 +1,199 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=p4p5_puzzle.pdb -o=p4p5_puzzle_dssr.out
+Date and time: Tue Aug  5 14:55:35 2014
+File name: p4p5_puzzle.pdb
+    no. of DNA/RNA chains: 1 [A=50]
+    no. of nucleotides:    50
+    no. of atoms:          1070
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 20 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.U107           A.A214           U-A WC           20-XX     cWW cW-W
+   2 A.U107           A.G215           U-G              00-n/a    cWW cW-W
+   3 A.G108           A.C213           G-C WC           19-XIX    cWW cW-W
+   4 A.G109           A.C212           G-C WC           19-XIX    cWW cW-W
+   5 A.G110           A.C211           G-C WC           19-XIX    cWW cW-W
+   6 A.G111           A.C209           G-C WC           19-XIX    cWW cW-W
+   7 A.G117           A.C204           G-C WC           19-XIX    cWW cW-W
+   8 A.G118           A.C203           G-C WC           19-XIX    cWW cW-W
+   9 A.G119           A.U202           G-U              00-n/a    cWW cW-W
+  10 A.U120           A.G201           U-G Wobble       28-XXVIII cWW cW-W
+  11 A.C121           A.G200           C-G WC           19-XIX    cWW cW-W
+  12 A.C124           A.A125           C+A Platform     00-n/a    ... c...
+  13 A.C124           A.C197           C-C              00-n/a    tHW tM-W
+  14 A.C124           A.G201           C+G              29-XXIX*  tWS tW+m
+  15 A.A125           A.U202           A+U              00-n/a    c.S c.+m
+  16 A.G126           A.A196           G-A Imino        08-VIII   cWW cW-W
+  17 A.C127           A.G195           C-G WC           19-XIX    cWW cW-W
+  18 A.C128           A.G194           C-G WC           19-XIX    cWW cW-W
+  19 A.G215           A.C260           G-C WC           19-XIX    cWW cW-W
+  20 A.G220           A.U253           G-U Wobble       28-XXVIII cWW cW-W
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 CAC A.C124,A.A125,A.C197
+
+****************************************************************************
+List of 3 helices
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[2] bps=5
+      strand-1 5'-GGGUC-3'
+       bp-type    ||.||
+      strand-2 3'-CCUGG-5'
+      helix-form  A.A.
+   1 A.G117           A.C204           G-C WC           19-XIX    cWW cW-W
+   2 A.G118           A.C203           G-C WC           19-XIX    cWW cW-W
+   3 A.G119           A.U202           G-U              00-n/a    cWW cW-W
+   4 A.U120           A.G201           U-G Wobble       28-XXVIII cWW cW-W
+   5 A.C121           A.G200           C-G WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#2[1] bps=3
+      strand-1 5'-GCC-3'
+       bp-type    .||
+      strand-2 3'-AGG-5'
+      helix-form  ..
+   1 A.G126           A.A196           G-A Imino        08-VIII   cWW cW-W
+   2 A.C127           A.G195           C-G WC           19-XIX    cWW cW-W
+   3 A.C128           A.G194           C-G WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#3[1] bps=6
+      strand-1 5'-CCCCAG-3'
+       bp-type    ||||||
+      strand-2 3'-GGGGUC-5'
+      helix-form  AAA.x
+   1 A.C209           A.G111           C-G WC           19-XIX    cWW cW-W
+   2 A.C211           A.G110           C-G WC           19-XIX    cWW cW-W
+   3 A.C212           A.G109           C-G WC           19-XIX    cWW cW-W
+   4 A.C213           A.G108           C-G WC           19-XIX    cWW cW-W
+   5 A.A214           A.U107           A-U WC           20-XX     cWW cW-W
+   6 A.G215           A.C260           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 4 stems
+  Note: a stem is defined as a helix consisting of only canonical WC/wobble
+        pairs, with a continuous backbone.
+      stem#number[#helix-number containing this stem]
+      Other terms are defined as in the above Helix section.
+      --------------------------------------------------------------------
+  stem#1[#3] bps=5
+      strand-1 5'-UGGGG-3'
+       bp-type    |||||
+      strand-2 3'-ACCCC-5'
+      helix-form  .AAA
+   1 A.U107           A.A214           U-A WC           20-XX     cWW cW-W
+   2 A.G108           A.C213           G-C WC           19-XIX    cWW cW-W
+   3 A.G109           A.C212           G-C WC           19-XIX    cWW cW-W
+   4 A.G110           A.C211           G-C WC           19-XIX    cWW cW-W
+   5 A.G111           A.C209           G-C WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  stem#2[#1] bps=2
+      strand-1 5'-GG-3'
+       bp-type    ||
+      strand-2 3'-CC-5'
+      helix-form  A
+   1 A.G117           A.C204           G-C WC           19-XIX    cWW cW-W
+   2 A.G118           A.C203           G-C WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  stem#3[#1] bps=2
+      strand-1 5'-UC-3'
+       bp-type    ||
+      strand-2 3'-GG-5'
+      helix-form  .
+   1 A.U120           A.G201           U-G Wobble       28-XXVIII cWW cW-W
+   2 A.C121           A.G200           C-G WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  stem#4[#2] bps=2
+      strand-1 5'-CC-3'
+       bp-type    ||
+      strand-2 3'-GG-5'
+      helix-form  .
+   1 A.C127           A.G195           C-G WC           19-XIX    cWW cW-W
+   2 A.C128           A.G194           C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 2 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.G215           A.C260           G-C WC           19-XIX    cWW cW-W
+  -2 A.G220           A.U253           G-U Wobble       28-XXVIII cWW cW-W
+
+****************************************************************************
+List of 1 coaxial stack
+   1 Helix#1 contains 2 stems: [#2,#3]
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 3 internal loops
+   1 symmetric internal loop: nts=6; [1,1]; linked by [#2,#3]
+     nts=6 GGUGUC A.G118,A.G119,A.U120,A.G201,A.U202,A.C203
+       nts=1 G A.G119
+       nts=1 U A.U202
+   2 asymmetric internal loop: nts=13; [5,4]; linked by [#3,#4]
+     nts=13 CAACAGCGACAUG A.C121,A.A122,A.A123,A.C124,A.A125,A.G126,A.C127,A.G195,A.A196,A.C197,A.A198,A.U199,A.G200
+       nts=5 AACAG A.A122,A.A123,A.C124,A.A125,A.G126
+       nts=4 ACAU A.A196,A.C197,A.A198,A.U199
+   3 asymmetric internal loop: nts=14; [4,6]; linked by [#-1,#-2]
+     nts=14 GCCAAGUGCAGUUC A.G215,A.C216,A.C217,A.A218,A.A219,A.G220,A.U253,A.G254,A.C255,A.A256,A.G257,A.U258,A.U259,A.C260
+       nts=4 CCAA A.C216,A.C217,A.A218,A.A219
+       nts=6 GCAGUU A.G254,A.C255,A.A256,A.G257,A.U258,A.U259
+
+****************************************************************************
+List of 1 non-loop single-stranded segment
+   1 nts=3 AAU A.A104,A.A105,A.U106
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>p4p5_puzzle nts=50 [whole]
+AAUUGGGG&GGGUCAACAGCC&GGACAUGGUCC&CCCCAGCCAAG&UGCAGUUC
+...(((((&((.((.....((&))....)).))&)))))(....(&)......)
+>p4p5_puzzle-A #1 nts=50 [chain] RNA*
+AAUUGGGGGGGUCAACAGCCGGACAUGGUCCCCCCAGCCAAGUGCAGUUC
+...(((((((.((.....(())....)).)))))))(....()......)
+
+****************************************************************************
+List of 7 additional files
+   1 dssr-stems.pdb -- MODEL/ENDMDL delineated stems
+   2 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   3 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   4 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   5 dssr-2ndstrs.ct -- secondary structures in the connect format
+   6 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   7 dssr-torsions.dat -- Backbone torsion angles and suite names

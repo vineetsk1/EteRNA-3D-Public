@@ -1,0 +1,123 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.3RG5.1.pdb --non-pair -o=TC.3RG5.1_dssr.out
+Date and time: Sun Jun 29 15:54:32 2014
+File name: TC.3RG5.1.pdb
+    no. of DNA/RNA chains: 1 [B=14]
+    no. of nucleotides:    14
+    no. of atoms:          296
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 6 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 B.U16            B.U59            U+U              13-XIII   tWW tW+W
+   2 B.G18            B.U55            G+U              00-n/a    tWS tW+m
+   3 B.G19            B.U20            G+U Platform     00-n/a    cSH cm+M
+   4 B.G19            B.C56            G-C WC           19-XIX    cWW cW-W
+   5 B.G53            B.C61            G-C WC           19-XIX    cWW cW-W
+   6 B.U54            B.A58            U-A rHoogsteen   24-XXIV   tWH tW-M
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 GUC B.G19,B.U20,B.C56
+
+****************************************************************************
+List of 1 helix
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=4
+      strand-1 5'-GUUG-3'
+       bp-type    |..|
+      strand-2 3'-CAGC-5'
+      helix-form  xxx
+   1 B.G53            B.C61            G-C WC           19-XIX    cWW cW-W
+   2 B.U54            B.A58            U-A rHoogsteen   24-XXIV   tWH tW-M
+   3 B.U55            B.G18            U+G              00-n/a    tSW tm+W
+   4 B.G19            B.C56            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 2 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 B.G19            B.C56            G-C WC           19-XIX    cWW cW-W
+  -2 B.G53            B.C61            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 8 non-pairing interactions
+   1 B.G15            B.U16           base-overlap-area=7.4(3.7)   H-bonds[0]: ""
+   2 B.G18            B.A57           base-overlap-area=5.3(2.3)   H-bonds[1]: "O2'(hydroxyl)-N1[3.10]"
+   3 B.G18            B.A58           base-overlap-area=6.2(3.1)   H-bonds[1]: "N2(amino)-O5'[3.08]"
+   4 B.G19            B.A57           base-overlap-area=1.5(0.9)   H-bonds[0]: ""
+   5 B.U55            B.A57           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.63]"
+   6 B.C56            B.A57           base-overlap-area=1.5(0.9)   H-bonds[0]: ""
+   7 B.A58            B.C61           base-overlap-area=6.1(2.9)   H-bonds[1]: "O2'(hydroxyl)-N4(amino)[3.40]"
+   8 B.U59            B.U60           base-overlap-area=4.5(2.1)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=9; [7]; linked by [#-2]
+     nts=9 GUUCAAUUC B.G53,B.U54,B.U55,B.C56,B.A57,B.A58,B.U59,B.U60,B.C61
+       nts=7 UUCAAUU B.U54,B.U55,B.C56,B.A57,B.A58,B.U59,B.U60
+
+****************************************************************************
+This structure contains at least one pseudo-knot.
+
+****************************************************************************
+List of 2 non-loop single-stranded segments
+   1 nts=3 GUG B.G15,B.U16,B.G18
+   2 nts=1 U B.U20
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.3RG5.1 nts=14 [whole]
+GUGGU&GUUCAAUUC
+...[.&(..]....)
+>TC.3RG5.1-B #1 nts=14 [chain] RNA*
+GUGGUGUUCAAUUC
+...[.(..]....)
+
+****************************************************************************
+List of 7 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   4 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   5 dssr-2ndstrs.ct -- secondary structures in the connect format
+   6 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   7 dssr-torsions.dat -- Backbone torsion angles and suite names

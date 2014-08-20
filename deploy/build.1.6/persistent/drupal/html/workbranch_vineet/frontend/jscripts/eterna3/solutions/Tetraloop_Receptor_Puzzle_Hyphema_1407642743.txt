@@ -1,0 +1,5 @@
+Tetraloop Receptor Puzzle
+Hyphema
+guugauauggaggaucgggggggaggggggaagguugaaggucucaggggaaacuuugagaccuggcccucccccgacgaacccccgcgucuccuaagucaac
+((((((.(((((...((((((...(((((..(((....(((((((((((....)))))))))))...))))))))......))))))...))))..)))))))
+motifs/tetraloop_receptor/tetraloop_receptor.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.2GDI.1/TWOWAY.2GDI.1.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.3GX5.0/TWOWAY.3GX5.0.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.1S72.82/TWOWAY.1S72.82.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.1OOA.1/TWOWAY.1OOA.1.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb

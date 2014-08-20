@@ -1,0 +1,5 @@
+Tetraloop Receptor Puzzle
+stlnegril9
+guugauauggaggggggggggaggggcggaacuacggggucucaggggaaacuuugagaccccgccgaccccgacgaaccccccccuccuaagucaac
+((((((.((((((((((((...(((((((.....(((((((((((((....)))))))))))))))).))))......)))))))))))..)))))))
+motifs/tetraloop_receptor/tetraloop_receptor.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.3GX5.0/TWOWAY.3GX5.0.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.1DUQ.7/TWOWAY.1DUQ.7.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.3P59.1/TWOWAY.3P59.1.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb

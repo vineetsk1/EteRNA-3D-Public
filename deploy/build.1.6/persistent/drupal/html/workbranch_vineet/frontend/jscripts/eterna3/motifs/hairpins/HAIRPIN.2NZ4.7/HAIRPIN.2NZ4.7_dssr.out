@@ -1,0 +1,89 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=HAIRPIN.2NZ4.7.pdb --non-pair -o=HAIRPIN.2NZ4.7_dssr.out
+Date and time: Sun Jun 29 15:53:59 2014
+File name: HAIRPIN.2NZ4.7.pdb
+    no. of DNA/RNA chains: 1 [R=21]
+    no. of nucleotides:    21
+    no. of atoms:          449
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 2 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 R.U40            R.G60            U-G Wobble       28-XXVIII cWW cW-W
+   2 R.A46            R.U51            A+U rWC          21-XXI    tWW tW+W
+
+****************************************************************************
+List of 1 lone WC/wobble pair
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 R.U40            R.G60            U-G Wobble       28-XXVIII cWW cW-W
+
+****************************************************************************
+List of 15 non-pairing interactions
+   1 R.A42            R.A58           base-overlap-area=3.4(2.2)   H-bonds[0]: ""
+   2 R.A42            R.G60           base-overlap-area=6.2(4.6)   H-bonds[0]: ""
+   3 R.C44            R.G45           base-overlap-area=1.8(0.5)   H-bonds[0]: ""
+   4 R.G45            R.A46           base-overlap-area=2.3(0.8)   H-bonds[0]: ""
+   5 R.A46            R.G47           base-overlap-area=5.8(3.2)   H-bonds[0]: ""
+   6 R.G47            R.A48           base-overlap-area=6.4(4.3)   H-bonds[0]: ""
+   7 R.G47            R.U51           base-overlap-area=0.2(0.0)   H-bonds[1]: "N2(amino)-O2'(hydroxyl)[2.97]"
+   8 R.U49            R.U50           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[2.90]"
+   9 R.U50            R.C52           base-overlap-area=4.9(0.0)   H-bonds[0]: ""
+  10 R.C52            R.G53           base-overlap-area=0.7(0.3)   H-bonds[0]: ""
+  11 R.G53            R.G54           base-overlap-area=3.8(2.4)   H-bonds[0]: ""
+  12 R.G54            R.C55           base-overlap-area=7.5(4.0)   H-bonds[0]: ""
+  13 R.C55            R.G56           base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+  14 R.G56            R.G57           base-overlap-area=4.4(1.9)   H-bonds[0]: ""
+  15 R.G57            R.A58           base-overlap-area=5.7(2.8)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=21; [19]; linked by [#-1]
+     nts=21 UUAUCGAGAUUUCGGCGGAUG R.U40,R.U41,R.A42,R.U43,R.C44,R.G45,R.A46,R.G47,R.A48,R.U49,R.U50,R.U51,R.C52,R.G53,R.G54,R.C55,R.G56,R.G57,R.A58,R.U59,R.G60
+       nts=19 UAUCGAGAUUUCGGCGGAU R.U41,R.A42,R.U43,R.C44,R.G45,R.A46,R.G47,R.A48,R.U49,R.U50,R.U51,R.C52,R.G53,R.G54,R.C55,R.G56,R.G57,R.A58,R.U59
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>HAIRPIN.2NZ4.7 nts=21 [whole]
+UUAUCGAGAUUUCGGCGGAUG
+(...................)
+>HAIRPIN.2NZ4.7-R #1 nts=21 [chain] RNA
+UUAUCGAGAUUUCGGCGGAUG
+(...................)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

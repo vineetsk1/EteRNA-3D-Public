@@ -1,0 +1,5 @@
+Tetraloop Receptor Puzzle
+JR
+GUAC (Incomplete)
+((...)) (Incomplete)
+motifs/tetraloop_receptor/tetraloop_receptor.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.1S72.58/TWOWAY.1S72.58.pdb,motifs/two_ways/TWOWAY.1GID.6/TWOWAY.1GID.6.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.2PN4.4/TWOWAY.2PN4.4.pdb,motifs/two_ways/TWOWAY.2PJP.0/TWOWAY.2PJP.0.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb

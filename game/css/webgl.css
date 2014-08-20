@@ -1,0 +1,59 @@
+<style>
+
+		.webgl.fadeAway {
+		    -webkit-transition: opacity 0.5s ease-in-out;
+		    -moz-transition: opacity 0.5s ease-in-out;
+		    -ms-transition: opacity 0.5s ease-in-out;
+		    -o-transition: opacity 0.5s ease-in-out;
+		    opacity: 0; /* should be opacity: 1 before switching, but not really !important */
+		}
+
+		.webgl.overlay {
+			position: fixed; 
+			top: 0; left: 0; 
+			background-color: rgba(0, 0, 0, 0.9);
+			width: 100%; height: 100%;
+			z-index: 50;
+		}
+
+		.webgl.container {
+			position: fixed;
+			top: 50%; left: 50%;
+			background-color: rgba(255, 255, 255, 0.9);
+			width: 400px; height: 200px;
+			margin-left: -200px; margin-top: -100px;
+			z-index: 60;
+		}
+
+		.webgl.title {
+			font: 25px 'Source Sans Pro';
+			text-align: center;
+			margin-top: 20px;
+			color: black;
+		}
+
+		.webgl.description {
+			font: 15px 'Source Sans Pro';
+			text-align: center;
+			margin-top: 15px;
+			color: black;
+			margin-left: 5px; margin-right: 5px;
+		}
+
+		.webgl.red { color: rgb(200, 70, 50); }
+		.webgl.green { color: rgb(50, 150, 100); }
+		.webgl.bgRed { background-color: rgb(200, 70, 50); }
+		.webgl.bgGreen { background-color: rgb(50, 150, 100); }
+		.webgl.blue { color: rgb(50, 100, 200); }
+		.webgl.white { color: white; }
+		a { text-decoration: none; }
+
+		.webgl.button {
+			width: 100px; height: 50px;
+			font: 15px 'Source Sans Pro';
+			line-height: 50px; text-align: center;
+			margin-left: 150px; margin-top: 10px;
+			cursor: pointer;
+		}
+
+</style>

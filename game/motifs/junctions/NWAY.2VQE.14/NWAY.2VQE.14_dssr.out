@@ -1,0 +1,102 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=NWAY.2VQE.14.pdb --non-pair -o=NWAY.2VQE.14_dssr.out
+Date and time: Sun Jun 29 15:54:11 2014
+File name: NWAY.2VQE.14.pdb
+    no. of DNA/RNA chains: 1 [A=17]
+    no. of nucleotides:    17
+    no. of atoms:          358
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 7 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.C1237          A.G1337          C-G WC           19-XIX    cWW cW-W
+   2 A.A1238          A.G1241          A-G              00-n/a    cWS cW-m
+   3 A.A1238          A.U1301          A-U rHoogsteen   24-XXIV   tHW tM-W
+   4 A.A1239          A.A1299          A+A              00-n/a    tHH cM+M
+   5 A.G1241          A.C1296          G-C WC           19-XIX    cWW cW-W
+   6 A.G1300          A.U1301          G+U Platform     00-n/a    cSH cm+M
+   7 A.C1303          A.G1334          C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=5 AGCGU A.A1238,A.G1241,A.C1296,A.G1300,A.U1301
+
+****************************************************************************
+List of 3 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.C1237          A.G1337          C-G WC           19-XIX    cWW cW-W
+  -2 A.G1241          A.C1296          G-C WC           19-XIX    cWW cW-W
+  -3 A.C1303          A.G1334          C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 15 non-pairing interactions
+   1 A.C1237          A.A1238         base-overlap-area=0.0(0.0)   H-bonds[1]: "O5'*O4'[3.18]"
+   2 A.C1237          A.G1300         base-overlap-area=0.0(0.0)   H-bonds[3]: "O3'-N2(amino)[2.60],O2'(hydroxyl)-N1(imino)[2.73],O2'(hydroxyl)-N2(amino)[2.65]"
+   3 A.C1237          A.G1334         base-overlap-area=0.0(0.0)   H-bonds[2]: "O4'-N2(amino)[2.83],O2(carbonyl)-O2'(hydroxyl)[2.47]"
+   4 A.C1237          A.C1335         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.79]"
+   5 A.C1237          A.C1336         base-overlap-area=5.3(2.5)   H-bonds[0]: ""
+   6 A.A1239          A.G1241         base-overlap-area=3.3(0.9)   H-bonds[0]: ""
+   7 A.A1239          A.C1298         base-overlap-area=1.3(0.0)   H-bonds[1]: "O2'(hydroxyl)-N4(amino)[3.13]"
+   8 A.C1296          A.C1297         base-overlap-area=3.6(1.6)   H-bonds[0]: ""
+   9 A.C1298          A.A1299         base-overlap-area=0.9(0.0)   H-bonds[0]: ""
+  10 A.A1299          A.U1301         base-overlap-area=4.2(1.0)   H-bonds[0]: ""
+  11 A.G1300          A.G1334         base-overlap-area=4.9(1.9)   H-bonds[0]: ""
+  12 A.G1300          A.C1335         base-overlap-area=6.8(3.5)   H-bonds[0]: ""
+  13 A.U1301          A.U1302         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[2.70]"
+  14 A.U1301          A.C1303         base-overlap-area=2.8(0.9)   H-bonds[0]: ""
+  15 A.G1334          A.G1337         base-overlap-area=0.0(0.0)   H-bonds[1]: "O3'-N2(amino)[3.31]"
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 junction
+   1 3-way junctions: nts=17; [3,6,2]; linked by [#-1,#-2,#-3]
+     nts=17 CAAUGCCCAGUUCGCCG A.C1237,A.A1238,A.A1239,A.U1240,A.G1241,A.C1296,A.C1297,A.C1298,A.A1299,A.G1300,A.U1301,A.U1302,A.C1303,A.G1334,A.C1335,A.C1336,A.G1337
+       nts=3 AAU A.A1238,A.A1239,A.U1240
+       nts=6 CCAGUU A.C1297,A.C1298,A.A1299,A.G1300,A.U1301,A.U1302
+       nts=2 CC A.C1335,A.C1336
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>NWAY.2VQE.14 nts=17 [whole]
+CAAUG&CCCAGUUC&GCCG
+(...(&)......(&)..)
+>NWAY.2VQE.14-A #1 nts=17 [chain] RNA*
+CAAUGCCCAGUUCGCCG
+(...()......()..)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

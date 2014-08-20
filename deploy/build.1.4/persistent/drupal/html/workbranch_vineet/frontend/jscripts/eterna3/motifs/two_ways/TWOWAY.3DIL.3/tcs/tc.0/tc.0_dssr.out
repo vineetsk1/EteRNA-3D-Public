@@ -1,0 +1,114 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=tc.0.pdb --non-pair -o=tc.0_dssr.out
+Date and time: Thu Jul 17 15:06:49 2014
+File name: tc.0.pdb
+    no. of DNA/RNA chains: 1 [A=47]
+    no. of nucleotides:    47
+    no. of atoms:          1028
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 2 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.G49            A.C95            G-C WC           19-XIX    cWW cW-W
+   2 A.G80            A.A81            G+A Platform     00-n/a    cSH cm+M
+
+****************************************************************************
+List of 1 lone WC/wobble pair
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.G49            A.C95            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 40 non-pairing interactions
+   1 A.G49            A.A50           base-overlap-area=2.5(1.0)   H-bonds[0]: ""
+   2 A.A50            A.A51           base-overlap-area=6.3(4.0)   H-bonds[0]: ""
+   3 A.A51            A.U52           base-overlap-area=5.2(3.9)   H-bonds[0]: ""
+   4 A.A51            A.G54           base-overlap-area=0.0(0.0)   H-bonds[3]: "O2'(hydroxyl)-O4'[3.20],N1-N2(amino)[3.23],N3-O2'(hydroxyl)[2.67]"
+   5 A.U52            A.G54           base-overlap-area=2.1(0.0)   H-bonds[0]: ""
+   6 A.G54            A.G55           base-overlap-area=4.0(2.3)   H-bonds[0]: ""
+   7 A.G55            A.G56           base-overlap-area=3.8(2.4)   H-bonds[0]: ""
+   8 A.G56            A.G57           base-overlap-area=3.5(2.0)   H-bonds[0]: ""
+   9 A.G57            A.A58           base-overlap-area=1.6(0.3)   H-bonds[0]: ""
+  10 A.A58            A.C59           base-overlap-area=5.5(4.2)   H-bonds[0]: ""
+  11 A.C59            A.G60           base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+  12 A.G60            A.G61           base-overlap-area=2.0(0.6)   H-bonds[0]: ""
+  13 A.G61            A.C62           base-overlap-area=7.1(4.2)   H-bonds[0]: ""
+  14 A.C62            A.U63           base-overlap-area=4.0(1.7)   H-bonds[0]: ""
+  15 A.U63            A.G64           base-overlap-area=4.6(2.4)   H-bonds[0]: ""
+  16 A.G64            A.A65           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.77]"
+  17 A.A65            A.A66           base-overlap-area=5.8(3.8)   H-bonds[0]: ""
+  18 A.A66            A.A67           base-overlap-area=0.9(0.9)   H-bonds[0]: ""
+  19 A.A67            A.G68           base-overlap-area=5.1(4.1)   H-bonds[0]: ""
+  20 A.G68            A.G69           base-overlap-area=3.7(1.3)   H-bonds[0]: ""
+  21 A.G69            A.C70           base-overlap-area=3.8(1.4)   H-bonds[0]: ""
+  22 A.C70            A.G71           base-overlap-area=3.5(1.9)   H-bonds[0]: ""
+  23 A.G73            A.G74           base-overlap-area=4.1(2.8)   H-bonds[0]: ""
+  24 A.G74            A.G75           base-overlap-area=3.0(1.5)   H-bonds[0]: ""
+  25 A.G75            A.C76           base-overlap-area=7.5(4.3)   H-bonds[0]: ""
+  26 A.C76            A.G77           base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+  27 A.G77            A.C78           base-overlap-area=4.9(1.1)   H-bonds[0]: ""
+  28 A.C78            A.A81           base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[2.75],O2(carbonyl)-O2'(hydroxyl)[2.77]"
+  29 A.G80            A.A82           base-overlap-area=1.7(0.7)   H-bonds[0]: ""
+  30 A.A82            A.G83           base-overlap-area=1.9(1.9)   H-bonds[0]: ""
+  31 A.G83            A.G84           base-overlap-area=4.1(2.7)   H-bonds[0]: ""
+  32 A.G84            A.G85           base-overlap-area=4.0(2.4)   H-bonds[0]: ""
+  33 A.G85            A.U86           base-overlap-area=7.4(4.4)   H-bonds[0]: ""
+  34 A.G87            A.C88           base-overlap-area=6.3(3.2)   H-bonds[0]: ""
+  35 A.C88            A.A89           base-overlap-area=0.3(0.0)   H-bonds[0]: ""
+  36 A.A89            A.G90           base-overlap-area=1.4(1.4)   H-bonds[0]: ""
+  37 A.G90            A.A91           base-overlap-area=4.2(2.8)   H-bonds[0]: ""
+  38 A.A91            A.G92           base-overlap-area=2.6(2.4)   H-bonds[0]: ""
+  39 A.G92            A.U93           base-overlap-area=7.4(4.1)   H-bonds[0]: ""
+  40 A.U94            A.C95           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O5'[2.94]"
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=47; [45]; linked by [#-1]
+     nts=47 GAAUCGGGGACGGCUGAAAGGCGAGGGCGCCGAAGGGUGCAGAGUUC A.G49,A.A50,A.A51,A.U52,A.C53,A.G54,A.G55,A.G56,A.G57,A.A58,A.C59,A.G60,A.G61,A.C62,A.U63,A.G64,A.A65,A.A66,A.A67,A.G68,A.G69,A.C70,A.G71,A.A72,A.G73,A.G74,A.G75,A.C76,A.G77,A.C78,A.C79,A.G80,A.A81,A.A82,A.G83,A.G84,A.G85,A.U86,A.G87,A.C88,A.A89,A.G90,A.A91,A.G92,A.U93,A.U94,A.C95
+       nts=45 AAUCGGGGACGGCUGAAAGGCGAGGGCGCCGAAGGGUGCAGAGUU A.A50,A.A51,A.U52,A.C53,A.G54,A.G55,A.G56,A.G57,A.A58,A.C59,A.G60,A.G61,A.C62,A.U63,A.G64,A.A65,A.A66,A.A67,A.G68,A.G69,A.C70,A.G71,A.A72,A.G73,A.G74,A.G75,A.C76,A.G77,A.C78,A.C79,A.G80,A.A81,A.A82,A.G83,A.G84,A.G85,A.U86,A.G87,A.C88,A.A89,A.G90,A.A91,A.G92,A.U93,A.U94
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>tc.0 nts=47 [whole]
+GAAUCGGGGACGGCUGAAAGGCGAGGGCGCCGAAGGGUGCAGAGUUC
+(.............................................)
+>tc.0-A #1 nts=47 [chain] RNA
+GAAUCGGGGACGGCUGAAAGGCGAGGGCGCCGAAGGGUGCAGAGUUC
+(.............................................)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

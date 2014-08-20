@@ -1,0 +1,115 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TWOWAY.1DFU.0.pdb --non-pair -o=TWOWAY.1DFU.0_dssr.out
+Date and time: Thu Jul 17 15:06:15 2014
+File name: TWOWAY.1DFU.0.pdb
+    no. of DNA/RNA chains: 2 [M=9,N=9]
+    no. of nucleotides:    18
+    no. of atoms:          394
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 9 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 N.C71            M.G105           C-G WC           19-XIX    cWW cW-W
+   2 N.G72            M.A104           G-A Sheared      11-XI     tSH tm-M
+   3 N.A73            M.U103           A-U rHoogsteen   24-XXIV   tHW tM-W
+   4 N.U74            M.G102           U-G              00-n/a    t.W c.-W
+   5 N.G75            M.A101           G-A              00-n/a    c.W c.-W
+   6 N.G76            M.G100           G-G              00-n/a    tWH cW-M
+   7 N.U77            M.A99            U-A rHoogsteen   24-XXIV   tWH tW-M
+   8 N.A78            M.G98            A-G Sheared      11-XI     tHS cM-m
+   9 N.G79            M.C97            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 1 helix
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=9
+      strand-1 5'-CGAGAGUAG-3'
+       bp-type    |.......|
+      strand-2 3'-GAUGGUAGC-5'
+      helix-form  ........
+   1 M.C97            N.G79            C-G WC           19-XIX    cWW cW-W
+   2 M.G98            N.A78            G-A Sheared      11-XI     tSH cm-M
+   3 M.A99            N.U77            A-U rHoogsteen   24-XXIV   tHW tM-W
+   4 M.G100           N.G76            G-G              00-n/a    tHW cM-W
+   5 M.A101           N.G75            A-G              00-n/a    cW. cW-.
+   6 M.G102           N.U74            G-U              00-n/a    tW. cW-.
+   7 M.U103           N.A73            U-A rHoogsteen   24-XXIV   tWH tW-M
+   8 M.A104           N.G72            A-G Sheared      11-XI     tHS tM-m
+   9 M.G105           N.C71            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 2 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 N.C71            M.G105           C-G WC           19-XIX    cWW cW-W
+  -2 N.G79            M.C97            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 2 non-pairing interactions
+   1 N.A73            M.A104          base-overlap-area=3.6(3.3)   H-bonds[0]: ""
+   2 N.A78            M.A99           base-overlap-area=4.3(3.9)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 internal loop
+   1 symmetric internal loop: nts=18; [7,7]; linked by [#-1,#-2]
+     nts=18 CGAUGGUAGCGAGAGUAG N.C71,N.G72,N.A73,N.U74,N.G75,N.G76,N.U77,N.A78,N.G79,M.C97,M.G98,M.A99,M.G100,M.A101,M.G102,M.U103,M.A104,M.G105
+       nts=7 GAUGGUA N.G72,N.A73,N.U74,N.G75,N.G76,N.U77,N.A78
+       nts=7 GAGAGUA M.G98,M.A99,M.G100,M.A101,M.G102,M.U103,M.A104
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TWOWAY.1DFU.0 nts=18 [whole]
+CGAUGGUAG&CGAGAGUAG
+(.......(&).......)
+>TWOWAY.1DFU.0-M #1 nts=9 [chain] RNA
+CGAGAGUAG
+).......)
+>TWOWAY.1DFU.0-N #2 nts=9 [chain] RNA
+CGAUGGUAG
+(.......(
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

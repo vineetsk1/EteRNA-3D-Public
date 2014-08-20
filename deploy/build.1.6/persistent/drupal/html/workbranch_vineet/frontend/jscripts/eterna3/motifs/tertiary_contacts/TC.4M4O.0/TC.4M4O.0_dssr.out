@@ -1,0 +1,101 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.4M4O.0.pdb --non-pair -o=TC.4M4O.0_dssr.out
+Date and time: Sun Jun 29 15:54:41 2014
+File name: TC.4M4O.0.pdb
+    no. of DNA/RNA chains: 1 [B=12]
+    no. of nucleotides:    12
+    no. of atoms:          254
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 6 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 B.G26            B.C41            G-C WC           19-XIX    cWW cW-W
+   2 B.G28            B.C39            G-C WC           19-XIX    cWW cW-W
+   3 B.G28            B.A40            G-A              00-n/a    tSH tm-M
+   4 B.U30            B.A35            U-A WC           20-XX     cWW cW-W
+   5 B.A31            B.C39            A-C              00-n/a    cWS cW-m
+   6 B.U33            B.A35            U-A              00-n/a    cWS cW-m
+
+****************************************************************************
+List of 2 multiplets
+   1 nts=3 GAC B.G28,B.A31,B.C39
+   2 nts=3 UUA B.U30,B.U33,B.A35
+
+****************************************************************************
+List of 3 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 B.G26            B.C41            G-C WC           19-XIX    cWW cW-W
+  -2 B.G28            B.C39            G-C WC           19-XIX    cWW cW-W
+  -3 B.U30            B.A35            U-A WC           20-XX     cWW cW-W
+
+****************************************************************************
+List of 8 non-pairing interactions
+   1 B.G26            B.A27           base-overlap-area=3.5(1.5)   H-bonds[0]: ""
+   2 B.A27            B.G28           base-overlap-area=5.6(4.1)   H-bonds[0]: ""
+   3 B.U30            B.C32           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2(carbonyl)-N4(amino)[3.10]"
+   4 B.U30            B.A40           base-overlap-area=0.4(0.0)   H-bonds[0]: ""
+   5 B.A31            B.C32           base-overlap-area=5.9(4.2)   H-bonds[0]: ""
+   6 B.A31            B.A40           base-overlap-area=7.1(4.5)   H-bonds[0]: ""
+   7 B.C32            B.U33           base-overlap-area=4.6(2.2)   H-bonds[0]: ""
+   8 B.U34            B.A35           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O3'[3.05]"
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=6; [4]; linked by [#-3]
+     nts=6 UACUUA B.U30,B.A31,B.C32,B.U33,B.U34,B.A35
+       nts=4 ACUU B.A31,B.C32,B.U33,B.U34
+
+****************************************************************************
+List of 1 internal loop
+   1 symmetric internal loop: nts=6; [1,1]; linked by [#-1,#-2]
+     nts=6 GAGCAC B.G26,B.A27,B.G28,B.C39,B.A40,B.C41
+       nts=1 A B.A27
+       nts=1 A B.A40
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.4M4O.0 nts=12 [whole]
+GAG&UACUUA&CAC
+(.(&(....)&).)
+>TC.4M4O.0-B #1 nts=12 [chain] RNA*
+GAGUACUUACAC
+(.((....)).)
+
+****************************************************************************
+List of 6 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   3 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   4 dssr-2ndstrs.ct -- secondary structures in the connect format
+   5 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   6 dssr-torsions.dat -- Backbone torsion angles and suite names

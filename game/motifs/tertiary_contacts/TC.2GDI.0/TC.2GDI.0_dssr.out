@@ -1,0 +1,107 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.2GDI.0.pdb --non-pair -o=TC.2GDI.0_dssr.out
+Date and time: Sun Jun 29 15:53:56 2014
+File name: TC.2GDI.0.pdb
+    no. of DNA/RNA chains: 1 [X=18]
+    no. of nucleotides:    18
+    no. of atoms:          389
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 5 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 X.U20            X.A45            U-A WC           20-XX     cWW cW-W
+   2 X.G21            X.C38            G-C WC           19-XIX    cWW cW-W
+   3 X.G21            X.U71            G-U              00-n/a    cS. cm-.
+   4 X.U39            X.A43            U-A rHoogsteen   24-XXIV   tWH tW-M
+   5 X.G66            X.C73            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 GCU X.G21,X.C38,X.U71
+
+****************************************************************************
+List of 3 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 X.U20            X.A45            U-A WC           20-XX     cWW cW-W
+  -2 X.G21            X.C38            G-C WC           19-XIX    cWW cW-W
+  -3 X.G66            X.C73            G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 16 non-pairing interactions
+   1 X.U20            X.A43           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O3'[3.38]"
+   2 X.U20            X.A44           base-overlap-area=1.4(0.3)   H-bonds[0]: ""
+   3 X.G21            X.A43           base-overlap-area=6.2(4.3)   H-bonds[1]: "O6(carbonyl)-O2'(hydroxyl)[2.92]"
+   4 X.C38            X.U39           base-overlap-area=2.7(0.6)   H-bonds[0]: ""
+   5 X.C38            X.A69           base-overlap-area=0.0(0.0)   H-bonds[1]: "O4'-N6(amino)[2.94]"
+   6 X.C38            X.A70           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N6(amino)[3.11]"
+   7 X.U39            X.G40           base-overlap-area=5.0(2.8)   H-bonds[0]: ""
+   8 X.G40            X.G42           base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O6(carbonyl)[3.17],O2'(hydroxyl)-N7[2.73]"
+   9 X.G40            X.A43           base-overlap-area=0.0(0.0)   H-bonds[2]: "N2(amino)-O5'[2.97],N2(amino)-O4'[3.38]"
+  10 X.A41            X.G42           base-overlap-area=6.2(4.4)   H-bonds[0]: ""
+  11 X.A44            X.A45           base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+  12 X.G66            X.A67           base-overlap-area=5.0(3.5)   H-bonds[0]: ""
+  13 X.A67            X.U68           base-overlap-area=5.8(3.6)   H-bonds[0]: ""
+  14 X.U68            X.A70           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-N7[2.63]"
+  15 X.A69            X.A70           base-overlap-area=5.6(4.0)   H-bonds[0]: ""
+  16 X.A70            X.U71           base-overlap-area=4.0(2.4)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=8; [6]; linked by [#-3]
+     nts=8 GAUAAUGC X.G66,X.A67,X.U68,X.A69,X.A70,X.U71,X.G72,X.C73
+       nts=6 AUAAUG X.A67,X.U68,X.A69,X.A70,X.U71,X.G72
+
+****************************************************************************
+List of 1 bulge
+   1 bulge: nts=10; [0,6]; linked by [#-1,#-2]
+     nts=10 UGCUGAGAAA X.U20,X.G21,X.C38,X.U39,X.G40,X.A41,X.G42,X.A43,X.A44,X.A45
+       nts=0
+       nts=6 UGAGAA X.U39,X.G40,X.A41,X.G42,X.A43,X.A44
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.2GDI.0 nts=18 [whole]
+UG&CUGAGAAA&GAUAAUGC
+((&)......)&(......)
+>TC.2GDI.0-X #1 nts=18 [chain] RNA*
+UGCUGAGAAAGAUAAUGC
+(()......)(......)
+
+****************************************************************************
+List of 6 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   3 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   4 dssr-2ndstrs.ct -- secondary structures in the connect format
+   5 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   6 dssr-torsions.dat -- Backbone torsion angles and suite names

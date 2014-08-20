@@ -1,0 +1,5 @@
+FMN Puzzle
+Brourd
+GUAC (Incomplete)
+((...)) (Incomplete)
+motifs/fmn_puzzle/fmn_puzzle.pdb,motifs/two_ways/TWOWAY.1S72.20/TWOWAY.1S72.20.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.1S72.2/TWOWAY.1S72.2.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.1S72.43/TWOWAY.1S72.43.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.2VQE.15/TWOWAY.2VQE.15.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/helix/helix.pdb,motifs/two_ways/TWOWAY.3GX5.1/TWOWAY.3GX5.1.pdb,motifs/two_ways/TWOWAY.3GX5.1/TWOWAY.3GX5.1.pdb,motifs/two_ways/TWOWAY.1GID.2/TWOWAY.1GID.2.pdb,motifs/helix/helix.pdb

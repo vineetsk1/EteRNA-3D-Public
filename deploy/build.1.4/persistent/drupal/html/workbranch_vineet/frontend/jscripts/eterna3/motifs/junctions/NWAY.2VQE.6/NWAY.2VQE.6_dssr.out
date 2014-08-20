@@ -1,0 +1,127 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=NWAY.2VQE.6.pdb --non-pair -o=NWAY.2VQE.6_dssr.out
+Date and time: Sun Jun 29 15:54:10 2014
+File name: NWAY.2VQE.6.pdb
+    no. of DNA/RNA chains: 1 [A=16]
+    no. of nucleotides:    16
+    no. of atoms:          345
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 8 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.C826           A.G874           C-G WC           19-XIX    cWW cW-W
+   2 A.U827           A.A859           U-A              00-n/a    cSW cm-W
+   3 A.U827           A.A872           U+A rWC          21-XXI    tWW tW+W
+   4 A.A828           A.G858           A-G Sheared      11-XI     tHS cM-m
+   5 A.G829           A.C857           G-C WC           19-XIX    cWW cW-W
+   6 A.A860           A.G869           A-G Sheared      11-XI     tHS tM-m
+   7 A.A860           A.A872           A-A              05-V      tWH tW-M
+   8 A.G861           A.C868           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=4 UAGA A.U827,A.A860,A.G869,A.A872
+
+****************************************************************************
+List of 2 helices
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=2
+      strand-1 5'-AG-3'
+       bp-type    .|
+      strand-2 3'-GC-5'
+      helix-form  .
+   1 A.A828           A.G858           A-G Sheared      11-XI     tHS cM-m
+   2 A.G829           A.C857           G-C WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#2[0] bps=2
+      strand-1 5'-AG-3'
+       bp-type    .|
+      strand-2 3'-GC-5'
+      helix-form  .
+   1 A.A860           A.G869           A-G Sheared      11-XI     tHS tM-m
+   2 A.G861           A.C868           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 3 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.C826           A.G874           C-G WC           19-XIX    cWW cW-W
+  -2 A.G829           A.C857           G-C WC           19-XIX    cWW cW-W
+  -3 A.G861           A.C868           G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 10 non-pairing interactions
+   1 A.C826           A.U827          base-overlap-area=0.3(0.0)   H-bonds[0]: ""
+   2 A.U827           A.U870          base-overlap-area=2.7(0.3)   H-bonds[0]: ""
+   3 A.U827           A.G874          base-overlap-area=0.2(0.0)   H-bonds[0]: ""
+   4 A.A828           A.A859          base-overlap-area=2.3(0.7)   H-bonds[0]: ""
+   5 A.G829           A.G858          base-overlap-area=0.2(0.0)   H-bonds[0]: ""
+   6 A.G858           A.G869          base-overlap-area=7.2(4.2)   H-bonds[0]: ""
+   7 A.A859           A.A860          base-overlap-area=5.2(2.3)   H-bonds[0]: ""
+   8 A.G861           A.G874          base-overlap-area=0.0(0.0)   H-bonds[2]: "O2'(hydroxyl)-O2'(hydroxyl)[2.85],N2(amino)-O4'[3.34]"
+   9 A.C868           A.A873          base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O2'(hydroxyl)[2.86]"
+  10 A.A872           A.G874          base-overlap-area=4.3(2.8)   H-bonds[1]: "O2'(hydroxyl)-N7[2.97]"
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 junction
+   1 3-way junctions: nts=16; [2,3,5]; linked by [#-1,#-2,#-3]
+     nts=16 CUAGCGAAGCGUUAAG A.C826,A.U827,A.A828,A.G829,A.C857,A.G858,A.A859,A.A860,A.G861,A.C868,A.G869,A.U870,A.U871,A.A872,A.A873,A.G874
+       nts=2 UA A.U827,A.A828
+       nts=3 GAA A.G858,A.A859,A.A860
+       nts=5 GUUAA A.G869,A.U870,A.U871,A.A872,A.A873
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>NWAY.2VQE.6 nts=16 [whole]
+CUAG&CGAAG&CGUUAAG
+(..(&)...(&).....)
+>NWAY.2VQE.6-A #1 nts=16 [chain] RNA*
+CUAGCGAAGCGUUAAG
+(..()...().....)
+
+****************************************************************************
+List of 6 additional files
+   1 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   2 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   3 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   4 dssr-2ndstrs.ct -- secondary structures in the connect format
+   5 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   6 dssr-torsions.dat -- Backbone torsion angles and suite names

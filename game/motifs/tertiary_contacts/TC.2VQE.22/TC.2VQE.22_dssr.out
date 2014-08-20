@@ -1,0 +1,189 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.2VQE.22.pdb --non-pair -o=TC.2VQE.22_dssr.out
+Date and time: Sun Jun 29 15:54:15 2014
+File name: TC.2VQE.22.pdb
+    no. of DNA/RNA chains: 1 [A=28]
+    no. of nucleotides:    28
+    no. of atoms:          604
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 14 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.U1247          A.G1290          U-G Wobble       28-XXVIII cWW cW-W
+   2 A.A1248          A.A1289          A-A              05-V      tWH tW-M
+   3 A.C1249          A.A1288          C-A              25-XXV    tWH tW-M
+   4 A.C1249          A.A1289          C-A              00-n/a    tWH tW-M
+   5 A.A1250          A.G1353          A+G              00-n/a    tWS tW+m
+   6 A.A1252          A.A1285          A+A              00-n/a    tWW tW+W
+   7 A.G1253          A.C1284          G-C WC           19-XIX    cWW cW-W
+   8 A.A1350          A.U1372          A-U WC           20-XX     cWW cW-W
+   9 A.U1351          A.G1371          U-G Wobble       28-XXVIII cWW cW-W
+  10 A.C1352          A.G1370          C-G WC           19-XIX    cWW cW-W
+  11 A.G1353          A.C1369          G-C WC           19-XIX    cWW cW-W
+  12 A.C1354          A.G1368          C-G WC           19-XIX    cWW cW-W
+  13 A.G1355          A.C1367          G-C WC           19-XIX    cWW cW-W
+  14 A.G1356          A.C1366          G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 1 multiplet
+   1 nts=3 AGC A.A1250,A.G1353,A.C1369
+
+****************************************************************************
+List of 3 helices
+  Note: a helix is defined by base-stacking interactions, regardless of bp
+        type and backbone connectivity, and may contain more than one stem.
+      helix#number[stems-contained] bps=number-of-base-pairs in the helix
+      bp-type: '|' for a canonical WC/wobble pair, '.' otherwise
+      helix-form: classification of a dinucleotide step comprising the bp
+        above the given designation and the bp that follows it. Types
+        include 'A', 'B' or 'Z' for the common A-, B- and Z-form helices,
+        '.' for an unclassified step, and 'x' for a step without a
+        continuous backbone.
+      --------------------------------------------------------------------
+  helix#1[0] bps=3
+      strand-1 5'-UAC-3'
+       bp-type    |..
+      strand-2 3'-GAA-5'
+      helix-form  ..
+   1 A.U1247          A.G1290          U-G Wobble       28-XXVIII cWW cW-W
+   2 A.A1248          A.A1289          A-A              05-V      tWH tW-M
+   3 A.C1249          A.A1288          C-A              25-XXV    tWH tW-M
+  --------------------------------------------------------------------------
+  helix#2[0] bps=2
+      strand-1 5'-AG-3'
+       bp-type    .|
+      strand-2 3'-AC-5'
+      helix-form  .
+   1 A.A1252          A.A1285          A+A              00-n/a    tWW tW+W
+   2 A.G1253          A.C1284          G-C WC           19-XIX    cWW cW-W
+  --------------------------------------------------------------------------
+  helix#3[1] bps=7
+      strand-1 5'-AUCGCGG-3'
+       bp-type    |||||||
+      strand-2 3'-UGGCGCC-5'
+      helix-form  ..A..A
+   1 A.A1350          A.U1372          A-U WC           20-XX     cWW cW-W
+   2 A.U1351          A.G1371          U-G Wobble       28-XXVIII cWW cW-W
+   3 A.C1352          A.G1370          C-G WC           19-XIX    cWW cW-W
+   4 A.G1353          A.C1369          G-C WC           19-XIX    cWW cW-W
+   5 A.C1354          A.G1368          C-G WC           19-XIX    cWW cW-W
+   6 A.G1355          A.C1367          G-C WC           19-XIX    cWW cW-W
+   7 A.G1356          A.C1366          G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 1 stem
+  Note: a stem is defined as a helix consisting of only canonical WC/wobble
+        pairs, with a continuous backbone.
+      stem#number[#helix-number containing this stem]
+      Other terms are defined as in the above Helix section.
+      --------------------------------------------------------------------
+  stem#1[#3] bps=7
+      strand-1 5'-AUCGCGG-3'
+       bp-type    |||||||
+      strand-2 3'-UGGCGCC-5'
+      helix-form  ..A..A
+   1 A.A1350          A.U1372          A-U WC           20-XX     cWW cW-W
+   2 A.U1351          A.G1371          U-G Wobble       28-XXVIII cWW cW-W
+   3 A.C1352          A.G1370          C-G WC           19-XIX    cWW cW-W
+   4 A.G1353          A.C1369          G-C WC           19-XIX    cWW cW-W
+   5 A.C1354          A.G1368          C-G WC           19-XIX    cWW cW-W
+   6 A.G1355          A.C1367          G-C WC           19-XIX    cWW cW-W
+   7 A.G1356          A.C1366          G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 2 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.U1247          A.G1290          U-G Wobble       28-XXVIII cWW cW-W
+  -2 A.G1253          A.C1284          G-C WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 21 non-pairing interactions
+   1 A.A1248          A.G1290         base-overlap-area=5.5(2.7)   H-bonds[0]: ""
+   2 A.A1250          A.A1251         base-overlap-area=6.2(4.5)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.58]"
+   3 A.A1250          A.A1287         base-overlap-area=5.9(4.5)   H-bonds[0]: ""
+   4 A.A1250          A.C1354         base-overlap-area=0.0(0.0)   H-bonds[1]: "N6(amino)-O4'[2.89]"
+   5 A.A1250          A.G1370         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O2'(hydroxyl)[3.35]"
+   6 A.A1251          A.A1252         base-overlap-area=5.8(4.2)   H-bonds[0]: ""
+   7 A.A1251          A.C1354         base-overlap-area=0.0(0.0)   H-bonds[1]: "N1-O2'(hydroxyl)[3.06]"
+   8 A.A1251          A.C1369         base-overlap-area=0.0(0.0)   H-bonds[3]: "O2'(hydroxyl)-O3'[2.88],O2'(hydroxyl)-O2'(hydroxyl)[2.59],N3-O2'(hydroxyl)[2.98]"
+   9 A.G1253          A.G1355         base-overlap-area=0.0(0.0)   H-bonds[3]: "O2'(hydroxyl)-O2'(hydroxyl)[3.16],N2(amino)-O3'[3.15],N3-O2'(hydroxyl)[3.23]"
+  10 A.G1253          A.G1356         base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[3.26]"
+  11 A.A1286          A.C1354         base-overlap-area=0.0(0.0)   H-bonds[1]: "N6(amino)-O3'[2.99]"
+  12 A.A1287          A.A1288         base-overlap-area=4.9(3.4)   H-bonds[0]: ""
+  13 A.A1287          A.G1353         base-overlap-area=0.0(0.0)   H-bonds[1]: "N3-O2'(hydroxyl)[2.87]"
+  14 A.A1287          A.G1370         base-overlap-area=0.0(0.0)   H-bonds[1]: "N1-N2(amino)[3.38]"
+  15 A.A1287          A.G1371         base-overlap-area=0.0(0.0)   H-bonds[1]: "N6(amino)-O4'[2.99]"
+  16 A.A1288          A.C1352         base-overlap-area=0.0(0.0)   H-bonds[3]: "O2'(hydroxyl)-O3'[3.14],O2'(hydroxyl)-O2'(hydroxyl)[2.67],N3-O2'(hydroxyl)[2.71]"
+  17 A.A1288          A.G1371         base-overlap-area=0.0(0.0)   H-bonds[1]: "N6(amino)-O2'(hydroxyl)[3.56]"
+  18 A.A1289          A.G1371         base-overlap-area=0.0(0.0)   H-bonds[2]: "N1-O2'(hydroxyl)[2.70],N3-N2(amino)[3.39]"
+  19 A.C1352          A.G1371         base-overlap-area=0.4(0.0)   H-bonds[0]: ""
+  20 A.G1353          A.G1370         base-overlap-area=1.7(0.0)   H-bonds[0]: ""
+  21 A.G1355          A.G1368         base-overlap-area=5.3(2.3)   H-bonds[0]: ""
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 internal loop
+   1 symmetric internal loop: nts=14; [5,5]; linked by [#-1,#-2]
+     nts=14 UACAAAGCAAAAAG A.U1247,A.A1248,A.C1249,A.A1250,A.A1251,A.A1252,A.G1253,A.C1284,A.A1285,A.A1286,A.A1287,A.A1288,A.A1289,A.G1290
+       nts=5 ACAAA A.A1248,A.C1249,A.A1250,A.A1251,A.A1252
+       nts=5 AAAAA A.A1285,A.A1286,A.A1287,A.A1288,A.A1289
+
+****************************************************************************
+List of 1 A-minor motif
+   1  type=II A/C-G	A.A1288 vs A.C1352+A.G1370 [WC]
+        -A.C1352	H-bonds[3]: "O2'(hydroxyl)-O3'[3.14],O2'(hydroxyl)-O2'(hydroxyl)[2.67],N3-O2'(hydroxyl)[2.71]"
+        +A.G1370	H-bonds[0]: ""
+
+****************************************************************************
+List of 2 ribose zippers
+   1 nts=4 AACG A.A1250,A.A1251,A.C1369,A.G1370
+   2 nts=4 AACG A.A1287,A.A1288,A.C1352,A.G1353
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.2VQE.22 nts=28 [whole]
+UACAAAG&CAAAAAG&AUCGCGG&CCGCGGU
+(.....(&).....)&(((((((&)))))))
+>TC.2VQE.22-A #1 nts=28 [chain] RNA*
+UACAAAGCAAAAAGAUCGCGGCCGCGGU
+(.....().....)((((((()))))))
+
+****************************************************************************
+List of 8 additional files
+   1 dssr-stems.pdb -- MODEL/ENDMDL delineated stems
+   2 dssr-helices.pdb -- MODEL/ENDMDL delineated helices (pseudo/coaxial)
+   3 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   4 dssr-multiplets.pdb -- MODEL/ENDMDL delineated multiplets
+   5 dssr-2ndstrs.ct -- secondary structures in the connect format
+   6 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   7 dssr-torsions.dat -- Backbone torsion angles and suite names
+   8 dssr-Aminors.pdb -- MODEL/ENDMDL delineated A minor motifs (type I/II)

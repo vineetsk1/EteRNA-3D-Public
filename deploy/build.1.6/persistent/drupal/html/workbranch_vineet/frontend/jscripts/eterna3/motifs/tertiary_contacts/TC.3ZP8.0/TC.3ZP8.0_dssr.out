@@ -1,0 +1,105 @@
+****************************************************************************
+         DSSR: a software program for Defining the Secondary
+         Structures of RNA from three-dimensional coordinates
+        v1.0.1-2014jan31, by Xiang-Jun Lu (xiangjun@x3dna.org)
+
+   This program is actively maintained and developed. As always, I
+   greatly appreciate your feedback! Please report all DSSR-related
+   issues on the 3DNA Forum (http://forum.x3dna.org/). I strive to
+   respond promptly to *any* questions posted there.
+
+****************************************************************************
+Note: Each nucleotide is identified by model:chainId.name#, where the
+      'model:' portion is omitted if no model number is available as
+      is normally the case for X-ray crystal structures in the PDB. So
+      a common example would be like A.G19, meaning G #19 on chain A.
+      One-letter base names for modified nucleotides are put in lower
+      case (e.g., 'c' for 5MC). For further information about the
+      output notation, please run DSSR with the '-note' option. More
+      details can be found in the DSSR user manual. Questions and
+      suggestions are always welcome on the 3DNA Forum.
+
+Command: x3dna-dssr -i=TC.3ZP8.0.pdb --non-pair -o=TC.3ZP8.0_dssr.out
+Date and time: Sun Jun 29 15:54:37 2014
+File name: TC.3ZP8.0.pdb
+    no. of DNA/RNA chains: 2 [A=13,B=3]
+    no. of nucleotides:    16
+    no. of atoms:          338
+    no. of waters:         0
+    no. of metals:         0
+
+****************************************************************************
+List of 6 base pairs
+      nt1              nt2             bp  name         Saenger    LW DSSR
+   1 A.G5             B.C14            G-C WC           19-XIX    cWW cW-W
+   2 A.U6             A.A28            U-A rHoogsteen   24-XXIV   tWH tW-M
+   3 A.C8             A.C26            C+C              15-XV     tWW tW+W
+   4 A.U9             B.A12            U-A WC           20-XX     cWW cW-W
+   5 B.U13            A.A31            U-A rHoogsteen   24-XXIV   tWH tW-M
+   6 A.C25            A.G32            C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 3 lone WC/wobble pairs
+  Note: lone WC/wobble pairs are assigned negative indices to differentiate
+        them from the stem numbers, which are positive.
+        --------------------------------------------------------------------
+  -1 A.G5             B.C14            G-C WC           19-XIX    cWW cW-W
+  -2 A.U9             B.A12            U-A WC           20-XX     cWW cW-W
+  -3 A.C25            A.G32            C-G WC           19-XIX    cWW cW-W
+
+****************************************************************************
+List of 15 non-pairing interactions
+   1 A.G5             A.U6            base-overlap-area=7.2(4.2)   H-bonds[0]: ""
+   2 A.U6             A.A7            base-overlap-area=0.9(0.3)   H-bonds[0]: ""
+   3 A.A7             A.U9            base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.95]"
+   4 A.A7             A.A27           base-overlap-area=5.1(3.3)   H-bonds[0]: ""
+   5 A.A7             A.A28           base-overlap-area=0.4(0.4)   H-bonds[0]: ""
+   6 A.C8             A.A27           base-overlap-area=0.1(0.0)   H-bonds[0]: ""
+   7 A.C8             A.G32           base-overlap-area=4.0(2.7)   H-bonds[1]: "O2'(hydroxyl)-N7[3.26]"
+   8 A.U9             A.A31           base-overlap-area=5.4(3.2)   H-bonds[0]: ""
+   9 B.A12            B.U13           base-overlap-area=5.5(3.8)   H-bonds[0]: ""
+  10 B.U13            A.U30           base-overlap-area=0.5(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4(carbonyl)[2.27]"
+  11 B.C14            A.A28           base-overlap-area=7.1(3.4)   H-bonds[1]: "N4(amino)-O2'(hydroxyl)[3.02]"
+  12 A.C25            A.C26           base-overlap-area=1.0(0.2)   H-bonds[0]: ""
+  13 A.C26            A.A27           base-overlap-area=2.0(1.1)   H-bonds[0]: ""
+  14 A.A27            A.U30           base-overlap-area=0.0(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[3.16]"
+  15 A.U30            A.A31           base-overlap-area=1.5(0.0)   H-bonds[1]: "O2'(hydroxyl)-O4'[2.94]"
+
+****************************************************************************
+Note: for the various types of loops listed below, numbers within the first
+      set of brackets are the number of loop nts, and numbers in the second
+      set of brackets are the identities of the stems (positive number) or
+      lone WC/wobble pairs (negative numbers) to which they are linked.
+
+****************************************************************************
+List of 1 hairpin loop
+   1 hairpin loop: nts=8; [6]; linked by [#-3]
+     nts=8 CCAAAUAG A.C25,A.C26,A.A27,A.A28,A.A29,A.U30,A.A31,A.G32
+       nts=6 CAAAUA A.C26,A.A27,A.A28,A.A29,A.U30,A.A31
+
+****************************************************************************
+List of 1 internal loop
+   1 asymmetric internal loop: nts=8; [3,1]; linked by [#-1,#-2]
+     nts=8 GUACUAUC A.G5,A.U6,A.A7,A.C8,A.U9,B.A12,B.U13,B.C14
+       nts=3 UAC A.U6,A.A7,A.C8
+       nts=1 U B.U13
+
+****************************************************************************
+Secondary structures in dot-bracket notation (dbn) as a whole and per chain
+>TC.3ZP8.0 nts=16 [whole]
+GUACU&AUC&CCAAAUAG
+(...(&).)&(......)
+>TC.3ZP8.0-A #1 nts=13 [chain] RNA*
+GUACUCCAAAUAG
+(...((......)
+>TC.3ZP8.0-B #2 nts=3 [chain] RNA
+AUC
+).)
+
+****************************************************************************
+List of 5 additional files
+   1 dssr-pairs.pdb -- MODEL/ENDMDL delineated base pairs
+   2 dssr-hairpins.pdb -- MODEL/ENDMDL delineated hairpin loops
+   3 dssr-2ndstrs.ct -- secondary structures in the connect format
+   4 dssr-2ndstrs.dbn -- secondary structures in the dot-bracket notation
+   5 dssr-torsions.dat -- Backbone torsion angles and suite names

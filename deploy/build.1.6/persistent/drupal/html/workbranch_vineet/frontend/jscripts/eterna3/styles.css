@@ -1,0 +1,582 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+    font-size: 15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    
+    background-image: url("https://s3.amazonaws.com/eterna/icon_img/bg_gradient.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+        
+    color: white;
+    background-color: rgb(18, 36, 67); /*#011e46;*/
+    height: 100%;
+
+   /* -webkit-user-select: none; /* Chrome/Safari */        
+  /*  -moz-user-select: none; /* Firefox */
+   /* -ms-user-select: none; /* IE10+ */
+
+}
+
+#bg {
+    width: 100%; height: 30%;
+    position: fixed; z-index: -50;
+    top: 100px;
+    
+    background-image: url("https://s3.amazonaws.com/eterna/icon_img/bg_bubbles3.png");
+    background-position: center center;
+    background-repeat: repeat;
+}
+
+
+.link {
+    font-size: 14px;
+    text-decoration: underline;
+    color: white;
+}
+
+.rounded, .rounded10 {
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    background-color: rgba(18, 80, 100, 0.3);
+}
+
+.rounded10 {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+.fadeOut {
+    -webkit-transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+#chat {
+    top: 75px;
+    position: fixed;
+    right: 25px;
+    width: 230px;
+    height: 300px;
+}
+
+.searchbox {
+  border: 1px solid white;
+  padding: 10px;
+  background: rgb(255, 255, 255);
+  box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0, 0, 0, 0.1);
+  margin-top: 10px; margin-left: 10px;
+}
+
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 5;
+}
+
+.link.nav { 
+  font-size: 13px;
+  float: left; 
+  text-decoration: none; 
+  margin-left: 15px; 
+  margin-right: 5px;
+  font-weight: normal; 
+}
+
+.link.nav.uni {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#navbar {
+  clear: both; float: right; display: block;
+  margin-left: 50px; margin-right: 50px;
+  line-height: 25px;
+}
+
+#navbar a:last-of-type .nav.link {
+  margin-right: 25px;
+}
+
+#title { 
+  margin-left: 20px;
+  float: left;
+  margin-top: 10px;
+}
+
+#titleImg {
+  width: 30px; height: 30px;
+  vertical-align: middle;
+}
+
+#name {
+  font-size: 16px; color: white;
+  margin-right: 60px; margin-top: 10px;
+  float: right;
+  text-decoration: underline;
+}
+
+.popupLink {
+    margin-left: 10px;
+    position: relative;
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 8px;
+    padding-bottom: 8px;
+    font-size: 13px;
+    border-bottom: 1px solid rgb(120, 120, 120);
+}
+
+.popupLink:hover {
+    color: rgb(144, 69, 44);
+}
+
+.popupmenu a:last-of-type div {
+    border-bottom: none;
+}
+
+.popupmenu, .popupmenu.rounded10 {
+    position: absolute;
+    top: 65px;
+    background-color: rgba(240, 240, 240, 0.8); /* rgba(196, 199, 205, 1.0); for no transparency */
+    width: 150px;
+    line-height: normal;
+    display: none;
+}
+
+.link.multi {
+    font-size: 13px;
+    float: left; 
+    text-decoration: none; 
+    font-weight: normal; 
+}
+
+#details {
+  top: 500px; left: 25px;
+  position: fixed;
+  width: 200px; height: 115px;
+}
+
+#detailsHeader {
+  margin-left: 10px; margin-top: 10px; 
+  font-size: 16px;
+}
+
+.detailsText {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 13px;
+  display: block;
+}
+
+#details>span:first-of-type {
+  margin-top: 10px;
+}
+
+#sidebar {
+  top: 75px; left: 25px;
+  position: fixed;
+  width: 200px; height: 398px;
+}
+
+#motifHeader { 
+  margin-left: 10px; margin-top: 10px;
+  font-size: 16px;
+}
+
+.motifContainer {
+  height: 45px;
+  border-bottom: 1px solid white;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.motifThumb {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.motifOverlay {
+  width: 198px;
+  height: 50px;
+  margin-top: -45px;
+  background-color: rgba(0, 40, 60, 0.5);
+  opacity: 0;
+  z-index: 10; 
+  position: relative;
+}
+
+.motifOverlay:hover { opacity: 1; }
+
+.motifButton {
+  line-height: 30px;
+  float: right;
+  margin-right: 15px;
+  background-color: rgba(0, 125, 125, 0.5);
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#scrollbar_container {  
+  position:relative;  
+  width:200px;  
+} 
+       
+#scrollbar_track {  
+  position:absolute;  
+  top:0;  
+  right:0;  
+  height:100%;  
+  width:10px;  
+  background-color:rgba(250, 250, 250, 1);  
+  cursor:move;  
+  z-index: 50;
+} 
+       
+#scrollbar_handle {  
+  z-index: 50;
+  width:10px;  
+  background-color:rgba(0, 40, 80, 0.8); /* 0 40 80 0.8 */  
+  cursor:move;  
+} 
+       
+#scrollbar_content {  
+  overflow:hidden;  
+  width:200px;  
+  height:306px;  
+}  
+
+#loadingMotif {
+  background-color: rgba(0, 0, 0, 0.85); 
+  position: absolute; 
+  top: 85px; 
+  width: 200px; 
+  height: 315px; 
+  z-index: 100;
+}
+
+#loadingMotifText {
+  width: 100%;
+  text-align: center; line-height: 50px;
+  font-size: 15px;
+  top: 50%; margin-top: -50px; position: relative;
+}
+
+#controls {
+    top: 400px;
+    position: fixed;
+    right: 25px;
+    width: 230px;
+    height: 250px;
+}
+
+.controlBox {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  height: 50px;
+  float: left;
+  width: 100px;
+}
+
+.controlBox:last-of-type {
+  margin-left: 0px;
+}
+
+.controlBox:first-of-type {
+  margin-left: 10px;
+}
+
+#displayInfo1, #displayInfo2, #displayInfo3 {
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.toggleDesc { 
+  font-size: 13px; 
+  float: left; 
+  line-height: 24px; 
+}
+
+#toggleDisplayContainer {
+  width: 58px;
+  position: relative; left: 50%;
+  margin-left: -29px; margin-top: 10px;
+}
+
+.toggleDisplayType {
+  width: 14px; height: 14px; 
+  -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; 
+  border: 1px solid white; 
+  float: left; 
+  margin-left: 5px; 
+  cursor: pointer;
+}
+
+.toggleDisplayType.active {
+  background-color: rgb(20, 70, 140);
+}
+
+.toggleDisplayType:first-of-type {
+  margin-left: 0px;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
+.roundedCheckbox {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  position: relative;
+  float: right;
+  margin-right: 5px; margin-top: 2px;
+}
+
+.roundedCheckbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  left: 1px;
+  top: 1px;
+}
+
+.roundedCheckbox label:after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: rgb(20, 70, 140);
+
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  top: 1px;
+  left: 1px;
+}
+
+.roundedCheckbox label:hover::after { opacity: 0.3; }
+.roundedCheckbox input[type=checkbox]:checked + label:after { opacity: 1; }
+
+#zoomControlDesc, #modelControlDesc {
+  font-size: 14px;
+  float: left; margin-left: 10px;
+  line-height: 50px;
+}
+
+.zoomButton {
+  background-color: rgba(0, 125, 125, 0.5);
+  height: 20px;
+  cursor: pointer;
+  line-height: 20px;
+  font-size: 15px;
+  text-align: center;
+  width: 20px;
+  float: left;
+  margin-top: 15px;
+  margin-left: 2px;
+}
+
+.zoomButton#moreZoom, .zoomButton#increaseModel{
+  font-size: 13px;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.zoomButton#increaseModel { font-size: 15px; }
+.zoomButton#allModels { font-size: 12px; }
+
+#leftArrow, #rightArrow {
+  float: left;
+  margin-top: 20px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+#vertArrowContainer {
+  float: left;
+  margin-left: 5px;
+  margin-top: 3px;
+}
+
+#upArrow, #downArrow { cursor: pointer; }
+
+#leftArrow { margin-left: 13px; }
+#downArrow { margin-top: 5px; }
+
+.triangle {
+  height: 0;
+  width: 0;
+}
+
+.triangle.left {
+  float: left;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid white;
+}
+
+.triangle.right {
+  float: left;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid white;
+}
+
+.triangle.up {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+}
+
+.triangle.down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+}
+
+.horizRect {
+  float: left;
+  width: 15px;
+  height: 2px;
+  margin-top: 4px;
+  background-color: white;
+}
+
+.vertRect {
+  height: 15px;
+  width: 2px;
+  margin-left: 4px;
+  background-color: white;
+}
+
+    .webgl.fadeAway {
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        -ms-transition: opacity 0.5s ease-in-out;
+        -o-transition: opacity 0.5s ease-in-out;
+        opacity: 0; /* should be opacity: 1 before switching, but not really !important */
+    }
+
+    .webgl.overlay {
+      position: fixed; 
+      top: 0; left: 0; 
+      background-color: rgba(0, 0, 0, 0.9);
+      width: 100%; height: 100%;
+      z-index: 50;
+    }
+
+    .webgl.container {
+      position: fixed;
+      top: 50%; left: 50%;
+      background-color: rgba(255, 255, 255, 0.9);
+      width: 400px; height: 200px;
+      margin-left: -200px; margin-top: -100px;
+      z-index: 60;
+    }
+
+    .webgl.title {
+      font: 25px 'Source Sans Pro';
+      text-align: center;
+      margin-top: 20px;
+      color: black;
+    }
+
+    .webgl.description {
+      font: 15px 'Source Sans Pro';
+      text-align: center;
+      margin-top: 15px;
+      color: black;
+      margin-left: 5px; margin-right: 5px;
+    }
+
+    .webgl.red { color: rgb(200, 70, 50); }
+    .webgl.green { color: rgb(50, 150, 100); }
+    .webgl.bgRed { background-color: rgb(200, 70, 50); }
+    .webgl.bgGreen { background-color: rgb(50, 150, 100); }
+    .webgl.blue { color: rgb(50, 100, 200); }
+    .webgl.white { color: white; }
+    a { text-decoration: none; }
+
+    .webgl.button {
+      width: 100px; height: 50px;
+      font: 15px 'Source Sans Pro';
+      line-height: 50px; text-align: center;
+      margin-left: 150px; margin-top: 10px;
+      cursor: pointer;
+    }

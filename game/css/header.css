@@ -1,0 +1,86 @@
+#header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  z-index: 5;
+}
+
+.link.nav { 
+  font-size: 13px;
+  float: left; 
+  text-decoration: none; 
+  margin-left: 15px; 
+  margin-right: 5px;
+  font-weight: normal; 
+}
+
+.link.nav.uni {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+#navbar {
+  clear: both; float: right; display: block;
+  margin-left: 50px; margin-right: 50px;
+  line-height: 25px;
+}
+
+#navbar a:last-of-type .nav.link {
+  margin-right: 25px;
+}
+
+#title { 
+  margin-left: 20px;
+  float: left;
+  margin-top: 10px;
+}
+
+#titleImg {
+  width: 30px; height: 30px;
+  vertical-align: middle;
+}
+
+#name {
+  font-size: 16px; color: white;
+  margin-right: 60px; margin-top: 10px;
+  float: right;
+  text-decoration: underline;
+}
+
+.popupLink {
+    margin-left: 10px;
+    position: relative;
+    color: black;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-right: 10px;
+    margin-top: 8px;
+    padding-bottom: 8px;
+    font-size: 13px;
+    border-bottom: 1px solid rgb(120, 120, 120);
+}
+
+.popupLink:hover {
+    color: rgb(144, 69, 44);
+}
+
+.popupmenu a:last-of-type div {
+    border-bottom: none;
+}
+
+.popupmenu, .popupmenu.rounded10 {
+    position: absolute;
+    top: 65px;
+    background-color: rgba(240, 240, 240, 0.8); /* rgba(196, 199, 205, 1.0); for no transparency */
+    width: 150px;
+    line-height: normal;
+    display: none;
+}
+
+.link.multi {
+    font-size: 13px;
+    float: left; 
+    text-decoration: none; 
+    font-weight: normal; 
+}

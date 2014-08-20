@@ -1,0 +1,115 @@
+#details {
+  top: 500px; left: 25px;
+  position: fixed;
+  width: 200px; height: 115px;
+}
+
+#detailsHeader {
+  margin-left: 10px; margin-top: 10px; 
+  font-size: 16px;
+}
+
+.detailsText {
+  margin-left: 10px;
+  margin-top: 5px;
+  font-size: 13px;
+  display: block;
+}
+
+#details>span:first-of-type {
+  margin-top: 10px;
+}
+
+#sidebar {
+  top: 75px; left: 25px;
+  position: fixed;
+  width: 200px; height: 398px;
+}
+
+#motifHeader { 
+  margin-left: 10px; margin-top: 10px;
+  font-size: 16px;
+}
+
+.motifContainer {
+  height: 45px;
+  border-bottom: 1px solid white;
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.motifThumb {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.motifOverlay {
+  width: 198px;
+  height: 50px;
+  margin-top: -45px;
+  background-color: rgba(0, 40, 60, 0.5);
+  opacity: 0;
+  z-index: 10; 
+  position: relative;
+}
+
+.motifOverlay:hover { opacity: 1; }
+
+.motifButton {
+  line-height: 30px;
+  float: right;
+  margin-right: 15px;
+  background-color: rgba(0, 125, 125, 0.5);
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+#scrollbar_container {  
+  position:relative;  
+  width:200px;  
+} 
+       
+#scrollbar_track {  
+  position:absolute;  
+  top:0;  
+  right:0;  
+  height:100%;  
+  width:10px;  
+  background-color:rgba(250, 250, 250, 1);  
+  cursor:move;  
+  z-index: 50;
+} 
+       
+#scrollbar_handle {  
+  z-index: 50;
+  width:10px;  
+  background-color:rgba(0, 40, 80, 0.8); /* 0 40 80 0.8 */  
+  cursor:move;  
+} 
+       
+#scrollbar_content {  
+  overflow:hidden;  
+  width:200px;  
+  height:306px;  
+}  
+
+#loadingMotif {
+  background-color: rgba(0, 0, 0, 0.85); 
+  position: absolute; 
+  top: 85px; 
+  width: 200px; 
+  height: 315px; 
+  z-index: 100;
+}
+
+#loadingMotifText {
+  width: 100%;
+  text-align: center; line-height: 50px;
+  font-size: 15px;
+  top: 50%; margin-top: -50px; position: relative;
+}

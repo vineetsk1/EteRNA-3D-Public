@@ -1,0 +1,2356 @@
+<html>
+<head>
+    <title>EteRNA - Played by Humans. Scored by Nature.</title>
+    <link href="css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="css/general.css" rel="stylesheet" type="text/css" />
+    <link href="css/header.css" rel="stylesheet" type="text/css" />
+    <link href="css/sidebar.css" rel="stylesheet" type="text/css" />
+    <link href="css/toolbar.css" rel="stylesheet" type="text/css" />
+    <link href="css/webgl.css" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+</head>
+<body>    
+  <div id="bg"></div>
+
+  <div id="header">
+      <div id="title">
+           <img src="img/puzzle.png" id="titleImg">
+           <span id="puzname">Tetraloop Receptor Puzzle</span><!-- P4-P5 Tutorial -->
+      </div>
+    <a href="/web/eterna3/puz1/">
+      <div id="title">
+           <img src="img/puzzle.png" id="titleImg">
+           <span class="link">Tetraloop Receptor Puzzle</span>
+      </div>
+    </a>
+    <a href="/web/eterna3/puz2/">
+      <div id="title">
+           <img src="img/puzzle.png" id="titleImg">
+           <span class="link">FMN Puzzle</span>
+      </div>
+    </a>
+    <a href="#">
+      <div id="name">
+           <span>Development Build</span>
+      </div>
+    </a>
+
+    <div id="navbar" class="rounded">
+      <a href="#">
+        <div class="nav link"><span class="link multi">Me</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">My Feed</div></a>
+            <a href="#"><div class="popupLink">My Profile</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">Roadmap</div></a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Puzzles</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Tutorials</div></a>
+            <a href="#"><div class="popupLink">Challenges</div></a>
+            <a href="#"><div class="popupLink">Player Puzzles</div></a>
+            <a href="#"><div class="popupLink">EteRNA Scripts</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Cloud Lab</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">Active Labs</div></a>
+            <a href="#"><div class="popupLink">Proposals</div></a>
+            <a href="#"><div class="popupLink">Archives</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#">
+        <div class="nav link"><span class="link multi">Community</span>
+          <div class="popupmenu rounded10">
+            <a href="#"><div class="popupLink">News</div></a>
+            <a href="#"><div class="popupLink">Players</div></a>
+            <a href="#"><div class="popupLink">Forums</div></a>
+            <a href="#"><div class="popupLink">Developer Blog</div></a>
+            <a href="#"><div class="popupLink">Groups</div></a>
+            <a href="#"><div class="popupLink">Strategy Guides</div></a>
+            <a href="#"><div class="popupLink">Wiki</div></a>
+          </div>
+        </div>
+      </a>
+
+      <a href="#"><div class="nav link uni">About EteRNA</div></a>
+    </div>
+  </div>
+
+  <div id="chat" class="rounded">
+      <div style="position: relative; top: 10px; font-size: 14px; text-align: center; border-bottom: 2px solid rgb(254, 201, 66); width: 100%; padding-bottom: 10px;">
+        Puzzle Requirements
+      </div>
+
+      <div style="margin-top: 20px; margin-left: 5px; margin-right: 5px; font-size: 13px;">Use the various RNA structures on the sidebar to the left to form a stable structure. Test out the various RNA motifs and assemble them together to connect the two highlighted ends of the puzzle.</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">RNA Length: <span id="RNALength" style="color: rgb(240, 50, 100);">0</span> Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Helices Length: <span id="HelixLength" style="color:rgb(50, 200, 70);">0</span> Nucleotides</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;">Motifs Length: <span id="MotifLength" style="color:rgb(50, 200, 70);">0</span> Nucleotides</div>
+
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementOne" style="color:rgb(240, 50, 100);">Requirement 1</span>: The RNA length should be less than 90 nucleotides to be synthesized in the lab.</div>
+      <div style="margin-top: 10px; margin-left: 5px; font-size: 13px;"><span id="RequirementTwo" style="color:rgb(50, 200, 70);">Requirement 2</span>: The helices length should be greater than the length of the motifs.</div>
+
+
+
+      <!-- <div id="mChat" style="position: relative; top: 15px; font-size: 14px; margin-left: 10px; margin-right: 10px; height: 220px; overflow-y: scroll; background-color: rgba(18, 80, 110, 0.3);">
+      </div> -->
+  </div>
+
+  <div id="details" class="rounded">
+    <div id="detailsHeader">Selection Details</div>
+    <span id="detailsZoom" class="detailsText"></span>
+    <span id="detailsPosition" class="detailsText">Make a Selection</span>
+    <span id="detailsType" class="detailsText"></span>
+    <span id="detailsMol" class="detailsText"></span>
+  </div>
+
+  <div style="z-index: 20; top: 75px; left: 250px; position: fixed; width: 150px; height: 85px; background-color: rgba(18, 80, 100, 0.5);" class="rounded">
+    <div id="detailsHeader">Puzzle Distance</div>
+    <span id="currentScore" class="detailsText" style="margin-top: 10px; color: rgb(240, 50, 100);">Current Score: 1E8</span>
+    <span id="targetScore" class="detailsText">Target Score: 7</span>
+  </div>
+
+  <div id="controls" class="rounded">
+
+    <div class="controlBox">
+      <!-- zoom controls -->
+      <div id="lessZoom" class="zoomButton"> - </div>
+      <div id="zoomControlDesc">Zoom</div>
+      <div id="moreZoom" class="zoomButton"> + </div>
+    </div>
+
+    <div class="controlBox">
+      <!-- toggle bonds, atoms, both display -->
+      <div id="displayInfo1" style="text-align: center;">Display: Bonds</div>
+      <div id="toggleDisplayContainer">
+        <div id="show_a" class="toggleDisplayType"></div>
+        <div id="show_b" class="toggleDisplayType active"></div>
+        <div id="show_ab" class="toggleDisplayType"></div>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <!-- toggle zoom general/selection, toggle auto rotate -->
+      <div id="toggleRotateDesc" class="toggleDesc" style="margin-left: 5px;">Toggle Color</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleRotate" name="check" />
+        <label for="toggleRotate"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="undo" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Undo</div>
+    </div>
+
+    <div class="controlBox" style="width:110px">
+      <!-- toggle zoom general/selection, toggle auto rotate -->
+      <div id="toggleBoneDesc" class="toggleDesc" style="margin-left: 5px;">Backbone</div>
+      <div class="roundedCheckbox">
+        <input type="checkbox" id="toggleBone" name="check" checked/>
+        <label for="toggleBone"></label>
+      </div>
+    </div>
+
+    <div class="controlBox" style="width: 80px; margin-left: 5px;">
+      <div id="submit" class="zoomButton" style="width: 70px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px;">Submit</div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="controlBox" style="width: 125px; float: left;">
+        <div class="zoomButton" id="incrementGhost" style="margin-top: 0px;  margin-right: 10px; float: left; margin-left: 5px;">+</div>
+        <div style="font-size: 14px; line-height: 20px; margin-right: 0px; float:left;">Hints</div>
+        <div class="zoomButton" id="hideAllGhost" style="margin-top: 0px;margin-left: 10px; float: left; font-size: 12px; width: 40px;">Hide</div>
+    </div>
+
+    <div class="controlBox" style="float: left; margin-top: -10px; margin-left: -10px;">
+      <!-- pan x,y -->
+      <div id="leftArrow">
+        <div class="triangle left"></div>
+        <div class="horizRect"></div>
+      </div>
+
+      <div id="vertArrowContainer">
+        <div id="upArrow">
+          <div class="triangle up"></div>
+          <div class="vertRect"></div>
+        </div>
+        <div id="downArrow">
+          <div class="vertRect"></div>
+          <div class="triangle down"></div>
+        </div>
+      </div>
+
+      <div id="rightArrow">
+        <div class="horizRect"></div>
+        <div class="triangle right"></div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="sidebar" class="rounded">
+      <div style="height: 75px; border-bottom: 1px solid white;">
+        <div id="motifHeader" style="float: left;">Motifs</div>
+
+        <div id="viewSelected" class="zoomButton" style="width: 50px; padding: 5px; margin-top: 0px; margin-left: 5px; font-size: 13px; float: right; border: 1px solid rgba(0, 125, 125, 0.5); background-color: inherit;">Used</div>
+        <input id="search" placeholder="Search" class="searchbox" style="margin-top: 5px;"></input>
+      </div>
+
+      <div id="usedMotifs" style="position: absolute; top: 75px; width: 200px; height: 325px; z-index: 100; display: none;">
+        <div id="usedMotifsText" style="margin-left: 15px; font-size: 15px; margin-top: 20px; height: 290px; margin-right: 15px; overflow-y: scroll;">
+        </div>
+      </div>
+
+      <div id="loadingMotif" class="fadeOut">
+        <div id="loadingMotifText">Loading Motifs...</div>
+      </div>
+
+      <div id="scrollbar_container" style="display: block;">  
+          <div id="scrollbar_track"><div id="scrollbar_handle"></div></div> 
+          <div id="scrollbar_content"></div>  
+      </div>  
+  </div>
+
+<div class="webgl overlay" id="submiterroroverlay" style="display: none;"></div>
+<div class="webgl container" id="submiterrorcontainer" style="display: none;">
+  <div class="webgl title"><b>Submission Warning</b></div>
+  <div class="webgl description"> Your puzzle did not meet the puzzle requirements: you can still submit your solution, but it might not be synthesized as a solution on EteRNA.</div>
+  <div class="webgl button bgRed white" onclick="document.getElementById('submiterroroverlay').style.display='none'; document.getElementById('submiterrorcontainer').style.display='none'; document.getElementById('submitoverlay').style.display = 'block'; document.getElementById('submitcontainer').style.display = 'block';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="puzzlecompleteoverlay" style="display: none;"></div>
+<div class="webgl container" id="puzzlecompletecontainer" style="display: none;">
+  <div class="webgl title"><b>Puzzle completed!</b></div>
+  <div class="webgl description" id="puzzlecompletedesc"></div>
+  <div class="webgl button bgGreen white" onclick="document.getElementById('puzzlecompleteoverlay').style.display='none'; document.getElementById('puzzlecompletecontainer').style.display='none';">Dismiss</div>
+</div>
+
+<div class="webgl overlay" id="submitoverlay" style="display: none;"></div>
+<div class="webgl container" id="submitcontainer" style="display: none;">
+  <div class="webgl title"><b>Submit Sequence</b></div>
+  <div style="font: 17px 'Source Sans Pro'; margin-left: 15px; color: black; margin-top: 20px; float: left;">Main Username: </div>
+  <input id="submitusername" placeholder="username" style="float: left; border: 1px solid rgb(200, 200, 200); padding: 10px; background: rgb(242, 242, 242); box-shadow: inset 0 0 8px rgba(0,0,0,0.1), 0 0 16px rgba(0, 0, 0, 0.1); margin-top: 10px; margin-left: 10px; color: black; margin-top: 10px; width: 200px; font: 15px 'Source Sans Pro';"></input>
+  <div style="clear: both;font: 13px 'Source Sans Pro'; color: rgb(180, 180, 180); margin-left: 15px; margin-top: -10px;">Enter the username for your account on the main Eterna server.</div>
+  <div id="submitbutton" class="webgl button bgGreen white">Submit</div>
+</div>
+
+  <div id="main" style="position: absolute; top: 75px; left: 250px;">
+    <!-- width/height dynamic: width: screen - leftsidebar(225) - leftmargin(25) - rightchat(255) - rightmargin(25) 
+                               height: screen - topbar(75) - bottombar(85) - bottommargin (15)
+    -->
+
+  </div>
+
+  <div id="sequenceContainer" style="font-size: 13px; position: absolute; bottom: 15px; width: 600px; height: 75px; left: 50%; margin-left: -300px; line-height: 50px; display: none;" class="rounded"> 
+    <div style="float: left; margin-left: 10px;line-height: 75px;">Previous Solution:</div>
+    <div id="fullsequence" style="float: left;margin-left: 10px; letter-spacing:3px; width: 420px; overflow-x: scroll;">ggauaugcgcagaagg</div>
+    <div id="fullsecondarystructure" style="float: left;margin-left: 10px; letter-spacing:7px; width: 420px; overflow-x: scroll; white-space: nowrap; margin-top: -20px;">(((..(((((((((((((((....))))))))())))).))))</div>
+
+    <div id="scrollSequenceLeft" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -35px;">&lt;</div>
+    <div id="scrollSequenceRight" style="float: left; cursor: pointer; margin-left: 10px; margin-top: -35px;">&gt;</div>
+  </div>
+
+  <script type='text/javascript' src="lib/livepipe/livepipe.js"></script>
+  <script type='text/javascript' src="lib/threejs/three.min.js"></script>
+  <script type='text/javascript' src="lib/threejs/TrackballControls.js"></script>
+  <script type='text/javascript' src="lib/threejs/CSS3DRenderer.js"></script>
+  <script type='text/javascript' src="js/PDBParserv3.js"></script>
+  <script type='text/javascript' src="js/toolbar.js"></script>
+
+<script type="text/javascript">
+
+var Detector = {
+  overlay: document.createElement("div"),
+  container: document.createElement("div"),
+  title: document.createElement("div"),
+  description: document.createElement("div"),
+  button: document.createElement("div"),
+  init: function() {
+    this.overlay.className = "webgl overlay";
+    this.container.className = "webgl container";
+    this.title.innerHTML = "<b>Ruh-Roh!</b>";
+    this.title.className = "webgl title";
+    this.description.innerHTML = "Looks like your computer unfortunately does <b>not</b> have <span class='webgl red'>WebGL</span> enabled, or does not support it. Please use a more updated browser. For more information, visit <a href='http://get.webgl.org/' class='webgl blue'>get.webgl.org</a>.";
+    this.description.className = "webgl description";
+    this.button.innerHTML = "Visit Site";
+    this.button.className = "webgl button";
+
+    if(this.detect()) {
+      this.title.innerHTML = "<b>Puzzle Goals</b>";
+      this.description.innerHTML = "Use the various RNA structures on the sidebar to the left to form a stable structure. Test out the various RNA motifs and assemble them together to connect the two ends of the puzzle."
+      // this.description.innerHTML = "Looks like <span class='webgl green'>WebGL</span> is properly supported on this device. Thanks for testing out the 3D Interface! We hope you enjoy helping us solve RNA puzzles using this new game style.";
+      this.button.className += " bgGreen white";
+      this.button.innerHTML = "Dismiss";
+      this.button.context = this;
+
+      this.button.onclick = function() {
+        this.context.overlay.style.display = "none";
+        this.context.container.style.display = "none";
+      }     
+    } else {
+      var link = document.createElement("a");
+      link.className = "webgl white";
+      link.href = "http://get.webgl.org/";
+      this.button.className += " bgRed";
+      link.appendChild(this.button);
+      this.button = link;     
+    }
+
+    document.body.appendChild(this.overlay);
+    this.description.appendChild(this.button);
+    this.container.appendChild(this.title);
+    this.container.appendChild(this.description);
+    document.body.appendChild(this.container);
+  },
+
+  detect: function() {
+    var canvas = document.createElement("canvas");
+    var gl, glExperimental = false;
+
+    try { gl = canvas.getContext("webgl"); } 
+    catch (x) { gl = null; }
+
+    if(gl === null) {
+      try { gl = canvas.getContext("experimental-webgl"); glExperimental = true; }
+      catch (x) { gl = null; }
+    }
+    if(gl) return true;
+    else if("WebGLRenderingContext" in window) return true;
+    else return false;    
+  }
+}
+
+Detector.init();
+
+</script>
+
+  <script>
+  var elementsList = {"Ac":"Actinium","Ag":"Silver","Al":"Aluminum","Am":"Americium","Ar":"Argon","As":"Arsenic","At":"Astatine","Au":"Gold","B":"Boron","Ba":"Barium","Be":"Beryllium","Bh":"Bohrium","Bi":"Bismuth","Bk":"Berkelium","Br":"Bromine","C":"Carbon","Ca":"Calcium","Cd":"Cadmium","Ce":"Cerium","Cf":"Californium","Cl":"Chlorine","Cm":"Curium","Cn":"Copernicium","Co":"Cobalt","Cr":"Chromium","Cs":"Cesium","Cu":"Copper","Db":"Dubnium","Ds":"Darmstadtium","Dy":"Dysprosium","Er":"Erbium","Es":"Einsteinium","Eu":"Europium","F":"Fluorine","Fe":"Iron","Fl":"Flerovium","Fm":"Fermium","Fr":"Francium","Ga":"Gallium","Gd":"Gadolinium","Ge":"Germanium","H":"Hydrogen","He":"Helium","Hf":"Hafnium","Hg":"Mercury","Ho":"Holmium","Hs":"Hassium","I":"Iodine","In":"Indium","Ir":"Iridium","K":"Potassium","Kr":"Krypton","La":"Lanthanum","Li":"Lithium","Lr":"Lawrencium","Lu":"Lutetium","Lv":"Livermorium","Md":"Mendelevium","Mg":"Magnesium","Mn":"Manganese","Mo":"Molybdenum","Mt":"Meitnerium","N":"Nitrogen","Na":"Sodium","Nb":"Niobium","Nd":"Neodymium","Ne":"Neon","Ni":"Nickel","No":"Nobelium","Np":"Neptunium","O":"Oxygen","Os":"Osmium","P":"Phosphorus","Pa":"Protactinium","Pb":"Lead","Pd":"Palladium","Pm":"Promethium","Po":"Polonium","Pr":"Praseodymium","Pt":"Platinum","Pu":"Plutonium","Ra":"Radium","Rb":"Rubidium","Re":"Rhenium","Rf":"Rutherfordium","Rg":"Roentgenium","Rh":"Rhodium","Rn":"Radon","Ru":"Ruthenium","S":"Sulfur","Sb":"Antimony","Sc":"Scandium","Se":"Selenium","Sg":"Seaborgium","Si":"Silicon","Sm":"Samarium","Sn":"Tin","Sr":"Strontium","Ta":"Tantalum","Tb":"Terbium","Tc":"Technetium","Te":"Tellurium","Th":"Thorium","Ti":"Titanium","Tl":"Thallium","Tm":"Thulium","U":"Uranium","Uuo":"Ununoctium","Uup":"Ununpentium","Uus":"Ununseptium","Uut":"Ununtrium","V":"Vanadium","W":"Tungsten","Xe":"Xenon","Y":"Yttrium","Yb":"Ytterbium","Zn":"Zinc","Zr":"Zirconium"};
+
+
+  function recalculateDimensions() {
+    var w = window,
+        d = document,
+        e = d.documentElement,
+        g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth,
+        y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+
+    var mainWidth = x  - 530;
+    var mainHeight = y - 175;
+    document.getElementById("main").style.width = mainWidth + "px";
+    document.getElementById("main").style.height = mainHeight + "px";
+    return {"w":mainWidth, "h":mainHeight};
+  }
+
+  var WIDTH = recalculateDimensions();
+  var HEIGHT = WIDTH.h;
+  WIDTH = WIDTH.w;
+
+  var container, controls;
+  var camera, scene, renderer, sprite;
+
+  var loader = new THREE.PDBParser();
+  loader.loadBonds = true;
+  loader.createBonds = true;
+
+  var isMoving = false;
+  var projector = new THREE.Projector();
+
+  var models = [];
+  var mainOffset = null;
+  var firstMolecule = true;
+
+  var displayType = 1; /* 0 for atoms, 1 for bonds, 2 for both */
+  var colorType = 0; /* 0 for GUAC, 1 for norm */
+  var backboneDisplay = 1; /* 0 for no, 1 for yes */
+
+  var selectedAtom = {};
+  var selectedMolecules = {};
+  var factor = 75;
+
+  var starting = [];
+
+  var puzName = document.getElementById("puzname").innerHTML;
+
+  var startingResidues = null;
+  var targetResiduesIds = null;
+  if(puzName == "Tetraloop Receptor Puzzle") {
+    startingResidues = ["A221", "A252", "A141", "A162"];
+    targetResiduesIds = ["A141","A162"];
+  } else if(puzName == "FMN Puzzle") {
+    startingResidues = ["A20", "A49", "A50", "A61"];
+    targetResiduesIds = ["A50","A61"];
+  } else if(puzName == "P4-P5 Tutorial") {
+    startingResidues = ["A111", "A209", "A204", "A117"];
+    targetResiduesIds = ["A111", "A209"];
+  }
+
+  var targetEnd = null;
+  var targetEndIndex = null;
+
+  var ghostMotifs = [];
+  var ghostParticles = [];
+  var ghostArrows = [];
+  var ghostIndex = 1; // 0 = none, 1 is show 0th
+  var ghostStartIndices = [];
+
+  var motif_entries = [];
+  var start_d = [0,0,0];
+  var start_r = [[1,0,0],[0,1,0],[0,0,1]];
+  var start_sug = [[-1.211,-4.735,-0.174],[-1.396,6.11,0.396]];
+
+  function MotifEntry(name, index, r, d, sug, bead, bend_angle) {
+    this.name = name;
+    this.index = index;
+    this.r = r;
+    this.d = d;
+    this.sug = sug;
+    this.bead = bead;
+    this.bend_angle = bend_angle;
+  }
+
+  function Model(id) {
+      this.id = id;
+
+      this.modelName = "";
+
+      this.particles = null;
+      this.geometry = new THREE.Geometry();
+      this.colors = [];
+      this.colorscopy = [];
+      this.collisionSpheres = [];
+
+      this.material = null; /* copy the materials over for independent opacitys */
+      this.lineMaterial = []; /* white, G, U, A, C, selec */
+      this.residues = [];
+
+      this.types = [];
+      this.elementcodes = [];
+      
+      this.bonds = [];
+      this.lineGeometry = [];
+
+      this.backboneBonds = null;
+      this.backboneGeometry = null;
+
+/*      this.c1 = null;
+      this.r1 = null;
+      this.c2 = null;
+      this.r2 = null; */
+
+      // Linkage
+      this.chains = []; 
+      this.ends = [];
+      
+      this.isHelix = 0;
+
+      this.tf = [];
+      this.residueObjs = [];
+      this.residueCenters = [];
+      this.basepairs = [];
+
+      this.usedEnds = [null, null]; // 1st elem is the connection to previous model, 2nd is connection to next model
+
+      this.dssr = []; // the parsed data from the dssr file
+  }
+
+
+  function updateSequenceGUI(valid) {
+    if(valid) document.getElementById("sequenceContainer").style.display = "block";
+    var seq = document.getElementById("fullsequence").innerHTML;
+    var ss = document.getElementById("fullsecondarystructure").innerHTML;
+    document.getElementById("fullsequence").innerHTML = "";
+
+    for(var i = 0; i < seq.length; i++) {
+      var color = "";
+      switch(seq.substring(i, i+1)) {
+        case 'c': color="#00A600"; break;
+        case 'a': color="#FCF200"; break;
+        case 'g': color="#CC2600"; break;
+        case 'u': color="#005CBB"; break;
+      }
+      var span = document.createElement("span");
+      span.style.color = color;
+      span.innerHTML = seq.substring(i, i+1).toUpperCase();
+
+      document.getElementById("fullsequence").appendChild(span);
+
+    }
+  }
+
+  document.getElementById("undo").onclick = function() {
+    if(models.length == 1) { alert("No more motifs left to undo."); return; }
+    var m = models.pop();
+    scene.remove(m.particles);
+    scene.remove(m.backboneBonds);
+    for(var i = 0; i < m.collisionSpheres.length; i++) { scene.remove(m.collisionSpheres[i]); m.collisionSpheres[i] = null; }
+    for(var i = 0; i < m.bonds.length; i++) scene.remove(m.bonds[i]);
+    for(var i = 0; i < m.colors.length; i++) {
+      m.colors[i] = null;
+      m.colorscopy[i] = null;
+      m.elementcodes[i] = null;
+    }
+    for (var prop in m) {
+        if (m.hasOwnProperty(prop)) {
+            m[prop] = null;
+        }
+    }
+    m = null;
+    updateLengths();
+    updateList( document.getElementById("scrollbar_container").style.display != "block"  );
+    ghostStartIndices.pop();
+    resetGhostMolecules(ghostStartIndices.pop());
+    valid_solution = isvalidsolution(models[models.length-1]);
+  }
+
+  new HotKey('z',function(event){  
+      document.getElementById("undo").onclick();
+  },{  
+      ctrlKey: false,
+      shiftKey: true
+  });  
+
+  function removeAllMotifs() {
+    while(models.length > 1) {
+      document.getElementById("undo").onclick();
+    }
+  }
+
+  document.getElementById("submit").onclick = function() {
+    if(puzName == "P4-P5 Tutorial") return;
+    var length = updateLengths();
+    if(length["l"] > 90 || length["h"] <= length["m"]) { 
+      document.getElementById("submiterrorcontainer").style.display = "block"; 
+      document.getElementById("submiterroroverlay").style.display = "block"; 
+      return; 
+    }
+    document.getElementById("submitoverlay").style.display = "block";
+    document.getElementById("submitcontainer").style.display = "block";
+  }
+
+  document.getElementById("submitbutton").onclick = function() {
+    document.getElementById("submitoverlay").style.display = "none";
+    document.getElementById("submitcontainer").style.display = "none"; 
+    var name = document.getElementById("submitusername").value.trim();
+    if(name == "") { alert("Empty username: cancelling submit."); return; }
+    if(!isvalidsolution(models[models.length-1])) { alert("Invalid solution: cancelling submit."); return; }
+
+    var seq = generateMergedMotif(valid_solution);
+    var ss = seq["ss"]; seq = seq["seq"];
+    var list = "";
+    for(var i = 0; i < models.length; i++) list += models[i].modelName + ",";
+    list = list.substring(0, list.length - 1);
+
+    var formData = new FormData();
+    formData.append("name", name);
+    formData.append("seq", seq);
+    formData.append("ss", ss);
+    formData.append("list", list);
+    formData.append("type", "post_3d");
+    formData.append("puzname", document.getElementById("puzname").innerHTML);
+    var xhr = new XMLHttpRequest();
+    xhr.open("post", "eterna_post_controller.php", true);
+    xhr.onreadystatechange = function() {
+      if(xhr.readyState == 4 && xhr.status == 200) {
+        // alert(xhr.responseText);
+      }
+    }
+    xhr.send(formData);
+
+    // upload seq, ss, list, name to /post/ 
+  }
+
+  init();
+
+  function init() {
+    container = document.getElementById("main");
+    camera = new THREE.PerspectiveCamera(70, WIDTH/HEIGHT, 1, 22500);
+    camera.rotation.order = 'YXZ';
+
+    scene = new THREE.Scene();
+    sprite = THREE.ImageUtils.loadTexture("lib/threejs/ball.png");
+
+    renderer = new THREE.WebGLRenderer({/*preserveDrawingBuffer: true,*/ alpha: true, antialias: true });
+    renderer.setSize(WIDTH, HEIGHT);
+    container.appendChild(renderer.domElement);
+
+    controls = new THREE.TrackballControls(camera, renderer.domElement);
+    controls.rotateSpeed = 0.5;
+    controls.minDistance = 50;
+    controls.maxDistance = 15000;
+    controls.addEventListener("change", render);
+
+    camera.position.z = -2417;
+    camera.position.y = -1522;
+    camera.position.x = -1261;
+
+    if(puzName == "Tetraloop Receptor Puzzle") loadMolecule("motifs/tetraloop_receptor/tetraloop_receptor.pdb");
+    else if(puzName == "FMN Puzzle") loadMolecule("motifs/fmn_puzzle/fmn_puzzle.pdb");
+    else if(puzName == "P4-P5 Tutorial") loadMolecule("motifs/p4p5_puzzle/p4p5_puzzle.pdb");
+    window.addEventListener('resize', onWindowResize, false);
+    container.addEventListener('mouseup', onMouseUp, false);
+    container.addEventListener('mousedown', onMouseDown, false);
+    container.addEventListener('mousemove', onMouseMove, false);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "unique_motif_data.dat", false);
+    xhr.overrideMimeType('text/plain');
+    xhr.send(null);
+    var fileContent = xhr.responseText;
+    var lines = fileContent.split("\n");
+
+    for(var i = 0; i < lines.length-1; i++) {
+      var spl = lines[i].split(";");
+      var name = spl[0];
+      var index = parseInt(spl[1]);
+      var r = [[],[],[]];
+      var d = [];
+      var sug = [[],[]];
+      var bead = [[],[]];
+      var bend_angle = parseFloat(spl[6]);
+
+      var spl2 = spl[2].split(" ");
+      var c = 0;
+      for(var j = 0; j < spl2.length-1; j++) {
+        if(j != 0 && j % 3 == 0) {
+          c += 1;
+        }
+        r[c].push(parseFloat(spl2[j]));
+   
+      }
+
+      spl2 = spl[3].split(" ");
+      for(var j = 0; j < spl2.length; j++){
+        d.push(parseFloat(spl2[j]));
+      }
+      
+      spl2 = spl[4].split(" ");
+      c = 0;
+      for(var j = 0; j < spl2.length-1; j++) {
+        if(j != 0 && j % 3 == 0) {
+          c += 1;
+        }
+        sug[c].push(parseFloat(spl2[j]));
+      }
+
+      spl2 = spl[5].split(" ");
+      c = 0;
+      for(var j = 0; j < spl2.length; j++) {
+        if(j != 0 && j % 3 == 0) {
+          c += 1;
+        }
+        bead[c].push(parseFloat(spl2[j]));
+      }
+
+
+      motif_entries.push(new MotifEntry(name,index,r,d,sug,bead,bend_angle));
+    }
+
+    render();
+    animate();
+  }
+
+  document.getElementById("viewSelected").onclick = function() {
+    if(document.getElementById("scrollbar_container").style.display == "block") {
+      updateList(1);
+    } else updateList(0);
+  }
+
+  function updateList(type) {
+    if(type == 1) {
+      document.getElementById("scrollbar_container").style.display = "none";
+      var s = (models.length > 1) ? "" : "You haven't added any motifs yet!";
+      for(var i = 1; i < models.length; i++) {
+        var name = models[i].modelName; name = name.substring(name.lastIndexOf("/") + 1, name.indexOf(".pdb"));
+        name = name.replace(/NWAY/g, 'N-Junction');
+        name = name.replace(/helix/g, "Helix");
+        name = name.replace(/HAIRPIN/g, "Hairpin");
+        if(url.indexOf("tertiary_contacts") >= 0) name = name.replace(/TC\./g, "Tertiary Contact.");
+        name = name.replace(/TWOWAY/g, "2-Junction");
+        name = name.replace(/\./g, " ");
+        s += i + ". " + name + "<br /><br />";
+      }
+      document.getElementById("usedMotifs").style.display = "block";
+      document.getElementById("usedMotifsText").innerHTML = s;
+      document.getElementById("viewSelected").style.border = "none";
+      document.getElementById("viewSelected").style.backgroundColor = "rgba(0, 125, 125, 0.5)";
+    } else {
+      document.getElementById("scrollbar_container").style.display = "block";
+      document.getElementById("usedMotifs").style.display = "none";
+      document.getElementById("viewSelected").style.border = "1px solid rgba(0, 125, 125, 0.5)";
+      document.getElementById("viewSelected").style.backgroundColor = "inherit";
+    }
+  }
+
+
+  function updateLengths() {
+    var totalLength = 0; var numTotal = models.length;
+    var helixLength = 0; var numHelix = 0;
+    var motifLength = 0; var numMotif = 0;
+    for(var i = 0; i < models.length; i++) {
+
+      if(models[i].isHelix == 2) numHelix++;
+      else if(models[i].isHelix != 1) numMotif++;
+      
+      for(var j = 0; j < models[i].chains.length; j++) {
+        totalLength += models[i].chains[j].length;
+        if(models[i].isHelix == 2) helixLength += models[i].chains[j].length;
+        else if(models[i].isHelix != 1) motifLength += models[i].chains[j].length;
+      }
+    }
+
+  //  numTotal = numTotal < 1 ? 1 : numTotal;
+  //  numHelix = numHelix < 1 ? 1 : numHelix;
+  //  numMotif = numMotif < 1 ? 1 : numMotif;
+
+    totalLength -= ((numTotal-1)*2);
+    helixLength -= ((numHelix)*2);
+    motifLength -= ((numMotif)*2);
+
+    document.getElementById("RNALength").innerHTML = totalLength;
+    document.getElementById("HelixLength").innerHTML = helixLength;
+    document.getElementById("MotifLength").innerHTML = motifLength;
+
+    if(totalLength > 90) { 
+      document.getElementById("RNALength").style.color = "rgb(240, 50, 100)"; 
+      document.getElementById("RequirementOne").style.color = "rgb(240, 50, 100)";
+    } else {
+      document.getElementById("RNALength").style.color = "rgb(50, 200, 70)"; 
+      document.getElementById("RequirementOne").style.color = "rgb(50, 200, 70)";
+    }
+
+    if(motifLength >= helixLength) {
+      document.getElementById("HelixLength").style.color = "rgb(240, 50, 100)"; 
+      document.getElementById("MotifLength").style.color = "rgb(240, 50, 100)";      
+      document.getElementById("RequirementTwo").style.color = "rgb(240, 50, 100)";      
+    } else {
+      document.getElementById("HelixLength").style.color = "rgb(50, 200, 70)"; 
+      document.getElementById("MotifLength").style.color = "rgb(50, 200, 70)";      
+      document.getElementById("RequirementTwo").style.color = "rgb(50, 200, 70)";
+    }
+    return {"l":totalLength, "h":helixLength, "m":motifLength};
+  }
+
+  var loadedPDB;
+  var loadedDSSR;
+  var doneLoading;
+
+  function loadMolecule(path, direction) {
+
+    selectedAtom = {};
+    selectedMolecules = {};
+    loadedPDB = false;
+    loadedDSSR = false;
+    doneLoading = false;
+
+    models.push(new Model(models.length));
+    if(path == "motifs/helix/helix.pdb") models[models.length-1].isHelix = 2;
+    else if(path == "motifs/tetraloop_receptor/tetraloop_receptor.pdb" || path == "motifs/fmn_puzzle/fmn_puzzle.pdb" || path == "motifs/p4p5_puzzle/p4p5_puzzle.pdb") models[models.length-1].isHelix = 1;
+
+    models[models.length-1].modelName = path;
+
+    loader.loadFile(path, function(loadedGeometryArray, loadedBondsArray) {
+
+        var loadedGeometry = loadedGeometryArray[0];
+        var loadedBonds = loadedBondsArray[0];
+
+        // Initialize materials
+
+        var i = models.length-1;
+
+        models[i].lineMaterial[0] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x746f6f, antialias: true }); // white
+        models[i].lineMaterial[1] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xCC2600, antialias: true }); // (g) red
+        models[i].lineMaterial[2] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x005CB8, antialias: true }); // (u) blue
+        models[i].lineMaterial[3] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xFCF200, antialias: true }); // (a) yellow 
+        models[i].lineMaterial[4] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x00A600, antialias: true }); // (c) green
+        models[i].lineMaterial[5] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x80FF80, antialias: true }); // (s) hgreen
+        models[i].lineMaterial[6] = new THREE.LineBasicMaterial({linewidth: 7, opacity: 0.8, color: 0xF8005F, antialias: true }); // (h) pink 0xC8C8FA
+        models[i].lineMaterial[7] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xC8C8FA, antialias: true }); // (h) white
+        models[i].lineMaterial[8] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: "rgb(99%, 99%, 50%)", antialias: true }); // (h) flashing
+
+
+        models[i].residueObjs = loadedGeometry.residueObjs;
+        for(var j = 0; j < models[i].residueObjs.length; j++) {
+          models[i].residueCenters.push(calculateCenter(models[i].residueObjs[j].atoms));
+        }
+
+        for(var j = 0; j < models[i].lineMaterial.length; j++) models[i].lineMaterial[j].transparent = true;
+        
+        models[i].material = new THREE.ParticleSystemMaterial( { size: 125, map: sprite, vertexColors: true, transparent: true } );
+        models[i].material.alphaTest = 0.5;
+
+        // Center loaded molecule
+
+        if(mainOffset == null) {
+            firstMolecule = true;
+            var offset = THREE.GeometryUtils.center(loadedGeometry);
+            loadedBonds.applyMatrix(new THREE.Matrix4().makeTranslation(offset.x, offset.y, offset.z));
+            mainOffset = offset;
+        } else firstMolecule = false;
+
+        // Load bonds 1 by 1
+        models[i].lineGeometry = [];
+        models[i].backboneGeometry = new THREE.Geometry();
+
+        models[i].chains = loadedBonds.sequence.split("|");
+        for(var j = 0; j < models[i].chains.length; j++) {
+          models[i].chains[j] = models[i].chains[j].split(",");
+          var res1, res2 = null;
+          for(var k = 0; k < models[i].residueObjs.length; k++) {
+            if(models[i].chains[j][0] == models[i].residueObjs[k].id) res1 = models[i].residueObjs[k];
+            if(models[i].chains[j][1] == models[i].residueObjs[k].id) res2 = models[i].residueObjs[k];
+          }
+
+          var o3_atom = findAtom(res1, "o3'");
+          var p_atom = findAtom(res2, "p");
+          if(Math.sqrt(calcDistanceSquare(o3_atom, p_atom)) > 2) {
+            models[i].chains[j] = models[i].chains[j].reverse();
+          }
+
+        }
+
+        updateLengths();
+
+        var prevRes = null;
+        var resCount = -1;
+
+        for(var j = 0; j < loadedBonds.vertices.length; j+= 2) {
+
+          var start = loadedBonds.vertices[j];
+          var end = loadedBonds.vertices[j+1];
+          start.multiplyScalar(factor);
+          start.z -= 5;
+          end.multiplyScalar(factor);
+          end.z -= 5;
+
+          if(loadedBonds.types[j] != -1) {
+            if(loadedBonds.resNames[j] !== prevRes) {
+              prevRes = loadedBonds.resNames[j];
+              resCount++;
+              models[i].lineGeometry.push(new THREE.Geometry());
+            }
+            
+            models[i].lineGeometry[resCount].vertices.push(start);
+            models[i].lineGeometry[resCount].vertices.push(end);
+            models[i].lineGeometry[resCount].residueType = loadedBonds.residues[j];
+            models[i].lineGeometry[resCount].residueName = loadedBonds.resNames[j];
+          } else {
+            models[i].backboneGeometry.vertices.push(start);
+            models[i].backboneGeometry.vertices.push(end);
+          }
+        }
+
+        // Now create overall bonds
+        for(var j = 0; j < models[i].lineGeometry.length; j++) {
+
+          models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], models[i].lineMaterial[0], THREE.LinePieces);
+
+          if(startingResidues.indexOf(models[i].lineGeometry[j].residueName) >= 0)
+            models[i].bonds[j].material = models[i].lineMaterial[8];
+
+          models[i].bonds[j].residueType = models[i].lineGeometry[j].residueType;
+          models[i].bonds[j].residueName = models[i].lineGeometry[j].residueName;
+          if(firstMolecule) scene.add(models[i].bonds[j]);
+        }
+
+        models[i].backboneBonds = new THREE.Line(models[i].backboneGeometry, models[i].lineMaterial[6], THREE.LinePieces);
+        if(firstMolecule) scene.add(models[i].backboneBonds);
+
+        // Load atoms 1 by 1
+        for(var j = 0; j < loadedGeometry.vertices.length; j++) {
+          loadedGeometry.vertices[j].multiplyScalar(factor);
+          models[i].residues.push(loadedGeometry.residues[j]);
+          models[i].types.push(loadedGeometry.types[j]);
+          models[i].elementcodes.push(loadedGeometry.elements[j]);
+          models[i].geometry.vertices.push(loadedGeometry.vertices[j]);
+          models[i].colors[j] = new THREE.Color();
+          models[i].colorscopy[j] = new THREE.Color();
+          models[i].colors[j].setRGB(loadedGeometry.colors[j].r, loadedGeometry.colors[j].g, loadedGeometry.colors[j].b);
+          models[i].colorscopy[j].setRGB(loadedGeometry.colors[j].r, loadedGeometry.colors[j].g, loadedGeometry.colors[j].b);
+
+          if(startingResidues.indexOf(loadedGeometry.residues[j]) >= 0) {
+            starting.push(j);
+            models[i].colors[j].setRGB(0.99, 0.99, 0.5);
+            models[i].colorscopy[j].setRGB(0.99, 0.99, 0.5);
+          }              
+        }
+
+        // Now create the overall atoms and add to the scene
+        models[i].geometry.colors = models[i].colors;
+        models[i].geometry.residues = loadedGeometry.residues;
+        models[i].particles = new THREE.ParticleSystem(models[i].geometry, models[i].material);
+        models[i].particles.sortParticles = true;
+        if(firstMolecule) scene.add(models[i].particles);
+
+        loadedPDB = true;
+
+      if(firstMolecule) {
+        for(var j = 0; j < loadedGeometry.vertices.length; j++) {
+            vector = new THREE.Vector3(loadedGeometry.vertices[j].x, loadedGeometry.vertices[j].y, loadedGeometry.vertices[j].z);
+            var collisionSphere = new THREE.Mesh(new THREE.SphereGeometry(30, 6, 6), new THREE.MeshBasicMaterial({color:0xffffff}));
+            collisionSphere.position = vector;
+
+            collisionSphere.name = j;
+            collisionSphere.visible = false; // troubleshoot with true
+            models[i].collisionSpheres.push(collisionSphere);
+            scene.add(collisionSphere);          
+        }
+
+        toggleBondsAtoms(displayType);
+        colorDisplay(colorType); // show normal coloring
+        toggleBackBone(backboneDisplay);
+      }
+
+    }, function(data) {
+      handleData(data, direction);
+    }, function(data) {
+      loadedDSSR = true;
+      // take the dssr data
+      // data is an array with 3 pos: id1, id2, and the bp type
+      models[models.length-1].dssr = data;
+
+      // console.log(data);
+    }
+
+    );
+  }
+
+  function findAtom(residue, atomname) {
+    for(var i = 0; i < residue.atoms.length; i++) {
+      if(residue.atoms[i][1] == atomname) return residue.atoms[i];
+    }
+    return null;
+  }
+
+  function scoreP4P5(end, tf) {
+    d_diff = calcDistance(calculateCenter(targetEnd.atoms),calculateCenter(end.atoms));
+    console.log(d_diff);
+    return d_diff;
+  }
+
+  function scoreEnd(end,tf) {
+    d_diff = calcDistance(calculateCenter(targetEnd.atoms),calculateCenter(end.atoms));
+    r_diff = 0;
+
+    //update end frame
+    var final_r = [[],[],[]];
+    if(tf.length !== 0) {
+      var pRotation = [[],[],[]];
+      for(var i = 0; i < 3; i++) {
+        for(var j = 0; j < 3; j++) {
+          pRotation[i][j] = tf[i][j];
+        }
+      }
+      final_r = multiplyMatrices(end.rotation, transpose(pRotation));
+    }
+    else { final_r = end.rotation; }
+
+    for (var i = 0; i < 3; i++) {
+      for (var j = 0; j < 3; j++) {
+        r_diff += Math.abs(targetEnd.rotation[i][j] - final_r[i][j]);
+      }
+    }
+    return d_diff + 2*r_diff;
+  }
+
+  function isvalidsolution(model) {
+
+    document.getElementById("currentScore").style.color = "rgb(240, 50, 100)";
+    var scoreAverage = 0;
+
+    for (var i = 0; i < model.ends.length; i++) {
+      if(puzName == "P4-P5 Tutorial") { score = scoreP4P5(model.ends[i], model.tf); document.getElementById("targetScore").innerHTML = "Target Score: 1.5"; }
+      else score = scoreEnd(model.ends[i],model.tf);
+      scoreAverage += score;
+      if( (score < 7 && puzName !== "P4-P5 Tutorial" && models.length > 1) || (score < 1.5 && puzName == "P4-P5 Tutorial" && models.length > 1)) {      
+        document.getElementById("currentScore").innerHTML = "Current Score: " + Math.round(score*100)/100;
+        document.getElementById("currentScore").style.color = "rgb(50, 200, 70)"; 
+        return 1;
+      }
+    }
+
+    document.getElementById("currentScore").innerHTML = "Current Score: " + Math.round((scoreAverage/model.ends.length)*100)/100;
+    return 0;
+  }
+
+  function projectPossibleSolutions(model,end_index) {
+    var end = model.ends[end_index];
+    console.log(model);
+    console.log(end_index);
+    console.log(end);
+    var end_center = calculateCenter(end.atoms);
+    var end_c1_atoms = [];
+
+    centers = []
+
+    for(var i = 0; i < end.atoms.length; i++) {
+      var atom = end.atoms[i];
+      if(end.atoms[i][1] == "c1'") end_c1_atoms.push([atom[2],atom[3],atom[4]]);
+    }
+
+    var final_r = [[],[],[]];
+    if(model.tf.length !== 0) {
+      var pRotation = [[],[],[]];
+      for(var i = 0; i < 3; i++) {
+        for(var j = 0; j < 3; j++) {
+          pRotation[i][j] = model.tf[i][j];
+        }
+      }
+      final_r = multiplyMatrices(end.rotation, transpose(pRotation));
+    }
+    else { final_r = end.rotation; }
+
+
+    for(var i = 0; i < motif_entries.length; i++) {
+
+      var r_trans = multiplyMatrices(transpose(final_r), start_r);
+      var t_trans = start_d;
+
+      t_trans[0] = -t_trans[0]; t_trans[1] = -t_trans[1]; t_trans[2] = -t_trans[2]; 
+
+      var new_sugars_2 =  multiplyMatrices(start_sug, transpose(r_trans));
+
+      for(var j = 0; j < 2; j++) {
+        new_sugars_2[j][0] += t_trans[0] + end_center[0];
+        new_sugars_2[j][1] += t_trans[1] + end_center[1];
+        new_sugars_2[j][2] += t_trans[2] + end_center[2];
+      }
+
+      if( calcDistance(new_sugars_2[0], end_c1_atoms[0]) > calcDistance(new_sugars_2[0], end_c1_atoms[1])) {
+        var temp = new_sugars_2[1];
+        new_sugars_2[1] = new_sugars_2[0];
+        new_sugars_2[0] = temp;
+      }
+
+      var sugar_diff_1 = [end_c1_atoms[0][0] - new_sugars_2[0][0], end_c1_atoms[0][1] - new_sugars_2[0][1], end_c1_atoms[0][2] - new_sugars_2[0][2]];
+      var sugar_diff_2 = [end_c1_atoms[1][0] - new_sugars_2[1][0], end_c1_atoms[1][1] - new_sugars_2[1][1], end_c1_atoms[1][2] - new_sugars_2[1][2]];
+
+      t_trans[0] += ((sugar_diff_1[0] + sugar_diff_2[0])/2);
+      t_trans[1] += ((sugar_diff_1[1] + sugar_diff_2[1])/2);
+      t_trans[2] += ((sugar_diff_1[2] + sugar_diff_2[2])/2);
+
+      var new_bead_pos = multiplyMatrices(motif_entries[i].bead,transpose(r_trans));
+      for(var j = 0; j < new_bead_pos.length; j++) {
+        new_bead_pos[j][0] += t_trans[0] + end_center[0]; 
+        new_bead_pos[j][1] += t_trans[1] + end_center[1]; 
+        new_bead_pos[j][2] += t_trans[2] + end_center[2];
+      }
+
+      skip = 0;
+      for(var j = 0; j < models.length; j++) {
+        for(var k = 0; k < models[j].residueCenters.length; k++) {
+          var dist1 = calcDistance(new_bead_pos[0],models[j].residueCenters[k]);
+          var dist2 = calcDistance(new_bead_pos[1],models[j].residueCenters[k]);
+          if(dist1 < 4.0 || dist2 < 4.0) { 
+            //console.log("made it");
+            skip = 1;
+            break;
+          }
+        }
+        if(skip) continue;
+      }
+
+      if(skip) continue;
+
+      var new_origin = dotProduct(motif_entries[i].d,transpose(r_trans));
+      new_origin[0] += t_trans[0] + end_center[0]; 
+      new_origin[1] += t_trans[1] + end_center[1]; 
+      new_origin[2] += t_trans[2] + end_center[2];
+      var new_rotation = multiplyMatrices(motif_entries[i].r,transpose(r_trans));
+      new_origin.push(motif_entries[i].name);
+      new_origin.push(new_rotation);
+      new_origin.push(motif_entries[i].bend_angle);
+      centers.push(new_origin);
+    }
+
+    return centers;
+
+  }
+
+  function handleData(data, direction) {
+
+    if(!loadedPDB || !loadedDSSR) {
+      setTimeout(function() { handleData(data, direction);}, 100);
+      return;
+    } else {
+
+      for(var i = 0; i < data.length; i++) {
+        var r1 = data[i].residue1.trim();
+        var r2 = data[i].residue2.trim();
+        for(var j = 0; j < models[models.length-1].residueObjs.length; j++) {
+
+          if(models[models.length-1].residueObjs[j].id.trim() == r1) data[i].residue1 = models[models.length-1].residueObjs[j];
+          if(models[models.length-1].residueObjs[j].id.trim() == r2) data[i].residue2 = models[models.length-1].residueObjs[j];
+        }
+      }
+
+      for(var i = 0; i < data.length; i++) {
+        data[i].atoms = data[i].residue1.atoms.concat(data[i].residue2.atoms);
+      }
+
+      models[models.length-1].basepairs = data;
+
+      var pairs = [];
+      for(var i = 0; i < models[models.length-1].chains.length; i++) {
+        var chain = models[models.length-1].chains[i];
+        pairs.push(chain[0]);
+        pairs.push(chain[chain.length - 1]);
+      }
+
+      for(var i = 0; i < pairs.length; i++) {
+        for(var j = i+1; j < pairs.length; j++) {
+          for(var k = 0; k < models[models.length-1].basepairs.length; k++) {
+            var bp = models[models.length-1].basepairs[k];
+            if( (bp.residue1.id == pairs[i] && bp.residue2.id == pairs[j]) || (bp.residue2.id == pairs[i] && bp.residue1.id == pairs[j])) {
+              models[models.length-1].ends.push(bp);
+            }
+          }
+        }
+      }
+
+      //add dssr bp types
+      console.log("dssr length " + models[models.length-1].dssr.length)
+      for(var i = 0; i < models[models.length-1].dssr.length; i++) {
+        if(models[models.length-1].dssr[i][0] == null) continue;
+        var dssr_id_1 = models[models.length-1].dssr[i][0];
+        var dssr_id_2 = models[models.length-1].dssr[i][1];
+
+        var resid1 = dssr_id_1.substring(0,1) +  dssr_id_1.substring(3);
+        var resid2 = dssr_id_2.substring(0,1) +  dssr_id_2.substring(3);
+
+        for (var j = 0; j < models[models.length-1].basepairs.length; j++) {
+          var bp = models[models.length-1].basepairs[j];
+          if((bp.residue1.id == resid1 && bp.residue2.id == resid2)  || (bp.residue2.id == resid1 && bp.residue1.id == resid2)) {
+            bp.bp_type = models[models.length-1].dssr[i][2];
+            if(bp.bp_type == null) bp.bp_type = "";
+            break;
+          } 
+        }
+      }
+
+      if(firstMolecule) {
+        if(puzName == "Tetraloop Receptor Puzzle") resetGhostMolecules(1);
+        else if(puzName == "P4-P5 Tutorial") resetGhostMolecules(1);
+        else if(puzName == "FMN Puzzle") resetGhostMolecules(0);
+      }
+
+      if(!firstMolecule) {
+        // Make this so concat error is fixed, wait until load pdb as well
+        // change so loops through all the ends
+
+        var cmodel = models[models.length-1]
+        var endsIndex = direction === undefined ? 1 : direction;
+        var startsIndex = 0;
+
+        if(puzName == "Tetraloop Receptor Puzzle") startsIndex = 1;
+        else if(puzName == "FMN Puzzle") startsIndex = 0;
+        else if(puzName == "P4-P5 Tutorial") startsIndex = 0; // fix
+
+        // if(models.length == 2) endsIndex = 0;
+        if(models.length == 2 && puzName == "Tetraloop Receptor Puzzle") startsIndex = 1;
+        if(models.length == 2 && puzName == "P4-P5 Tutorial") startsIndex = 1;
+
+        // if(models.length == 3) endsIndex = 1; // just for debugging
+        var result = align3(models[models.length-2].ends[startsIndex], models[models.length-1], endsIndex, models[models.length-2].tf);
+
+        //last_center = cmodel.ends[]
+
+        while(clashExists(models[models.length-1].ends[endsIndex])) {
+
+          var model = models[models.length-1];
+          for(var i = 0; i < model.ends.length; i++) {
+            for(var j = 0; j < model.ends[i].atoms.length; j++) {
+              var atom = model.ends[i].atoms[j];
+              atom[2] = result["oldcoords"][atom[0]][0];
+              atom[3] = result["oldcoords"][atom[0]][1];
+              atom[4] = result["oldcoords"][atom[0]][2];
+            }
+          }
+
+          for(var i = 0; i < model.residueObjs.length; i++) {
+            for(var j = 0; j < model.residueObjs[i].atoms.length; j++) {
+              var atom = model.residueObjs[i].atoms[j];
+              atom[2] = result["oldcoords"][atom[0]][0];
+              atom[3] = result["oldcoords"][atom[0]][1];
+              atom[4] = result["oldcoords"][atom[0]][2];
+            }
+          }
+
+          endsIndex--;
+          result = align3(models[models.length-2].ends[startsIndex], models[models.length-1], endsIndex, models[models.length-2].tf);
+        }
+
+        models[models.length - 2].usedEnds[1] = startsIndex;
+        models[models.length-1].usedEnds[0] = endsIndex;
+
+        renderModel(models[models.length-1], result["coords"], result["oldcoords"]);
+
+        models[models.length-1].tf = result["tf"];
+        if(endsIndex > 0) resetGhostMolecules(0);
+        else resetGhostMolecules(1);
+      }
+
+      //get target end for scoring 
+      else {
+
+        for(var i = 0; i < models[0].ends.length; i++){
+          if(targetResiduesIds[0] == models[0].ends[i].residue1.id && targetResiduesIds[1] == models[0].ends[i].residue2.id ) {
+            targetEnd = models[0].ends[i];
+            targetEndIndex = i;
+            break;
+          }
+          if(targetResiduesIds[1] == models[0].ends[i].residue1.id && targetResiduesIds[0] == models[0].ends[i].residue2.id ) {
+            targetEnd = models[0].ends[i];
+            targetEndIndex = i;
+          }
+        }
+      }
+
+      /*
+
+      Vineet make a nice alert that this solution is good
+      */
+      //generateMergedMotif(0);
+
+
+      valid_solution = isvalidsolution(models[models.length-1]);
+      doneLoading = true;
+      // alert(seq + " " + ss);
+      if(valid_solution) {
+
+        if(puzName == "P4-P5 Tutorial") {
+
+          document.getElementById("puzzlecompletecontainer").style.display = "block";
+          document.getElementById("puzzlecompleteoverlay").style.display = "block";
+          document.getElementById("puzzlecompletedesc").innerHTML = "Congratulations, you completed the tutorial! Now that you know how to play the game, why don't you try submitting solutions for the Tetraloop Receptor and FMN puzzles.";
+
+          return;
+        }
+
+        var seq = generateMergedMotif(valid_solution);
+        var ss = seq["ss"]; seq = seq["seq"];
+
+        document.getElementById("fullsequence").innerHTML = seq;
+        document.getElementById("fullsecondarystructure").innerHTML = ss;
+
+        updateSequenceGUI(valid_solution);
+
+        document.getElementById("puzzlecompletecontainer").style.display = "block";
+        document.getElementById("puzzlecompleteoverlay").style.display = "block";
+        document.getElementById("puzzlecompletedesc").style.fontSize = "12px";
+        document.getElementById("puzzlecompletedesc").style.marginLeft = "10px";
+        document.getElementById("puzzlecompletedesc").style.marginRight = "20px";
+        document.getElementById("puzzlecompletedesc").style.overflowX = "scroll";
+        document.getElementById("puzzlecompletedesc").style.textAlign = "left";
+        document.getElementById("puzzlecompletedesc").innerHTML = "Final Solution:<br/>" + seq + "<br/>" + ss;
+
+        //Some alert here!!!!, ask if the user wants to save the solution
+        //document.alert("this solution works");
+        //only join motifs if user asks to save the solution
+      }
+
+    }
+  }
+
+  function removeGhostMolecules() {
+     while(ghostMotifs.length > 0) {
+      var m = ghostMotifs.pop();
+      while(m.length > 0) scene.remove(m.pop());
+     }
+     while(ghostParticles.length > 0) scene.remove(ghostParticles.pop());
+     while(ghostArrows.length > 0) scene.remove(ghostArrows.pop());
+  }
+
+  new HotKey('1',function(event){ if(document.getElementById("search") === document.activeElement) return; hideGhostMolecules(1); },{ ctrlKey: false, shiftKey: false });    
+  new HotKey('2',function(event){ if(document.getElementById("search") === document.activeElement) return; hideGhostMolecules(2); },{ ctrlKey: false, shiftKey: false });    
+  new HotKey('3',function(event){ if(document.getElementById("search") === document.activeElement) return; hideGhostMolecules(3); },{ ctrlKey: false, shiftKey: false });    
+  new HotKey('4',function(event){ if(document.getElementById("search") === document.activeElement) return; hideGhostMolecules(4); },{ ctrlKey: false, shiftKey: false });    
+  new HotKey('5',function(event){ if(document.getElementById("search") === document.activeElement) return; hideGhostMolecules(5); },{ ctrlKey: false, shiftKey: false }); 
+
+  // index is 1-5 (numkeys)
+  // if index == 0 then hide all
+  function hideGhostMolecules(index) {
+    ghostIndex = index;
+    for(var i = 0; i < ghostParticles.length; i++) {
+      if(ghostIndex-1 == i) {
+        ghostParticles[i].visible = true;
+        ghostArrows[i].visible = true;
+      } else {
+        ghostParticles[i].visible = false;
+        ghostArrows[i].visible = false;
+      }
+    }
+  }
+
+  document.getElementById("incrementGhost").onclick = function() {
+    if(ghostIndex+1 > 5) hideGhostMolecules(1);
+    else hideGhostMolecules(ghostIndex + 1);
+  }
+
+  document.getElementById("hideAllGhost").onclick = function() {
+    hideGhostMolecules(0);
+  }
+
+  // a = array, n = num arrays
+  function splitArray(a, n) {
+      var len = a.length,out = [], i = 0;
+      while (i < len) {
+          var size = Math.ceil((len - i) / n--);
+          out.push(a.slice(i, i += size));
+      }
+      return out;
+  }
+
+  function resetGhostMolecules(startIndex) {
+    removeGhostMolecules();
+    addGhostMolecules(startIndex);
+    hideGhostMolecules(ghostIndex);
+    ghostStartIndices.push(startIndex);
+  }  
+
+  function addGhostMolecules(startIndex) {
+
+      var projectedCenters = projectPossibleSolutions(models[models.length-1],startIndex);
+      projectedCenters.sort(function(a,b){
+          if(a[5] !== b[5]) return a[5] - b[5];
+          else return a[3].localeCompare(b[3]);
+      });
+      projectedCenters = splitArray(projectedCenters, 5); // 5 chunks for numkeys 1-5
+
+      for(var j = 0; j < projectedCenters.length; j++) {
+        ghostMotifs.push([]);
+        var ghostGeometry = new THREE.Geometry();
+        var ghostArrowsGeometry = new THREE.Geometry();
+
+        for(var i = 0; i < projectedCenters[j].length; i++) {
+          var vector = new THREE.Vector3(projectedCenters[j][i][0]*factor + mainOffset.x*factor,
+                                         projectedCenters[j][i][1]*factor + mainOffset.y*factor,
+                                         projectedCenters[j][i][2]*factor + mainOffset.z*factor);
+
+          var d1_x = projectedCenters[j][i][4][0][0]*factor; var d1_y = projectedCenters[j][i][4][1][0]*factor;
+          var d2_x = projectedCenters[j][i][4][0][1]*factor; var d2_y = projectedCenters[j][i][4][1][1]*factor;
+          var d3_x = projectedCenters[j][i][4][0][2]*factor; var d3_y = projectedCenters[j][i][4][1][2]*factor;
+          var dtot_x = Math.sqrt((d1_x*d1_x)+(d2_x*d2_x)+(d3_x*d3_x)); var dtot_y = Math.sqrt((d1_y*d1_y)+(d2_y*d2_y)+(d3_y*d3_y));
+          var dfact_x = 150/dtot_x; d1_x *= dfact_x; d2_x *= dfact_x; d3_x *= dfact_x;
+          var dfact_y = 400/dtot_y; d1_y *= dfact_y; d2_y *= dfact_y; d3_y *= dfact_y;
+          
+          var vec1 = new THREE.Vector3(vector.x + d1_x + d1_y ,vector.y + d2_x + d2_y, vector.z + d3_x + d3_y);
+          var vec2 = new THREE.Vector3(vector.x + d1_x - d1_y ,vector.y + d2_x - d2_y, vector.z + d3_x - d3_y);
+          var vec3 = new THREE.Vector3(vector.x - d1_x + d1_y ,vector.y - d2_x + d2_y, vector.z - d3_x + d3_y);
+          var vec4 = new THREE.Vector3(vector.x - d1_x - d1_y ,vector.y - d2_x - d2_y, vector.z - d3_x - d3_y);
+
+          ghostGeometry.vertices.push(vector);
+          var sphere = new THREE.Mesh(new THREE.SphereGeometry(80,12,12),new THREE.MeshBasicMaterial({color:0xffddee, visible:false}));
+          ghostGeometry.colors.push(new THREE.Color(0.5, 0.7, 0.85));
+
+         // ghostArrowsGeometry.vertices.push(vector); ghostArrowsGeometry.vertices.push(vec1);
+          ghostArrowsGeometry.vertices.push(vec1); ghostArrowsGeometry.vertices.push(vec2);
+          ghostArrowsGeometry.vertices.push(vec2); ghostArrowsGeometry.vertices.push(vec4);
+          ghostArrowsGeometry.vertices.push(vec3); ghostArrowsGeometry.vertices.push(vec4);
+          ghostArrowsGeometry.vertices.push(vec3); ghostArrowsGeometry.vertices.push(vec1);
+
+        //  ghostArrowsGeometry.vertices.push(vec1); ghostArrowsGeometry.vertices.push(vec3);
+          sphere.url = projectedCenters[j][i][3]; sphere.name = "ghost_" + i;
+          ghostMotifs[j].push(sphere);
+          sphere.position = vector;
+          scene.add(sphere);
+        }
+        var ghostParticle = new THREE.ParticleSystem(ghostGeometry, new THREE.ParticleSystemMaterial( { size: 350, map: sprite, vertexColors: true, transparent: true, alphaTest: 0.5, color: 0xffddee} ));
+        ghostParticle.sortParticles = true;
+        ghostParticles.push(ghostParticle); scene.add(ghostParticle);
+
+        var ghostArrow = new THREE.Line(ghostArrowsGeometry, new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xC8C8FA, antialias: true }), THREE.LinePieces);
+        ghostArrows.push(ghostArrow); scene.add(ghostArrow);
+      }
+  }
+
+  // REMOVE lol
+  function trySolution() {
+
+    var testSolution = [];
+    for(var i = 0; i < 18; i++) { testSolution.push("motifs/helix/helix.pdb");}
+    testSolution.push("motifs/two_ways/TWOWAY.1S72.34/TWOWAY.1S72.34.pdb");
+    testSolution.push("motifs/helix/helix.pdb");
+    testSolution.push("motifs/two_ways/TWOWAY.1FEU.1/TWOWAY.1FEU.1.pdb");
+    testSolution.push("motifs/two_ways/TWOWAY.1S72.34/TWOWAY.1S72.34.pdb");
+    testSolution.push("motifs/two_ways/TWOWAY.1QTQ.0/TWOWAY.1QTQ.0.pdb");
+    testSolution.push("motifs/two_ways/TWOWAY.1S72.97/TWOWAY.1S72.97.pdb");
+    testSolution.push("motifs/two_ways/TWOWAY.2GDI.7/TWOWAY.2GDI.7.pdb");
+    testSolution.push("motifs/two_ways/TWOWAY.2GDI.7/TWOWAY.2GDI.7.pdb");
+
+    for(var i = 0; i < testSolution.length; i++) {
+      var timer = (i+1)*500;
+
+      setTimeout(function() {
+        tryloadMolecule(testSolution[0]);
+        testSolution.shift();
+      }, timer);
+    }
+  }
+
+  function generateMergedMotif(final_end_index) {
+
+    var start = models[0];
+    var current_chains = [];
+    var allBasePairs = [];
+
+    for(var i = 0; i < start.chains.length; i++) {
+      var currentChain = [];
+      for(var j = 0; j < start.chains[i].length; j++) {
+        currentChain.push(start.chains[i][j]);
+      }
+      current_chains.push(convertChainToResidueArray(currentChain,start));
+    }
+
+    for(var i = 1; i < models.length; i++) {
+
+      var bp1 = models[i-1].ends[models[i-1].usedEnds[1]];
+      var bp2 = models[i].ends[models[i].usedEnds[0]];
+
+      var chainInfo1 = []; 
+      var chainInfo2 = [];
+
+      chainInfo1.push(findResidueOnChains(bp1.residue1, current_chains));
+      chainInfo1.push(findResidueOnChains(bp1.residue2, current_chains));
+      
+     /* if(chainInfo1[0] == undefined || chainInfo2[0] == undefined) {
+        alert("An error occured with generating the sequence and secondary structure. This is because of some bugs in-game that we are working on. You can still submit your solution: we will generate the proper secondary structure and sequence after.");
+        return {"seq":"GUAC (Incomplete)","ss":"((...)) (Incomplete)"};
+      }*/
+
+      var new_current_chains = []
+      for (var j = 0; j < current_chains.length; j++) {
+        if(j == chainInfo1[0][2] || j == chainInfo1[1][2]) continue;
+        new_current_chains.push(current_chains[j])
+      }
+      current_chains = new_current_chains;
+
+      model_chains = []
+      for(var j = 0; j < models[i].chains.length; j++) {
+        model_chains.push(convertChainToResidueArray(models[i].chains[j],models[i]))
+      }
+
+      chainInfo2.push(findResidueOnChains(bp2.residue1, model_chains));
+      chainInfo2.push(findResidueOnChains(bp2.residue2, model_chains));
+
+      if(chainInfo1[0][0] == 1) { chainInfo1 = chainInfo1.reverse(); }
+      if(chainInfo2[0][0] == 1) { chainInfo2 = chainInfo2.reverse(); }
+
+     // console.log(chainInfo2);
+
+      var tmpChain1 = chainInfo2[1][1].reverse();
+      tmpChain1.shift();
+      var tmpChain2 = chainInfo2[0][1]; 
+      tmpChain2.shift();
+
+      chainInfo1[0][1] = (chainInfo1[0][1].reverse().concat(tmpChain1)).reverse();
+      chainInfo1[1][1] = chainInfo1[1][1].concat(tmpChain2);
+
+      current_chains.push(chainInfo1[0][1]);
+      current_chains.push(chainInfo1[1][1]);
+
+    }
+    //super hacky
+    hairpin_chain = current_chains[0];
+    start_chain = null;
+    end_chain = null;
+    if(current_chains[1][0].id == "B7" || current_chains[1][0].id == "A5" || current_chains[1][0].id == "A4" || current_chains[1][0].id == "B8") { 
+      start_chain = current_chains[2];
+      end_chain = current_chains[1];
+    }
+    else {
+      start_chain = current_chains[1];
+      end_chain = current_chains[2];
+    }
+
+    var tmpChain1 = hairpin_chain;
+    tmpChain1.shift();
+    tmpChain1.pop();
+    var tmpChain2 = end_chain; 
+    //tmpChain2.shift();
+
+    start_chain = start_chain.concat(tmpChain1);
+    start_chain = start_chain.concat(tmpChain2);
+
+    seq = ""
+
+    for(var i = 0; i < start_chain.length; i++) {
+      //console.log(start_chain[i].id);
+      seq += start_chain[i].name;
+    }
+    //console.log(seq);
+
+    // get basepairs for each residue in the finished chain order
+    basepairs = [];
+
+    for(var a = 0; a < start_chain.length; a++ ) {
+      c_basepairs = [];
+      c_center = calculateCenter(start_chain[a].atoms);
+      for(var i = 0; i < models.length; i++) {
+        for(var j = 0; j < models[i].basepairs.length; j++) {
+          if(start_chain[a].id != models[i].basepairs[j].residue1.id && start_chain[a].id != models[i].basepairs[j].residue2.id) {
+            continue;
+          }
+          var center_1 = calculateCenter(models[i].basepairs[j].residue1.atoms);
+          var center_2 = calculateCenter(models[i].basepairs[j].residue2.atoms);
+
+          var dist_1 = calcDistance(c_center,center_1);
+          var dist_2 = calcDistance(c_center,center_2);
+
+          if(dist_1 < 0.01 || dist_2 < 0.01) c_basepairs.push(models[i].basepairs[j]);
+
+        }
+      }
+      basepairs.push(c_basepairs);
+    }
+
+    ss = getSecondaryStructure(start_chain,basepairs);
+    console.log(ss + " " + seq);
+    return {"seq":seq,"ss":ss};
+
+    // Stich together the 2(n) chains at the end from 5' to 3'
+
+    //console.log(allBasePairs);
+    //console.log(chainInfo1[0][1]);
+    //console.log(chainInfo2[1][1]);
+    //console.log(start_chain);
+  }
+
+  function getSecondaryStructure(chain,basepairs) {
+    var seen_bp = [];
+    var count = 1;
+    var sstructure = [];
+    var sequence = [];
+    var design_sequence = [];
+    var seen_res = [];
+
+    for(var i = 0; i < chain.length; i++) {
+      var ss = "";
+      var bps = basepairs[i];
+      var is_bp = 0;
+      var saved_bp = null;
+
+      for(var j = 0; j < bps.length; j++) {
+        partner_res = null;
+        if(bps[j].residue1.id == chain[i].id) {
+          partner_res = bps[j].residue2
+        }
+        else{
+          partner_res = bps[j].residue1;
+        }
+
+        is_bp = 1;
+        var passes = 0;
+
+        if(is_bp_wc(bps[j]) && bps[j].bp_type == "cW-W") passes = 1;
+        if(is_bp_gu(bps[j]) && bps[j].bp_type == "cW-W") passes = 1;
+
+        if(passes) {
+          saved_bp = bps[j];
+          //have we seen this bp yet
+          if(!has_seen_bp(bps[j],seen_bp) && !has_seen_res(chain[i],seen_res) && !has_seen_res(partner_res,seen_res))  {
+            var center = calculateCenter(chain[i].atoms);
+            seen_res.push([chain[i],center,1]);
+            ss = "(";
+          }
+          else if(has_seen_res(partner_res,seen_res)) {
+            var partner_res_count = has_seen_res(partner_res,seen_res);
+            if(partner_res_count > 1) {
+              ss = ".";
+            }
+            else {
+              ss = ")"
+              var center = calculateCenter(chain[i].atoms);
+              seen_res.push([chain[i],center,1]);
+              has_seen_res(partner_res,seen_res,1);
+            }
+
+          }
+
+        }
+        else {
+          ss = ".";
+        }
+      }
+
+      if(!is_bp) {
+        ss = ".";
+      }
+
+      sstructure.push(ss);
+
+    }
+
+    var string = ""
+    console.log(sstructure.length + " " + chain.length)
+    for(var i = 0; i < sstructure.length; i++) {
+      string += sstructure[i];
+      //console.log(chain[i].id + " " + sstructure[i]);
+    }
+    return string;
+  }
+
+  function has_seen_bp(bp,seen_bp) {
+    var center_1 = calculateCenter(bp.residue1.atoms);
+    var center_2 = calculateCenter(bp.residue2.atoms);
+
+    for(var k = 0; k < seen_bp.length; k++) {
+      if(!((bp.residue1.id == seen_bp[k].residue1.id && bp.residue2.id == seen_bp[k].residue2.id) || bp.residue1.id == seen_bp[k].residue2.id && bp.residue2.id == seen_bp[k].residue1.id)) {
+        continue;
+      }
+
+      var dist_1 = calcDistance(center_1,seen_bp[k][1]);
+      var dist_2 = calcDistance(center_2,seen_bp[k][2]);
+
+      if(dist_1 > 0.01 && dist_2 > 0.01) continue;
+
+      dist_1 = calcDistance(center_2,seen_bp[k][1]);
+      dist_2 = calcDistance(center_2,seen_bp[k][2]);
+
+      if(dist_1 > 0.01 && dist_2 > 0.01) continue;
+
+      return 1;
+
+    }
+    return 0;
+  }
+
+  function has_seen_res(res,seen_res,add) {
+    var center = calculateCenter(res.atoms);
+    for (var i = 0; i < seen_res.length; i++) {
+      if(seen_res[i][0].id != res.id) continue;
+      var dist = calcDistance(center,seen_res[i][1]);
+      if(dist < 0.01) {
+
+        if(add != null) {
+          seen_res[i][2] += 1;
+        }
+        return seen_res[i][2]
+
+      }
+    }
+    return 0;
+
+  }
+
+
+  function is_bp_wc(bp) {
+    var bp_name = bp.residue1.name + bp.residue2.name;
+    if(bp_name == "gc" || bp_name == "cg" || bp_name == "au" || bp_name == "ua") {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  function is_bp_gu(bp) {
+    var bp_name = bp.residue1.name + bp.residue2.name;
+    if(bp_name == "gu" || bp_name == "ug") {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+
+  function convertChainToResidueArray(chain,model) {
+    var residue_array = [];
+    for(var i = 0; i < chain.length; i++) {
+      residue = null;
+      for(var j = 0; j < model.residueObjs.length; j++) {
+        if(chain[i] == model.residueObjs[j].id) {
+          residue = model.residueObjs[j];
+          break;
+        }
+      }
+      residue_array.push(residue);
+    }
+    return residue_array;
+  }
+
+
+  // position and chain
+  function findResidueOnChains(residue, chains) {
+    for(var i = 0; i < chains.length; i++) {
+      //console.log(residue.id + " " + chains[i][0].id);
+      if(residue.id == chains[i][0].id) {
+        var chainscopy = [];
+        for(var j = 0; j < chains[i].length; j++) chainscopy.push(chains[i][j]);
+        return [0, chainscopy, i];
+      }
+      if(residue.id == chains[i][chains[i].length-1].id) {
+        var chainscopy = [];
+        for(var j = 0; j < chains[i].length; j++) chainscopy.push(chains[i][j]);
+        return [1, chainscopy, i];
+      }
+    }
+  }
+
+  function toggleBackBone(type) {
+    backboneDisplay = type;
+    for(var i = 0; i < models.length; i++) {
+      scene.remove(models[i].backboneBonds);
+    }
+    if(type == 1) {
+      for(var i = 0; i < models.length; i++) {
+        scene.add(models[i].backboneBonds);
+      }
+    }
+  }
+
+    function transpose(matrix) {
+        return matrix[0].map(function(uselessValue, colIndex){
+            return matrix.map(function(uselessRow, rowIndex){
+                return matrix[rowIndex][colIndex];
+            });
+        });
+    }
+
+    function multiplyMatrices(m1, m2) {
+        var result = [];
+        for (var i = 0; i < m1.length; i++) {
+            result[i] = [];
+            for (var j = 0; j < m2[0].length; j++) {
+                var sum = 0;
+                for (var k = 0; k < m1[0].length; k++) {
+                    sum += m1[i][k] * m2[k][j];
+                }
+                result[i][j] = sum;
+            }
+        }
+        return result;
+    }
+
+    function dotProduct(m1, m2) {
+        var a = (m1[0] * m2[0][0]) + (m1[1] * m2[1][0]) + (m1[2] * m2[2][0]);
+        var b = (m1[0] * m2[0][1]) + (m1[1] * m2[1][1]) + (m1[2] * m2[2][1]);
+        var c = (m1[0] * m2[0][2]) + (m1[1] * m2[1][2]) + (m1[2] * m2[2][2]);
+        return [a, b, c];
+    }
+
+    function unitarize(matrix) {
+      return matrix;
+    }
+
+    function subtractMatrices(m1, m2) {
+      return [m1[0]-m2[0], m1[1]-m2[1], m1[2]-m2[2]];
+    }
+
+    function subtractMatrices2(m1, v1) {
+      for(var i = 0; i < m1.length; i++) {
+        m1[i][0] -= v1[0];
+        m1[i][1] -= v1[1];
+        m1[i][2] -= v1[2];
+      }
+      return m1;
+    }
+
+    function addMatrices2(m1, v1) {
+      for(var i = 0; i < m1.length; i++) {
+        m1[i][0] += v1[0];
+        m1[i][1] += v1[1];
+        m1[i][2] += v1[2];
+      }
+      return m1;
+    }
+
+    var animationInterval = 0;
+    var animationTime = 0;
+
+
+/*function Tf(arg1, arg2) {
+  if(arg2 === undefined) {
+    this.matrix = arg1;
+    this.translation = [[arg1[0][3]],[arg1[1][3]],[arg1[2][3]]];
+    this.rotation = [[arg1[0].splice(0,3)],[arg1[1].splice(0,3)],[arg1[2].splice(0,3)]];
+  }
+}*/
+
+function calculateCenter(atoms) {
+  var center = [0, 0, 0];
+  for(var i = 0; i < atoms.length; i++) {
+    center[0] += atoms[i][2]; center[1] += atoms[i][3]; center[2] += atoms[i][4];
+  }
+  center[0] /= atoms.length; center[1] /= atoms.length; center[2] /= atoms.length;
+  return center;
+}
+
+function clashExists(end) {
+
+  for(var i = 0; i < models[models.length-1].residueCenters.length; i++) {
+    var resId = models[models.length-1].residueObjs[i].id;
+
+    if(resId == end.residue1.id || resId == end.residue2.id) continue;
+
+    for(var j = 0; j < models.length-1; j++) {
+      for(var k = 0; k < models[j].residueCenters.length; k++) {
+        //needs to be able to overlay with the target end
+        if(j == 0) {
+          if(models[j].residueObjs[k].id == targetResiduesIds[0] || models[j].residueObjs[k].id == targetResiduesIds[1]) {
+            continue;
+          }
+        }
+
+        if( calcDistance(models[j].residueCenters[k], models[models.length-1].residueCenters[i]) < 2) return true; 
+      }
+    }
+  }
+  return false;
+}
+
+function align3(ref_bp, model, end_pos, previous_transform) {
+  var r1 = ref_bp.rotation;
+  var r2 = model.ends[end_pos].rotation;
+  var rotation = multiplyMatrices(transpose(r1), r2);
+
+  var rotation_origin = calculateCenter(model.ends[end_pos].atoms);
+
+  var coords = [];
+  var oldcoords = [];
+  for(var i = 0; i < model.geometry.vertices.length; i++) {
+    var v = model.geometry.vertices[i];
+    coords[i] = [v.x/factor, v.y/factor, v.z/factor];
+    oldcoords[i] = [v.x/factor, v.y/factor, v.z/factor];
+  }
+
+  coords = subtractMatrices2(multiplyMatrices(coords, transpose(rotation)), rotation_origin);
+
+  if(previous_transform.length !== 0) {
+    var pTranslation = [previous_transform[0][3],previous_transform[1][3],previous_transform[2][3]];
+
+    var pRotation = [[],[],[]];
+    for(var i = 0; i < 3; i++) {
+      for(var j = 0; j < 3; j++) {
+        pRotation[i][j] = previous_transform[i][j];
+      }
+    }
+
+   coords = multiplyMatrices(coords, transpose(pRotation));
+  }
+
+  var rotation_origin_2 = subtractMatrices(dotProduct(rotation_origin, transpose(rotation)), rotation_origin);
+  var bp_pos_diff = subtractMatrices(calculateCenter(ref_bp.atoms), rotation_origin_2);
+
+  for(var i = 0; i < coords.length; i++) {
+    coords[i][0] += bp_pos_diff[0];
+    coords[i][1] += bp_pos_diff[1];
+    coords[i][2] += bp_pos_diff[2];
+  }
+
+  // Changing model.ends
+  for(var i = 0; i < model.ends.length; i++) {
+    for(var j = 0; j < model.ends[i].atoms.length; j++) {
+      var atom = model.ends[i].atoms[j];
+      atom[2] = coords[atom[0]][0];
+      atom[3] = coords[atom[0]][1];
+      atom[4] = coords[atom[0]][2];
+    }
+  }
+
+  var ref_c1_atoms = [];
+  var model_c1_atoms = [];
+
+  for(var i = 0; i < ref_bp.atoms.length; i++) {
+    if(ref_bp.atoms[i][1] == "c1'") ref_c1_atoms.push(ref_bp.atoms[i]);
+  }
+
+  for(var i = 0; i < model.ends[end_pos].atoms.length; i++) {
+    if(model.ends[end_pos].atoms[i][1] == "c1'") model_c1_atoms.push(model.ends[end_pos].atoms[i]);
+  }
+
+  if( calcDistanceSquare(ref_c1_atoms[0], model_c1_atoms[0]) > calcDistanceSquare(ref_c1_atoms[0], model_c1_atoms[1])) {
+    var temp = model_c1_atoms[1];
+    model_c1_atoms[1] = model_c1_atoms[0];
+    model_c1_atoms[0] = temp;
+  }
+
+  var sugar_diff_1 = [ref_c1_atoms[0][2] - model_c1_atoms[0][2], ref_c1_atoms[0][3] - model_c1_atoms[0][3], ref_c1_atoms[0][4] - model_c1_atoms[0][4]];
+  var sugar_diff_2 = [ref_c1_atoms[1][2] - model_c1_atoms[1][2], ref_c1_atoms[1][3] - model_c1_atoms[1][3], ref_c1_atoms[1][4] - model_c1_atoms[1][4]];
+
+  for(var i = 0; i < coords.length; i++) {
+    coords[i][0] += ((sugar_diff_1[0] + sugar_diff_2[0])/2);
+    coords[i][1] += ((sugar_diff_1[1] + sugar_diff_2[1])/2);
+    coords[i][2] += ((sugar_diff_1[2] + sugar_diff_2[2])/2);
+  }
+
+  for(var i = 0; i < model.ends.length; i++) {
+    for(var j = 0; j < model.ends[i].atoms.length; j++) {
+      var atom = model.ends[i].atoms[j];
+      atom[2] = coords[atom[0]][0];
+      atom[3] = coords[atom[0]][1];
+      atom[4] = coords[atom[0]][2];
+    }
+  }
+
+  // Changing model.residueObjs
+  for(var i = 0; i < model.residueObjs.length; i++) {
+    for(var j = 0; j < model.residueObjs[i].atoms.length; j++) {
+      var atom = model.residueObjs[i].atoms[j];
+      atom[2] = coords[atom[0]][0];
+      atom[3] = coords[atom[0]][1];
+      atom[4] = coords[atom[0]][2];
+    }
+  }
+
+  // Changing model.residueCenters
+  model.residueCenters = [];
+  for(var j = 0; j < model.residueObjs.length; j++) {
+    //if 
+    model.residueCenters.push(calculateCenter(model.residueObjs[j].atoms));
+  }
+
+  if(previous_transform.length == 0) {
+    previous_transform = [rotation[0], rotation[1], rotation[2], [0,0,0,1]];
+    previous_transform[0].push(-rotation_origin[0]);
+    previous_transform[1].push(-rotation_origin[1]);
+    previous_transform[2].push(-rotation_origin[2]);
+  } else {
+    var currentMatrix = [rotation[0], rotation[1], rotation[2], [0,0,0,1]];
+    currentMatrix[0].push(-rotation_origin[0]);
+    currentMatrix[1].push(-rotation_origin[1]);
+    currentMatrix[2].push(-rotation_origin[2]);
+    previous_transform = multiplyMatrices(previous_transform, currentMatrix);
+  }
+
+  return {"tf":previous_transform,"coords":coords, "oldcoords": oldcoords};
+}
+
+function renderModel(model, coords, oldcoords) {
+  for(var i = 0; i < model.particles.geometry.vertices.length; i++) {
+    var v = model.particles.geometry.vertices[i];
+    v.x = coords[i][0] * factor;
+    v.y = coords[i][1] * factor; 
+    v.z = coords[i][2] * factor; 
+  }
+
+  scene.add(model.particles);
+  model.particles.applyMatrix(new THREE.Matrix4().makeTranslation(mainOffset.x*factor, mainOffset.y*factor, mainOffset.z*factor));
+  model.particles.material.opacity = 0;
+  model.particles.material.transparent = true;
+  fadeIn(model.particles);
+
+  for(var k = 0; k < model.bonds.length; k++) {
+    var lineGeometry = new THREE.Geometry();
+    var lineMaterial = model.lineMaterial[0];
+
+    for(var i = 0; i < model.bonds[k].geometry.vertices.length; i++) {
+      var v = model.bonds[k].geometry.vertices[i];
+      for(var j =0; j < oldcoords.length; j++) {
+        if(v.x == (oldcoords[j][0]*factor) && v.y == (oldcoords[j][1]*factor) && v.z == (oldcoords[j][2]*factor)-5) {
+          v.x = (coords[j][0] * factor) + (mainOffset.x * factor);
+          v.y = (coords[j][1] * factor) + (mainOffset.y * factor);
+          v.z = (coords[j][2] * factor) + (mainOffset.z * factor);
+          lineGeometry.vertices.push(v);
+          break;
+        }
+      }
+    }
+    
+    var bond = new THREE.Line(lineGeometry, lineMaterial, THREE.LinePieces);
+    bond.residueType = model.bonds[k].residueType;
+    bond.residueName = model.bonds[k].residueName;
+
+    if(startingResidues.indexOf(bond.residueName) >= 0)
+      bond.material = model.lineMaterial[8];
+
+    model.bonds[k] = bond;
+
+    lineGeometry.residueType = model.lineGeometry[k].residueType;
+    lineGeometry.residueName = model.lineGeometry[k].residueName;
+    model.lineGeometry[k] = lineGeometry;
+
+    scene.add(model.bonds[k]);
+    // model.bonds[k].applyMatrix(new THREE.Matrix4().makeTranslation(mainOffset.x*factor, mainOffset.y*factor, mainOffset.z*factor));
+    model.bonds[k].material.transparent = true;
+    model.bonds[k].material.opacity = 0;
+    fadeIn(model.bonds[k]);
+  }
+
+  var backboneGeometry = new THREE.Geometry();
+  
+  for(var i = 0; i < model.backboneGeometry.vertices.length; i++) {
+    var v = model.backboneGeometry.vertices[i];
+    for(var j = 0; j < oldcoords.length; j++) {
+      if(v.x == (oldcoords[j][0]*factor) && v.y == (oldcoords[j][1]*factor) && v.z == (oldcoords[j][2]*factor)-5) {
+        v.x = (coords[j][0]*factor) + (mainOffset.x * factor);
+        v.y = (coords[j][1]*factor) + (mainOffset.y * factor);
+        v.z = (coords[j][2]*factor) + (mainOffset.z * factor);
+        backboneGeometry.vertices.push(v);
+        break;
+      }
+    }
+  }
+  var backbone = new THREE.Line(backboneGeometry, model.lineMaterial[6], THREE.LinePieces);
+  model.backboneGeometry = backboneGeometry;
+  model.backboneBonds = backbone;
+  scene.add(backbone);
+  model.backboneBonds.material.transparent = true;
+  model.backboneBonds.material.opacity = 0;
+  fadeIn(model.backboneBonds);
+
+  for(var j = 0; j < model.particles.geometry.vertices.length; j++) {
+    vector = new THREE.Vector3(model.particles.geometry.vertices[j].x + (mainOffset.x*factor), model.particles.geometry.vertices[j].y + (mainOffset.y*factor), model.particles.geometry.vertices[j].z + (mainOffset.z*factor));
+    
+    var collisionSphere = new THREE.Mesh(new THREE.SphereGeometry(30, 6, 6), new THREE.MeshBasicMaterial({color:0xffffff}));
+    collisionSphere.position = vector;
+
+    collisionSphere.name = j;
+    collisionSphere.visible = false; // troubleshoot with true
+    model.collisionSpheres.push(collisionSphere);
+    scene.add(collisionSphere);          
+  }
+
+  toggleBondsAtoms(displayType);
+  colorDisplay(colorType);
+  toggleBackBone(backboneDisplay);
+}
+
+function calcDistance(point1, point2) {
+  return Math.pow(Math.pow(point1[0] - point2[0], 2) + Math.pow(point1[1] - point2[1], 2) + Math.pow(point1[2] - point2[2], 2), 0.5); 
+}
+
+function calcDistanceSquare(atom1, atom2) {
+  return Math.pow(atom1[2] - atom2[2], 2) + Math.pow(atom1[3] - atom2[3], 2) + Math.pow(atom1[4] - atom2[4], 2);
+}
+
+// 1 second overall
+function fadeIn(obj) {
+  obj.material.opacity += 0.1;
+  if(obj.material.opacity < 1) {
+    setTimeout(function() { fadeIn(obj); }, 100);
+  }
+}
+
+
+function onWindowResize() {
+  w = recalculateDimensions();
+  h = w.h; w = w.w;
+  camera.aspect = w/h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+  render();
+}
+
+function onMouseMove() { isMoving = true; }
+function onMouseDown() { isMoving = false; }
+
+var timer = null;
+var events;
+
+function onMouseUp(e) {
+  if(isMoving) return;
+  var doubleClick = false;
+  if(timer != null) { clearTimeout(timer); timer = null; doubleClick = true; } 
+  else { events = e; }
+
+  deselectColors();
+
+  if(!doubleClick) {
+    timer = setTimeout(function() {
+      selectMolecule();
+      timer = null;
+      updateInfo();
+    }, 150);
+  } else {
+    selectResidue();
+    updateInfo();
+  }
+}
+
+function updateInfo() {
+  if(selectedMolecules["i"] === undefined && selectedAtom["modelnum"] === undefined) {
+    document.getElementById("detailsPosition").innerHTML = "Make a Selection";
+    document.getElementById("detailsType").innerHTML = "";
+    document.getElementById("detailsMol").innerHTML = "";
+  } else if(selectedMolecules["i"] !== undefined) {
+    document.getElementById("detailsPosition").innerHTML = "";
+
+    var c = "Error";
+    for(var i = 0; i < models[selectedMolecules["i"]].types.length; i++) {
+      if(models[selectedMolecules["i"]].residues[i] == selectedMolecules["m"])
+        c = models[selectedMolecules["i"]].types[i];
+    }
+    switch(c) {
+      case 'a' :
+        c = "Adenine"; break;
+      case 'g' :
+        c = "Guanine"; break;
+      case 'u' :
+        c = "Uracil"; break;
+      case 't' :
+        c = "Thymine"; break;
+      case 'c' : 
+        c = "Cytosine"; break;
+      default:
+        c = "FMN"; break;
+    }
+    if(models[selectedMolecules["i"]].isHelix == 2) c = 'Nucleotide';
+
+    document.getElementById("detailsType").innerHTML = "Residue " + selectedMolecules["m"] + ", " + c;
+    document.getElementById("detailsMol").innerHTML = "";
+  } else if(selectedAtom["modelnum"] !== undefined) {
+
+    var model = models[selectedAtom["modelnum"]];
+    var r = model.residues[selectedAtom["i"]];
+    var c = model.types[selectedAtom["i"]];
+    var nm = model.elementcodes[selectedAtom["i"]].toUpperCase();
+    switch(c) {
+      case 'a' :
+        c = "Adenine"; break;
+      case 'g' :
+        c = "Guanine"; break;
+      case 'u' :
+        c = "Uracil"; break;
+      case 't' :
+        c = "Thymine"; break;
+      case 'c' : 
+        c = "Cytosine"; break;
+      default:
+        c = "FMN"; break;
+    }
+    if(models[selectedAtom["modelnum"]].isHelix == 2) c = 'Nucleotide';
+    var sphere = null;
+    sphere = model.collisionSpheres[selectedAtom["i"]]
+
+    document.getElementById("detailsPosition").innerHTML = "(" + Math.round(sphere.position.x) + "," + Math.round(sphere.position.y) + "," + Math.round(sphere.position.z) + ")";
+    document.getElementById("detailsType").innerHTML = "Residue " + r + ", " + c;
+    document.getElementById("detailsMol").innerHTML = elementsList[nm] + " (" + nm + ")";    
+
+  }
+}
+
+function selectResidue() {
+
+  selectedAtom = {};
+  var newSelectionResidue = -1;
+  var newSelectionID = -1;
+
+  var x = ((events.clientX - container.offsetLeft) / container.clientWidth) * 2 - 1;
+  var y = -((events.clientY - container.offsetTop) / container.clientHeight) * 2 + 1;
+  var vector = new THREE.Vector3(x, y, 0);
+  projector.unprojectVector(vector, camera);
+  var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize(), 50, 5000);
+  for(var i = 0; i < models.length; i++) {
+
+    // Normal Collision
+    var intersects = ray.intersectObjects(models[i].collisionSpheres);
+    if(intersects.length > 0) {
+      var resName = models[i].residues[intersects[0].object.name];
+      newSelectionResidue = resName;
+      newSelectionID = i;
+      for(var j = 0; j < models[i].geometry.colors.length; j++) {
+        if(models[i].residues[j] == resName && (selectedMolecules["i"] === undefined || selectedMolecules["i"] !== i || selectedMolecules["m"] !== resName)) {
+          models[i].geometry.colors[j] = new THREE.Color();
+          models[i].geometry.colors[j].setRGB(0.5, 1.0, 0.5);
+        }
+      }
+
+      for(var j = 0; j < models[i].bonds.length; j++) {
+        if(models[i].bonds[j].residueName == resName && (selectedMolecules["i"] === undefined || selectedMolecules["i"] !== i || selectedMolecules["m"] !== resName)) {
+          scene.remove(models[i].bonds[j]);
+          var rType = models[i].bonds[j].residueType;
+          var rName = models[i].bonds[j].residueName;
+          models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], models[i].lineMaterial[5], THREE.LinePieces);
+          models[i].bonds[j].residueType = rType;
+          models[i].bonds[j].residueName = rName;
+          if(displayType != 0) scene.add(models[i].bonds[j]);
+        }
+      }
+    }
+  }
+  if(selectedMolecules["i"] !== undefined && selectedMolecules["i"] == newSelectionID && selectedMolecules["m"] == newSelectionResidue || newSelectionResidue == -1 || newSelectionID == -1) selectedMolecules = {};
+  else selectedMolecules = {"m":newSelectionResidue, "i":newSelectionID};
+}
+
+function selectMolecule() {
+  selectedMolecules = {};
+  var x = ((events.clientX - container.offsetLeft) / container.clientWidth) * 2 - 1;
+  var y = -((events.clientY - container.offsetTop) / container.clientHeight) * 2 + 1;
+  var vector = new THREE.Vector3(x, y, 0);
+  projector.unprojectVector(vector, camera);
+  var ray = new THREE.Raycaster(camera.position, vector.sub(camera.position).normalize(), 50, 5000);
+  var mId = -1; var nId = -1;
+  for(var i = 0; i < models.length; i++) {
+    // Normal Collision
+    var n = checkIntersection(i, ray, models[i], models[i].collisionSpheres);
+    if(n != -1) { mId = i; nId = n; }
+  }
+
+  // Check if hit ghost objects
+  if(ghostIndex != 0) {
+    var intersects = ray.intersectObjects(ghostMotifs[ghostIndex-1]);
+    if(intersects.length > 0) {
+      var iname = intersects[0].object.name; 
+      iname = parseInt(iname.substring(iname.indexOf("_") + 1));
+      console.log(intersects[0].object.name + " " + ghostMotifs[ghostIndex-1][iname].url);
+      tryloadMolecule("motifs/two_ways/" + ghostMotifs[ghostIndex-1][iname].url + "/" + ghostMotifs[ghostIndex-1][iname].url + ".pdb");
+    }
+  }
+
+  if( (selectedAtom["modelnum"] !== undefined && selectedAtom["i"] == nId && selectedAtom["modeslnum"] == mId) || mId == -1 || nId == -1) selectedAtom = {};
+  else selectedAtom = {"modelnum":mId, "i":nId};
+}
+
+function checkIntersection(count, ray, model, spheres) {
+  var intersects = ray.intersectObjects(spheres);
+  if(intersects.length > 0 && (selectedAtom["modelnum"] === undefined || intersects[0].object.name != selectedAtom["i"] || count != selectedAtom["modelnum"])) {
+    model.geometry.colors[intersects[0].object.name] = new THREE.Color();
+    model.geometry.colors[intersects[0].object.name].setRGB(0.5, 1.0, 0.5);
+    return intersects[0].object.name;
+  }
+  return -1;
+}
+
+
+function deselectColors() {
+  if(selectedMolecules["i"] !== undefined) {
+    for(var i = 0; i < models.length; i++) {
+        if(colorType == 0) {
+          for(var j = 0; j < models[i].geometry.colors.length; j++) {
+            if(models[i].residues[j] == selectedMolecules["m"]) {
+                  if(models[i].types[j] == 'g')         models[i].colors[j].setRGB(0.80, 0.15, 0.00);
+                  else if(models[i].types[j] == 'u')    models[i].colors[j].setRGB(0.00, 0.36, 0.72);
+                  else if(models[i].types[j] == 'a')    models[i].colors[j].setRGB(0.99, 0.95, 0.00);
+                  else if(models[i].types[j] == 'c')    models[i].colors[j].setRGB(0.00, 0.65, 0.00);
+                  else if(models[i].types[j] == 'fmn')   models[i].colors[j] = models[i].colorscopy[j];
+            }
+          }
+          for(var j = 0; j < models[i].bonds.length; j++) {
+            if(models[i].bonds[j].residueName == selectedMolecules["m"]) {
+              var mat = models[i].lineMaterial[0];
+              var rType = models[i].bonds[j].residueType;
+              var rName = models[i].bonds[j].residueName;
+              if(rType == 'g') mat = models[i].lineMaterial[1];
+              if(rType == 'u') mat = models[i].lineMaterial[2];
+              if(rType == 'a') mat = models[i].lineMaterial[3];
+              if(rType == 'c') mat = models[i].lineMaterial[4];
+              if(startingResidues.indexOf(rName) >= 0) mat = models[i].lineMaterial[8];
+              scene.remove(models[i].bonds[j]);
+              models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], mat, THREE.LinePieces);
+              models[i].bonds[j].residueType = rType;
+              models[i].bonds[j].residueName = rName;
+              if(displayType != 0) scene.add(models[i].bonds[j]);
+            }
+          }
+        } else {
+          for(var j = 0; j < models[i].geometry.colors.length; j++) {
+            if(models[i].residues[j] == selectedMolecules["m"])
+              models[i].colors[j].setRGB(models[i].colorscopy[j].r, models[i].colorscopy[j].g, models[i].colorscopy[j].b);
+          }
+          for(var j = 0; j < models[i].bonds.length; j++) {
+            if(models[i].bonds[j].residueName == selectedMolecules["m"]) {
+              var mat = models[i].lineMaterial[0];
+              var rType = models[i].bonds[j].residueType;
+              var rName = models[i].bonds[j].residueName;
+              scene.remove(models[i].bonds[j]);
+              models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], mat, THREE.LinePieces);
+              models[i].bonds[j].residueType = rType;
+              models[i].bonds[j].residueName = rName;
+              if(displayType != 0) scene.add(models[i].bonds[j]);
+            }
+          }
+        }
+      }
+    }
+
+  if(selectedAtom["modelnum"] !== undefined) {
+    var am = models[selectedAtom["modelnum"]].geometry.colors[selectedAtom["i"]];
+    var cam = models[selectedAtom["modelnum"]].colorscopy[selectedAtom["i"]];
+    var rType = models[selectedAtom["modelnum"]].types[selectedAtom["i"]];
+    if(colorType == 0) {
+      if(rType == 'g') am.setRGB(0.80, 0.15, 0.00);
+      if(rType == 'u') am.setRGB(0.00, 0.36, 0.72);
+      if(rType == 'a') am.setRGB(0.99, 0.95, 0.00);
+      if(rType == 'c') am.setRGB(0.00, 0.65, 0.00);
+      if(rType == 'fmn') { console.log("HI"); models[selectedAtom["modelnum"]].geometry.colors[selectedAtom["i"]] = models[selectedAtom["modelnum"]].colorscopy[selectedAtom["i"]]; }
+    } else {
+      am.setRGB(cam.r, cam.g, cam.b);
+    }
+  }
+
+  for(var i = 0; i < starting.length; i++) {
+    var c = models[0].geometry.colors[starting[i]];
+    if(!c) continue;
+    c.setRGB(0.99, 0.99, 0.5);
+  }
+
+  for(var i = 0; i < models.length; i++) {
+    if(models[i].isHelix != 2) continue;
+    for(var j = 0; j < models[i].geometry.colors.length; j++) {
+      models[i].geometry.colors[j].setRGB(0.9, 0.9, 0.9);
+    }
+    for(var j = 0; j < models[i].bonds.length; j++) {
+      models[i].bonds[j].material = models[i].lineMaterial[7];
+    }
+  }
+
+}
+
+  var direction = 0.1;
+  function animate() {
+    requestAnimationFrame( animate );
+    controls.update();
+
+    var d = Math.round(Math.pow(Math.pow(camera.position.x, 2) + Math.pow(camera.position.y, 2) + Math.pow(camera.position.z, 2), 0.5));
+    var size = 0.5;
+    if(d >= 2500) size = 0.5; else if(d >= 2000) size = 1; else if( d >= 1500) size = 1.5; else if(d >= 1000) size = 2; else size = 3;
+    if(displayType == 1) size += 1.5;
+
+    for(var i = 0; i < starting.length; i++) {
+      var c = models[0].geometry.colors[starting[i]];
+      c.setRGB(c.r + direction, c.g, c.b + direction);
+     // console.log(c);
+    }
+
+    for(var i = 0; i < models.length; i++) {
+      if(!models[i].lineMaterial[8]) continue;
+      var c = models[i].lineMaterial[8].color;
+      c.setRGB(c.r + direction, c.g, c.b + direction);
+      // models[i].lineMaterial[8].color = "rgb(99%, 99%, 50%)";
+    }
+
+    if(models.length > 0 && starting.length > 0 && (models[0].geometry.colors[starting[0]].r >= 1 || models[0].geometry.colors[starting[0]].b <= 0))direction *= -1;
+    
+      for(var i = 0; i < models.length; i++) {
+        for(var j = 0; j < models[i].lineMaterial.length; j++) {
+          models[i].lineMaterial[j].linewidth = size;
+        }
+       // console.log(models[i].lineMaterial.length);
+       if(models[i].lineMaterial.length < 3) continue;
+        models[i].lineMaterial[models[i].lineMaterial.length-3].linewidth = size + 6;
+      }
+
+    var x = Math.round(controls.object.position.x);
+    var y = Math.round(controls.object.position.y);
+    var z = Math.round(controls.object.position.z);
+    document.getElementById("detailsZoom").innerHTML = "Camera: (" + x + "," + y + "," + z +")";
+
+    render();
+  }
+
+  function render() {
+    renderer.render( scene, camera );
+  }
+
+
+  </script>
+
+  <script type='text/javascript' src="js/header.js"></script>
+  <script type='text/javascript' src="js/sidebar.js"></script>
+
+</body>
+</html>

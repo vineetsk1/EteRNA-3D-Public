@@ -1,0 +1,2592 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google IO 2012</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="all" href="theme/css/app.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+<slide class="title-slide segue nobackground">
+  <aside class="gdbar"><img src="images/dev.png"></aside>
+  <hgroup class="auto-fadein">
+    <h1 data-config-title><!-- populated from slide_config.json --></h1>
+    <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+    <p data-config-presenter><!-- populated from slide_config.json --></p>
+  </hgroup>
+</slide>
+
+<slide class="nobackground">
+  <hgroup>
+    <h2>Dev Server Deployment</h2>
+  </hgroup>
+  <article class="flexbox" style="font-size: 20px; line-height: 25px;">
+    workbranch_vineet/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; backend/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eterna_post_controller.php <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eterna_page_template.php <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; frontend/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; jscripts/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eterna3/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ball.png <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; game.js <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; puzzle.png <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; styles.css <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; unique_motif_data.txt <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; motifs/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fmn_puzzle/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; helix/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p4p5_puzzle/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tetraloop_receptor/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; two_ways/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; themes/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; htmls/ <br />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; eterna3d.html
+    </ul>
+  </article>
+</slide>
+
+<slide class="nobackground">
+  <hgroup>
+    <h2>Function Groups</h2>
+  </hgroup>
+  <article class="flexbox vcenter">
+    <a href="#4" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(232, 30, 20, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-left: 50px;">RNA Objects</div></a>
+    <a href="#11" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(255, 168, 57, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-left: 10px;">Load/Parse Data</div></a>
+    <a href="#18" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(255, 187, 26, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-left: 10px;">Manipulate Atoms</div></a>
+    <a href="#32" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(113, 186, 85, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-left: 10px;">Ghost Motifs/Hints</div></a>
+    <a href="#38" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(64, 136, 234, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-top: 10px; margin-left: 50px;">Seq &amp; SS Generation</div></a>
+    <a href="#47" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(0, 55, 72, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-top: 10px; margin-left: 10px;">Matrix Manipulation</div></a>
+    <a href="#54" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(133, 188, 222, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-top: 10px; margin-left: 10px;">Game Objects</div></a>
+    <a href="#62" target="_self" onclick="setTimeout(function(){window.location.reload();},100);"><div style="text-align: center; color: white; background-color: rgba(190, 53, 163, 0.85); line-height: 150px; width: 200px; height: 150px; font-size: 20px; cursor: pointer; float: left; margin-top: 10px; margin-left: 10px;">Game Display</div></a>
+  </article>
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>RNA Objects</h2>
+      <h3>Code directly related to analyzing the RNA data</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>THREE.PDBParser<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">PDBParser is a class that contains the methods for parsing and loading a motif's .pdb file, along with its related <b>ref_frames.dat</b> and <b>_dssr.out</b> file. It will convert this information into Geometry objects of THREEjs and arrays.</p>
+<pre class="prettyprint" data-lang="js">
+var loader = new THREE.PDBParser();
+loader.loadBonds = true;
+loader.createBonds = true;
+</pre>
+      <p style="line-height: 30px;">It is initialized without any arguments, but you can control the output from the parser for bonds. To do so, adjust its two instance variables: loadBonds, which is a flag that determines if the parser should load "BOND" statements from the PDB file format, and createBonds, which is a flag that determines if the parser should create bonds based on RNA molecule rules.</p>
+
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>Residue<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+
+      <pre class="prettyprint" data-lang="js">
+var residue = new Residue(molID, resName);
+residue.atoms.push([atomid, atomtype, x, y, z]);
+</pre>
+
+      <p style="line-height: 30px;">Residue is a class that represents one Guanine, Cytosine, Adenine, or Uracil molecule. It is initialized with two variables: a name (one of [g,u,a,c]), and a residue id (eg: "A1401", "B5").</p>
+
+      <pre class="prettyprint" data-lang="js">
+function Residue(name, residue) {
+    this.atoms = [];
+    this.name = name;
+    this.id = residue;
+}
+</pre>
+
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>BasePair<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <pre class="prettyprint" data-lang="js">
+basepairs.push(new BasePair(residue1, residue2, rotationMatrix, origin));
+</pre>
+      <p style="line-height: 30px;">BasePair is an class that represents the connection between two residues. It has several variables: the two residues (initially strings, but later set as the actual residue objects), the rotation matrix and center loaded from the ref_frames.dat file, the base pair type, and the atoms between the residues.
+</p>
+      <pre class="prettyprint" data-lang="js">
+function BasePair(res1, res2, r, c) {
+    this.residue1 = res1;
+    this.residue2 = res2;
+    this.rotation = r;
+    this.center = c;
+    this.atoms = []
+    this.bp_type = ""
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>PDBModel<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">PDBModel is a class that was used to store the various MODEL commands in a PDB file. The feature to switch between models is <b><i>deprecated</i></b>: even though it is still in use in the PDBParser, only the first model from any given PDB is used in the game. PDBModels stored the following:
+      <li>their model id</li>
+      <li>their atoms in a K>=V associative array by atomid</li>
+      <li>their atoms ids in a K>=V associative array by atom name/element (eg: p, o3')</li>
+      <li>their atom ids by residue</li>
+      <li>their bonds in an array of 3-element arrays (atom1id, atom2id, bondtype)</li>
+      <li>their bonds in a hashed array of pairs</li>
+      <li>their residue objects</li>
+      <li>their sequence, initially as an array of chains, but after parsing as a string</li>
+</p>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>MotifEntry<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">MotifEntry is just a class used to temporarily save the information loaded from the unique motifs .DAT file. It has no methods, just an initializer that sets all of its local variables.</p>
+      <pre class="prettyprint" data-lang="js">
+function MotifEntry(name, index, r, d, sug, bead, bend_angle) {
+  this.name = name;
+  this.index = index;
+  this.r = r;
+  this.d = d;
+  this.sug = sug;
+  this.bead = bead;
+  this.bend_angle = bend_angle;
+}
+
+motif_entries.push(new MotifEntry(name,index,r,d,sug,bead,bend_angle));
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>Model<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">Model is a class used to tidy up the game display function calls: each model is a different PDB file, with its own set of THREE.js objects. Additionally, each model is given an id, the url it was loaded from, linkage chains and base pair ends, a number representing what kind of molecule it is, a transform array, residue objects, base pairs, used ends, and the parsed dssr information.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px;" data-lang="js">
+// Some parts hidden for brevity's sake
+function Model(id) {
+  this.id = id;
+
+  this.particles = null; // Atoms
+  this.geometry = new THREE.Geometry(); // Location of atoms
+
+  this.collisionSpheres = []; // Spheres so you can select each atom
+  this.material = null; // Atoms texture
+  this.lineMaterial = []; // Array of possible textures for bonds
+
+  this.bonds = []; // Array of bonds: each element is a new residue
+  this.lineGeometry = []; // Array of locations of bonds
+  this.backboneBonds = null;
+  this.backboneGeometry = null; // Location of the backbone bonds
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Load/Parse Data</h2>
+      <h3>Functions that load or parse PDB, DSSR, or DAT files</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>THREE.PDBParser.loadFile<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">THREE.PDBParser.loadFile is a function that is used to load in the PDB file, the DAT file, and the DSSR file all at once. It takes in as its first variable the path to the PDB file, and the next three variables are the respective callback functions for when each file is loaded. The function returns nothing, instead using the callbacks to pass data.</p>
+      <pre class="prettyprint" style="overflow-x: wrap; word-wrap:break-word; padding-right: 25px;" data-lang="js">
+loadFile: function(url, pdbCallback, datCallback, dssrCallback) {
+    this.loadAjaxFile(url, pdbCallback, 1, this);
+    this.loadAjaxFile(url.substring(0, url.lastIndexOf("/")) +"/ref_frames.dat", datCallback, 0, this);
+    this.loadAjaxFile(url.substring(0, url.lastIndexOf(".pdb")) + "_dssr.out", dssrCallback, 2, this);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>THREE.PDBParser.parseDSSR<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">THREE.PDBParser.parseDSSR is a function that takes in the context from which it was called, and the text contents of the DSSR file. From there, it searches the file for the base pair match information and uses that to build and return an array of 3-element arrays. Each 3-element array contains the two ids of the residues, and the type of base pair formed between the residues.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px;" data-lang="js">
+parseDSSR: function(context, text) {
+    var lines = text.split("\n");
+    var startIndex = -1;
+    var endIndex = -1;
+    for(var i = 0; i < lines.length; i++) {
+        if(lines[i].match(/List of [0-9]+ base pairs/g)) startIndex = i;
+        if(startIndex != -1 && lines[i].indexOf("*") >= 0) { endIndex = i; break; }
+    }
+    console.log(startIndex + " " + endIndex);
+    var data = [];
+    for(var i = startIndex+2; i < endIndex; i++) {
+        var d = lines[i].trim().split(/\s+/);
+        if(d[0].match(/[0-9]+/g) && d.length==8) {
+            data.push([d[1], d[2], d[7]]);
+        }
+    }
+    return data;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>THREE.PDBParser.loadAjaxFile<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function creates a request object and then uses the GET protocol to request the contents of a file. Upon the successful loading of that file, the given callback is passed the file contents. Otherwise, an error message is outputted to the console. It takes in the url, the call back function, the context it was called from, and what kind of file we are loading (PDB,DSSR,DAT).</p>
+      <pre class="prettyprint" style="overflow-y: scroll; height: 400px; font-size: 15px; line-height: 20px;" data-lang="js">
+loadAjaxFile: function(url, callback, fileType, context) {
+  var xhr = new XMLHttpRequest();
+  var length = 0;
+
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === xhr.DONE) {
+      if(xhr.status === 200 || xhr.status === 0) {
+        if(xhr.responseText) {
+          if(fileType == 1) context.createModel(context.parsePDB(context, xhr.responseText), callback);
+          else if(fileType == 0) context.sendDAT(context.parseDAT(context, xhr.responseText), callback);
+          else if(fileType == 2) callback(context.parseDSSR(context, xhr.responseText));
+        } else console.warn("THREE.PDBParser: [" + url + "] is unreachable or empty");
+      } else console.error("THREE.PDBParser: Couldn't load [" + url +"] [" + xhr.status +"]");
+    } else if(xhr.readyState == xhr.HEADERS_RECIEVED) {
+      length = xhr.getResponseHeader("Content-Length");
+    }
+  };
+
+  xhr.open("GET", url, true);
+  if(xhr.overrideMimeType) xhr.overrideMimeType("text/plain; charset=x-user-defined");
+  xhr.setRequestHeader("Content-Type", "text/plain");
+  xhr.send(null);
+}
+</pre>
+
+      <p style="font-size: 15px; line-height: 20px;">The main part of this code lies in the <code>xhr.onreadystatechange</code> function, which waits until the correct status and readyState are returned.</p>
+
+
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>THREE.PDBParser.parseDAT<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function takes in the text contents of the DAT file, and then split it up into a line by line array. Afterwards, the array is then traversed, and using some regex matches the first and second residue, rotation, and origin for each base pair are extracted. This method returns the array of base pair objects found in the DAT file.</p>
+      <pre class="prettyprint" style="height: 400px; overflow-y: scroll; font-size: 15px; line-height: 20px;" data-lang="js">
+parseDAT: function(context, text) {
+    var lines = text.split("\n"); lines.shift();
+    var bps = [];
+    for(var i = 0; i < lines.length; i+= 5) { // every 5 lines, a new base pair obj
+      if(lines[i].trim() === "") continue; // empty line
+
+      // Lines Format:
+      //    ...     1 G-C   # A:.290_:[..G]G - A:.312_:[..C]C"
+      //    94.6760   147.9983    45.4915  # origin
+      //    0.9946    -0.0938     0.0440  # x-axis
+      //    0.0858     0.5072    -0.8576  # y-axis
+      //    0.0581     0.8567     0.5125  # z-axis
+
+      var regex = lines[i].match(/(\w+)\:\.*(\d+)/g);
+      var r1 = regex[0].replace(/\.|\:/g, '');
+      var r2 = regex[1].replace(/\.|\:/g, '');
+      var origin = lines[i+1].trim().split(/\s+/g);
+      origin = [parseFloat(origin[0]), parseFloat(origin[1]), parseFloat(origin[2])];
+      var rotation = [[],[],[]];
+      for(var j = 2; j < 5; j++) {
+        var line = lines[i+j];
+        var ln = line.trim().split(/\s+/g);
+        ln = [parseFloat(ln[0]), parseFloat(ln[1]), parseFloat(ln[2])];
+        rotation[j-2] = ln;
+      }
+      bps.push(new BasePair(r1, r2, rotation, origin));
+    }
+    return bps;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>THREE.PDBParser.parsePDB<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function is the main powerhouse of the PDBParser class. First, the PDB file is read line by line, while searching for <b><i>ATOM</i></b>, <b><i>HETATM</i></b>, <b><i>MODEL</i></b>, <b><i>ENDMDL</i></b>, and <b><i>CONECT</i></b> markers to create the PDB's models, atoms, and bonds. Afterwards, depending on the parser's flags, depending on the connection rules for guanine, cytosine, adenine, and uracil, connections are formed inside each residue. Finally, backbone bonds are formed in each residue connecting the phosphate to the o3' end, and bonds are created connecting residues together.</p>
+      <pre style="height: 380px; overflow-y: scroll; font-size: 15px; line-height: 20px;" class="prettyprint" data-lang="js">
+var models = {}; // array of PDBModel
+var lines = text.split("\n"); // line by line file contents
+
+for(var i = 0; i < lines.length; i++) {
+  if(lines[i].substring(0, 5) == "MODEL") {
+    var id = lines[i].substring(11, 14).replace(/\s+/g, '');
+    models[id] = new PDBModel(id);
+  }
+} // determine how many models we need
+
+var currentModel = null;
+var prevResidue = null;
+var count = 0;
+
+var modelsSize = 0;
+for(key in models) modelsSize++;
+
+if(modelsSize == 0) {
+  models[1] = new PDBModel(1);
+  currentModel = models[1];
+}
+
+for(var i = 0; i < lines.length; i++) {
+  if(lines[i].substring(0, 5) == "MODEL") { // move on to the next model
+    var id = lines[i].substring(11, 14).replace(/\s+/g, '');
+    currentModel = models[id];
+    prevResidue = null;
+    count = 0;
+  } else if(lines[i].substring(0, 6) == "ENDMDL") { // stop using the current model
+    currentModel = null;
+  } else if(lines[i].substring(0, 4) == "ATOM" || lines[i].substring(0, 6) == "HETATM") {
+    var id = parseInt(lines[i].substring(7, 11).trim()); // 1, 2, 3, 4, 5...
+    var type = lines[i].substring(12, 16).toLowerCase().trim(); // c4, h5', p, o3'...
+    if(type == "ho2'") type = "h2''"; // make it fit the convention
+    var molID = lines[i].substring(16, 21).replace(/\s+/g, '').toLowerCase(); // g, u, a, c, t
+    var residue = lines[i].substring(21, 26).replace(/\s+/g, ''); // A1401, A1402, A9, B10...
+    var x = parseFloat(lines[i].substring(30, 38));
+    var y = parseFloat(lines[i].substring(38, 46));
+    var z = parseFloat(lines[i].substring(46, 54));
+
+    // all atoms of a certain residue are in the same part of the file
+    if(prevResidue !== residue) {
+      currentModel.residues.push([]);
+      currentModel.residueObjs.push(new Residue(molID, residue));
+    }
+    currentModel.residues[currentModel.residues.length - 1].push(id);
+    prevResidue = residue;
+
+    var mol = lines[i].substr(76, 2).toLowerCase().trim(); // n, h, o, c, he...
+    if(mol === "") mol = lines[i].substr(12, 2).toLowerCase().trim();
+    mol = mol.substring(0, 1); // only take the first letter
+
+    currentModel.atoms[id] = [id, type, molID, residue, x, y, z, mol, context.colors[mol], count];
+    currentModel.residueObjs[currentModel.residueObjs.length - 1].atoms.push([count, type, x, y, z]);
+    count++;
+
+    if(currentModel.atommap[type] === undefined) currentModel.atommap[type] = [];
+    currentModel.atommap[type].push(id);        
+  } else if(lines[i].substring(0, 6) == "CONECT" && context.loadBonds) { // a bond statement
+    var id1 = parseInt(lines[i].substr(6, 5));
+    for(var m in models) {
+      createBond(models[m], id1, parseInt(lines[i].substr(11, 5)), 1); // 4 possible connections
+      createBond(models[m], id1, parseInt(lines[i].substr(16, 5)), 1);
+      createBond(models[m], id1, parseInt(lines[i].substr(21, 5)), 1);
+      createBond(models[m], id1, parseInt(lines[i].substr(26, 5)), 1);  
+    }     
+  }
+}
+
+console.log("Done Reading File...");
+
+if(context.createBonds) {
+  for(var m in models) {
+    var currentModel = models[m];
+
+    // Inside a residue use the rules to create bonds
+    for(var i in currentModel.atoms) {
+      var rules = null;
+      if(currentModel.atoms[i][2] == 'g') rules = context.rulesG;
+      else if(currentModel.atoms[i][2] == 'u') rules = context.rulesU;
+      else if(currentModel.atoms[i][2] == 't') rules = context.rulesT;
+      else if(currentModel.atoms[i][2] == 'a') rules = context.rulesA;
+      else if(currentModel.atoms[i][2] == 'c') rules = context.rulesC;
+      else if(currentModel.atoms[i][2] == 'fmn') rules = null;
+
+      if(rules !== null && rules[currentModel.atoms[i][1]] !== undefined) {
+        var rule = rules[currentModel.atoms[i][1]];
+        for(var j = 0; j < rule.length; j++) {
+          var bondType = 1;
+          var name = rule[j];
+          if(rule[j].indexOf("*") == 0) {
+            bondType = 2;
+            name = name.substring(1);
+          }
+          var list = currentModel.atommap[name];
+          if(list !== undefined) {
+            for(var k = 0; k < list.length; k++) {
+              if(currentModel.atoms[list[k]][3] == currentModel.atoms[i][3]) {
+                createBond(currentModel, i, list[k], bondType);
+                break;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // Create the backbone in each residue
+    for(var i in currentModel.atoms) {
+      if(currentModel.atoms[i][2] !== 'fmn' && currentModel.atoms[i][1] == "p") {
+        for(var j in currentModel.atoms) {
+          if( i == j || 
+            currentModel.atoms[j][2] == 'fmn' || 
+            currentModel.atoms[j][1] !== "o3'" || 
+            currentModel.atoms[j][3] !== currentModel.atoms[i][3]) continue;
+            createBond(currentModel, i, j, -1);
+        }
+      }
+    }
+
+    // Create bonds between residue to residue
+    currentModel.residues.sort(function(r1, r2) { return currentModel.atoms[r2[0]][3] - currentModel.atoms[r1[0]][3]; });
+    for(var i = 0; i < currentModel.residues.length; i++) {
+      var r = currentModel.residues[i];
+      var d_1 = 1000, d_2 = 1000, id_1 = -1, id_2 = -1;
+      var atom_1 = null, atom_2 = null, atom_3 = null, atom_4 = null;
+      for(var l = 0; l < currentModel.residues.length; l++) {
+        if(l == i) continue;
+
+        var atom1 = findAtom(currentModel.residueObjs[i], "p");
+        var atom2 = findAtom(currentModel.residueObjs[i], "o3'");
+        var atom3 = findAtom(currentModel.residueObjs[l], "p");
+        var atom4 = findAtom(currentModel.residueObjs[l], "o3'");
+
+        var d1 = Math.sqrt(calcDistanceSquare(atom1, atom4));
+        var d2 = Math.sqrt(calcDistanceSquare(atom2, atom3));
+        if(d1 < d_1) { d_1 = d1; id_1 = l; atom_1 = atom1; atom_4 = atom4; }
+        if(d2 < d_2) { d_2 = d2; id_2 = l; atom_2 = atom2; atom_3 = atom3; }
+      }
+      if(id_1 != -1 && d_1 < 2) {
+        var atom1 = findAtomByCoords(currentModel.atoms, atom_1[2], atom_1[3], atom_1[4]);
+        var atom2 = findAtomByCoords(currentModel.atoms, atom_4[2], atom_4[3], atom_4[4]);
+
+        createBond(currentModel, atom1[0], atom2[0], 1);
+        createBond(currentModel, atom1[0], atom2[0], -1);
+        if( parseInt(atom1[3].replace(/[^\d.]/g, "")) < parseInt(atom2[3].replace(/[^\d.]/g, ""))) currentModel.sequence[atom1[3]] = [atom1[0], atom2[0]];
+        else currentModel.sequence[atom2[3]] = [atom2[0], atom1[0]];
+      }
+
+      if(id_2 != -1 && d_2 < 2) {
+
+        var atom1 = findAtomByCoords(currentModel.atoms, atom_2[2], atom_2[3], atom_2[4]);
+        var atom2 = findAtomByCoords(currentModel.atoms, atom_3[2], atom_3[3], atom_3[4]);
+        
+        createBond(currentModel, atom1[0], atom2[0], 1);
+        createBond(currentModel, atom1[0], atom2[0], -1);
+        if( parseInt(atom1[3].replace(/[^\d.]/g, "")) < parseInt(atom2[3].replace(/[^\d.]/g, ""))) currentModel.sequence[atom1[3]] = [atom1[0], atom2[0]];
+        else currentModel.sequence[atom2[3]] = [atom2[0], atom1[0]];
+      }
+    }
+
+    // Generate the model's sequence
+    var previousRes = null;
+    var sequenceStr = "";
+
+    for(var key in currentModel.sequence) {
+      if(currentModel.sequence.hasOwnProperty(key)) {
+          var start = currentModel.atoms[currentModel.sequence[key][0]];
+          var end = currentModel.atoms[currentModel.sequence[key][1]];    
+      }
+    }
+
+    for (var key in currentModel.sequence) {
+      if (currentModel.sequence.hasOwnProperty(key)) {
+        var start = currentModel.atoms[currentModel.sequence[key][0]];
+        var end = currentModel.atoms[currentModel.sequence[key][1]];
+        if(start[3] !== previousRes) sequenceStr = sequenceStr.substring(0, sequenceStr.length-1) + "|" + start[3] + ",";
+        sequenceStr += end[3] + ",";
+        previousRes = end[3];
+      }
+    }
+    currentModel.sequence = sequenceStr.substring(1, sequenceStr.length-1);
+  }
+}
+return {"ok": true, "models":models};
+</pre>
+      <p style="font-size: 15px; line-height: 20px;">The entire data set is returned as a JSON value. The JSON value has two fields, out of which only one is important: json["ok"] (a boolean that is always true), and json["models"], containing the models that were just parsed.</p>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>parseMotifGhostData<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function takes in the file contents of the unique motif DAT file and then parses the motif entries information. The function only takes in the file contents, and does not return anything: instead it sets the value of the global motifEntries variable.</p>
+      <pre class="prettyprint" style="height: 420px; overflow-y: scroll; font-size: 15px; line-height: 20px;" data-lang="js">  
+function parseMotifGhostData(text) {
+  var fileContent = text;
+  var lines = fileContent.split("\n");
+  for(var i = 0; i < lines.length-1; i++) {
+    var spl = lines[i].split(";");
+    var name = spl[0];
+    var index = parseInt(spl[1]);
+    var r = [[],[],[]];
+    var d = [];
+    var sug = [[],[]];
+    var bead = [[],[]];
+    var bend_angle = parseFloat(spl[6]);
+
+    var spl2 = spl[2].split(" ");
+    var c = 0;
+    for(var j = 0; j < spl2.length-1; j++) {
+      if(j != 0 && j % 3 == 0) {
+        c += 1;
+      }
+      r[c].push(parseFloat(spl2[j]));
+ 
+    }
+
+    spl2 = spl[3].split(" ");
+    for(var j = 0; j < spl2.length; j++){
+      d.push(parseFloat(spl2[j]));
+    }
+    
+    spl2 = spl[4].split(" ");
+    c = 0;
+    for(var j = 0; j < spl2.length-1; j++) {
+      if(j != 0 && j % 3 == 0) {
+        c += 1;
+      }
+      sug[c].push(parseFloat(spl2[j]));
+    }
+
+    spl2 = spl[5].split(" ");
+    c = 0;
+    for(var j = 0; j < spl2.length; j++) {
+      if(j != 0 && j % 3 == 0) {
+        c += 1;
+      }
+      bead[c].push(parseFloat(spl2[j]));
+    }
+
+
+    motif_entries.push(new MotifEntry(name,index,r,d,sug,bead,bend_angle));
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Manipulate Atoms</h2>
+      <h3>Utility functions for atoms, residues, and distances</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>createBond<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function creates a bond between two atoms by first creating a hash of their connection ids, and then checking if a bond already exists. If it doesn't exist, then the hash is added and the bond is pushed to the array. It takes in the current model, the two atom ids, and the type of bond (single, double, backbone). The first atom is assumed to exist, since it is parsed in straight from the PDB.</p>
+      <pre class="prettyprint" data-lang="js">
+function createBond(model, id1, id2, type) {
+  if(id2 > 0) {
+    var h = "s" + Math.min(id1, id2) + "e" + Math.max(id1, id2) + "t" + type;
+    if(model.bhash[h] === undefined) {
+      model.bonds.push([id1, id2, type]);
+      model.bhash[h] = model.bonds.length - 1;
+    }
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>distance<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function returns the distance between two atoms, given that their X,Y,Z coordinates lie at positions 5,6,7 in the atom array. For some atoms, this is true, but for other atom arrays, the other distance function should be used. Thus, this function assumes we are using the PDB atom.</p>
+      <pre class="prettyprint" style="overflow-x: wrap; word-wrap:break-word; " data-lang="js">
+function distance(atom1, atom2) {
+  var a = Math.pow(Math.pow(atom1[4] - atom2[4], 2) + Math.pow(atom1[5] - atom2[5], 2) + Math.pow(atom1[6] - atom2[6], 2), 0.5);
+  return a;     
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>searchAllAtoms<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This is a trivial search function that is given an array of atoms, the name of an atom, and the residue that atom is in. This function just searches the array of atoms until it finds an atom that matches these conditions. It returns the atom that is found, or null if none are found.</p>
+      <pre class="prettyprint" data-lang="js">
+function searchAllAtoms(atoms, residueName, atomName) {
+  for(var i in atoms) {
+    if(atoms[i][3] !== residueName) continue;
+    if(atoms[i][1] === atomName) return atoms[i];
+  }
+  return null;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>findAtomByCoords<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function is another trivial search function: an array of atoms is given, and so are the coordinates of an atom. It just loops through the array until it finds the specific atom and returns that, otherwise it returns null.</p>
+      <pre class="prettyprint" data-lang="js">
+function findAtomByCoords(atoms, x, y, z) {
+  for(var i in atoms) {
+    if(atoms[i][4] == x && atoms[i][5] == y && atoms[i][6] == z) return atoms[i];
+  }
+  return null;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>findAtom<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function is yet another search function to find atoms, except in this case an atom name is given and so is a residue object: the function loops through the residue object's atoms until it finds the specific atom, and returns it. Otherwise, it returns null.</p>
+      <pre class="prettyprint" data-lang="js">
+function findAtom(residue, atomname) {
+  for(var i = 0; i < residue.atoms.length; i++) {
+    if(residue.atoms[i][1] == atomname) return residue.atoms[i];
+  }
+  return null;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>scoreP4P5<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function is a variation of the default scoring function, modified for the P4-P5 tutorial. Here, the distance is calculated to the target end from the end we are currently at, and then that distance is returned.</p>
+      <pre class="prettyprint" data-lang="js">
+function scoreP4P5(end, tf) {
+ d_diff = calcDistance(calculateCenter(targetEnd.atoms),calculateCenter(end.atoms));
+ console.log(d_diff);
+ return d_diff;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>scoreEnd<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This is the default scoring function for all puzzles. First the distance to the target end from our basepair end is calculated. Afterwards, the variation in orientation is calculated by using the rotation matrices and previous transforms of the two ends. Finally, the two are added and returned.</p>
+      <pre class="prettyprint" style="height: 420px; overflow-y: scroll; font-size: 15px; line-height: 20px;"  data-lang="js">
+function scoreEnd(end,tf) {
+  d_diff = calcDistance(calculateCenter(targetEnd.atoms),calculateCenter(end.atoms));
+  r_diff = 0;
+
+  //update end frame
+  var final_r = [[],[],[]];
+  if(tf.length !== 0) {
+    var pRotation = [[],[],[]];
+    for(var i = 0; i < 3; i++) {
+      for(var j = 0; j < 3; j++) {
+        pRotation[i][j] = tf[i][j];
+      }
+    }
+    final_r = multiplyMatrices(end.rotation, transpose(pRotation));
+  }
+  else { final_r = end.rotation; }
+
+  for (var i = 0; i < 3; i++) {
+    for (var j = 0; j < 3; j++) {
+      r_diff += Math.abs(targetEnd.rotation[i][j] - final_r[i][j]);
+    }
+  }
+
+  return d_diff + 2*r_diff;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>isvalidsolution<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function takes in a model and determines the average distance between that model and the ending point. If it meets some requirement: 1.5 for the tutorial and 7 for the puzzles, then the solution is valid. The function also updates the score GUI as well.</p>
+      <pre class="prettyprint" style="height: 420px; overflow-y: scroll; font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px;" data-lang="js">
+function isvalidsolution(model) {
+
+  document.getElementById("currentScore").style.color = "rgb(240, 50, 100)";
+  var scoreAverage = 0;
+
+  for (var i = 0; i < model.ends.length; i++) {
+    if(puzName == "P4-P5 Tutorial") { score = scoreP4P5(model.ends[i], model.tf); document.getElementById("targetScore").innerHTML = "Target Score: 1.5"; }
+    else score = scoreEnd(model.ends[i],model.tf);
+    scoreAverage += score;
+    if( (score < 7 && puzName !== "P4-P5 Tutorial" && models.length > 1) || (score < 1.5 && puzName == "P4-P5 Tutorial" && models.length > 1)) {      
+      document.getElementById("currentScore").innerHTML = "Current Score: " + Math.round(score*100)/100;
+      document.getElementById("currentScore").style.color = "rgb(50, 200, 70)"; 
+      return 1;
+    }
+  }
+
+  document.getElementById("currentScore").innerHTML = "Current Score: " + Math.round((scoreAverage/model.ends.length)*100)/100;
+  return 0;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>calcDistance<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function returns the distance between two points, given that their X,Y,Z coordinates lie at positions 0,1,2 in the atom array. For some atoms (all points), this is true, but for other atom arrays, the other distance function should be used. Thus, this function assumes we are using a point.</p>
+      <pre class="prettyprint" style="word-wrap: break-word; padding-right: 25px;" data-lang="js">
+function calcDistance(point1, point2) {
+  return Math.pow(Math.pow(point1[0] - point2[0], 2) + Math.pow(point1[1] - point2[1], 2) + Math.pow(point1[2] - point2[2], 2), 0.5); 
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>calcDistanceSquare<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function returns the square of a distance between two residue atoms, given that their X,Y,Z coordinates lie at positions 2,3,4 in the atom array. For some atoms (in the residue objects), this is true, but for other atom arrays (in the pdb models), the other distance function should be used. Thus, this function assumes we are using a residue objects atom.</p>
+      <pre class="prettyprint" style="word-wrap: break-word; padding-right: 25px;" data-lang="js">
+function calcDistanceSquare(atom1, atom2) {
+  return Math.pow(atom1[2] - atom2[2], 2) + Math.pow(atom1[3] - atom2[3], 2) + Math.pow(atom1[4] - atom2[4], 2);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>calculateCenter<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">Given a list of atoms, this function will calculate the average center for all those atoms. It takes in an array of residue object atoms, and returns an array with 3 elements: x, y, and z.</p>
+      <pre class="prettyprint" data-lang="js">
+function calculateCenter(atoms) {
+  var center = [0, 0, 0];
+  for(var i = 0; i < atoms.length; i++) {
+    center[0] += atoms[i][2]; center[1] += atoms[i][3]; center[2] += atoms[i][4];
+  }
+  center[0] /= atoms.length; center[1] /= atoms.length; center[2] /= atoms.length;
+  return center;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>clashExists<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function determines if a clash exists somewhere in the molecule. It takes in an end basepair that we are checking to find a clash with, and then loops through all of the centers of the residues while calculating the distance. If the distance is less than 2 angstroms then the clash exists.</p>
+      <pre class="prettyprint" style="height: 420px; overflow-y: scroll; font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px;" data-lang="js">
+function clashExists(end) {
+
+  for(var i = 0; i < models[models.length-1].residueCenters.length; i++) {
+    var resId = models[models.length-1].residueObjs[i].id;
+
+    if(resId == end.residue1.id || resId == end.residue2.id) continue;
+
+    for(var j = 0; j < models.length-1; j++) {
+      for(var k = 0; k < models[j].residueCenters.length; k++) {
+        //needs to be able to overlay with the target end
+        if(j == 0) {
+          if(models[j].residueObjs[k].id == targetResiduesIds[0] || models[j].residueObjs[k].id == targetResiduesIds[1]) {
+            continue;
+          }
+        }
+
+        if( calcDistance(models[j].residueCenters[k], models[models.length-1].residueCenters[i]) < 2) return true; 
+      }
+    }
+  }
+  return false;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>align3<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function is another powerhouse function, and is taken almost completely from Joe's Python code. There are various steps: first, we save the old coordinates, next we determine the rotation, afterwards, we apply the previous rotations from old motifs, then we apply the translation, account for the sugar difference, save the coordinates, and return everything as a JSON object. The JSON object has three fields: <b><i>json["tf"]</i></b> for the transform, <b><i>json["oldcoords"]</i></b> for the old coordinates, and <b><i>json["coords"]</i></b> for the new coords.</p>
+      <pre class="prettyprint" style="height: 420px; overflow-y: scroll; font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px;" data-lang="js">
+function align3(ref_bp, model, end_pos, previous_transform) {
+  var r1 = ref_bp.rotation;
+  var r2 = model.ends[end_pos].rotation;
+  var rotation = multiplyMatrices(transpose(r1), r2);
+
+  var rotation_origin = calculateCenter(model.ends[end_pos].atoms);
+
+  // Save old coordinates
+  var coords = [];
+  var oldcoords = [];
+  for(var i = 0; i < model.geometry.vertices.length; i++) {
+    var v = model.geometry.vertices[i];
+    coords[i] = [v.x/factor, v.y/factor, v.z/factor];
+    oldcoords[i] = [v.x/factor, v.y/factor, v.z/factor];
+  }
+
+  // Apply new rotation
+  coords = subtractMatrices2(multiplyMatrices(coords, transpose(rotation)), rotation_origin);
+
+  // Apply previous rotations
+  if(previous_transform.length !== 0) {
+    var pTranslation = [previous_transform[0][3],previous_transform[1][3],previous_transform[2][3]];
+
+    var pRotation = [[],[],[]];
+    for(var i = 0; i < 3; i++) {
+      for(var j = 0; j < 3; j++) {
+        pRotation[i][j] = previous_transform[i][j];
+      }
+    }
+
+   coords = multiplyMatrices(coords, transpose(pRotation));
+  }
+
+  var rotation_origin_2 = subtractMatrices(dotProduct(rotation_origin, transpose(rotation)), rotation_origin);
+  var bp_pos_diff = subtractMatrices(calculateCenter(ref_bp.atoms), rotation_origin_2);
+
+  // Apply new translation
+  for(var i = 0; i < coords.length; i++) {
+    coords[i][0] += bp_pos_diff[0];
+    coords[i][1] += bp_pos_diff[1];
+    coords[i][2] += bp_pos_diff[2];
+  }
+
+  // Modify the actual geometry
+  for(var i = 0; i < model.ends.length; i++) {
+    for(var j = 0; j < model.ends[i].atoms.length; j++) {
+      var atom = model.ends[i].atoms[j];
+      atom[2] = coords[atom[0]][0];
+      atom[3] = coords[atom[0]][1];
+      atom[4] = coords[atom[0]][2];
+    }
+  }
+
+  // Offset the atoms to account for sugar differences
+  var ref_c1_atoms = [];
+  var model_c1_atoms = [];
+
+  for(var i = 0; i < ref_bp.atoms.length; i++) {
+    if(ref_bp.atoms[i][1] == "c1'") ref_c1_atoms.push(ref_bp.atoms[i]);
+  }
+
+  for(var i = 0; i < model.ends[end_pos].atoms.length; i++) {
+    if(model.ends[end_pos].atoms[i][1] == "c1'") model_c1_atoms.push(model.ends[end_pos].atoms[i]);
+  }
+
+  if( calcDistanceSquare(ref_c1_atoms[0], model_c1_atoms[0]) > calcDistanceSquare(ref_c1_atoms[0], model_c1_atoms[1])) {
+    var temp = model_c1_atoms[1];
+    model_c1_atoms[1] = model_c1_atoms[0];
+    model_c1_atoms[0] = temp;
+  }
+
+  var sugar_diff_1 = [ref_c1_atoms[0][2] - model_c1_atoms[0][2], ref_c1_atoms[0][3] - model_c1_atoms[0][3], ref_c1_atoms[0][4] - model_c1_atoms[0][4]];
+  var sugar_diff_2 = [ref_c1_atoms[1][2] - model_c1_atoms[1][2], ref_c1_atoms[1][3] - model_c1_atoms[1][3], ref_c1_atoms[1][4] - model_c1_atoms[1][4]];
+
+  // Add to the actual coordinates
+  for(var i = 0; i < coords.length; i++) {
+    coords[i][0] += ((sugar_diff_1[0] + sugar_diff_2[0])/2);
+    coords[i][1] += ((sugar_diff_1[1] + sugar_diff_2[1])/2);
+    coords[i][2] += ((sugar_diff_1[2] + sugar_diff_2[2])/2);
+  }
+
+  // Change the actual geometry
+  for(var i = 0; i < model.ends.length; i++) {
+    for(var j = 0; j < model.ends[i].atoms.length; j++) {
+      var atom = model.ends[i].atoms[j];
+      atom[2] = coords[atom[0]][0];
+      atom[3] = coords[atom[0]][1];
+      atom[4] = coords[atom[0]][2];
+    }
+  }
+
+  // Change the actual residue geometry
+  for(var i = 0; i < model.residueObjs.length; i++) {
+    for(var j = 0; j < model.residueObjs[i].atoms.length; j++) {
+      var atom = model.residueObjs[i].atoms[j];
+      atom[2] = coords[atom[0]][0];
+      atom[3] = coords[atom[0]][1];
+      atom[4] = coords[atom[0]][2];
+    }
+  }
+
+  // Changing model.residueCenters
+  model.residueCenters = [];
+  for(var j = 0; j < model.residueObjs.length; j++) {
+    //if 
+    model.residueCenters.push(calculateCenter(model.residueObjs[j].atoms));
+  }
+
+  // Recalculate the transform object
+  if(previous_transform.length == 0) {
+    previous_transform = [rotation[0], rotation[1], rotation[2], [0,0,0,1]];
+    previous_transform[0].push(-rotation_origin[0]);
+    previous_transform[1].push(-rotation_origin[1]);
+    previous_transform[2].push(-rotation_origin[2]);
+  } else {
+    var currentMatrix = [rotation[0], rotation[1], rotation[2], [0,0,0,1]];
+    currentMatrix[0].push(-rotation_origin[0]);
+    currentMatrix[1].push(-rotation_origin[1]);
+    currentMatrix[2].push(-rotation_origin[2]);
+    previous_transform = multiplyMatrices(previous_transform, currentMatrix);
+  }
+
+  // Return everything as JSON object
+  return {"tf":previous_transform,"coords":coords, "oldcoords": oldcoords};
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Ghost Motifs/Hints</h2>
+      <h3>Anything related to the generation of possible solutions</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>projectPossibleSolutions<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function generates the possible solution coordinates for the motifs, using the unique motif data. This code is also taken directly from Joe's python code. The function takes in the current model, and the end from which we are starting, and then returns the array of coordinates, along with the corresponding url, rotation, and bend angle.</p>
+      <pre class="prettyprint" style="height: 420px; overflow-y: scroll; font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px;" data-lang="js">
+function projectPossibleSolutions(model,end_index) {
+  var end = model.ends[end_index];
+  console.log(model);
+  console.log(end_index);
+  console.log(end);
+  var end_center = calculateCenter(end.atoms);
+  var end_c1_atoms = [];
+
+  centers = []
+
+  for(var i = 0; i < end.atoms.length; i++) {
+    var atom = end.atoms[i];
+    if(end.atoms[i][1] == "c1'") end_c1_atoms.push([atom[2],atom[3],atom[4]]);
+  }
+
+  var final_r = [[],[],[]];
+  if(model.tf.length !== 0) {
+    var pRotation = [[],[],[]];
+    for(var i = 0; i < 3; i++) {
+      for(var j = 0; j < 3; j++) {
+        pRotation[i][j] = model.tf[i][j];
+      }
+    }
+    final_r = multiplyMatrices(end.rotation, transpose(pRotation));
+  }
+  else { final_r = end.rotation; }
+
+
+  for(var i = 0; i < motif_entries.length; i++) {
+
+    var r_trans = multiplyMatrices(transpose(final_r), start_r);
+    var t_trans = start_d;
+
+    t_trans[0] = -t_trans[0]; t_trans[1] = -t_trans[1]; t_trans[2] = -t_trans[2]; 
+
+    var new_sugars_2 =  multiplyMatrices(start_sug, transpose(r_trans));
+
+    for(var j = 0; j < 2; j++) {
+      new_sugars_2[j][0] += t_trans[0] + end_center[0];
+      new_sugars_2[j][1] += t_trans[1] + end_center[1];
+      new_sugars_2[j][2] += t_trans[2] + end_center[2];
+    }
+
+    if( calcDistance(new_sugars_2[0], end_c1_atoms[0]) > calcDistance(new_sugars_2[0], end_c1_atoms[1])) {
+      var temp = new_sugars_2[1];
+      new_sugars_2[1] = new_sugars_2[0];
+      new_sugars_2[0] = temp;
+    }
+
+    var sugar_diff_1 = [end_c1_atoms[0][0] - new_sugars_2[0][0], end_c1_atoms[0][1] - new_sugars_2[0][1], end_c1_atoms[0][2] - new_sugars_2[0][2]];
+    var sugar_diff_2 = [end_c1_atoms[1][0] - new_sugars_2[1][0], end_c1_atoms[1][1] - new_sugars_2[1][1], end_c1_atoms[1][2] - new_sugars_2[1][2]];
+
+    t_trans[0] += ((sugar_diff_1[0] + sugar_diff_2[0])/2);
+    t_trans[1] += ((sugar_diff_1[1] + sugar_diff_2[1])/2);
+    t_trans[2] += ((sugar_diff_1[2] + sugar_diff_2[2])/2);
+
+    var new_bead_pos = multiplyMatrices(motif_entries[i].bead,transpose(r_trans));
+    for(var j = 0; j < new_bead_pos.length; j++) {
+      new_bead_pos[j][0] += t_trans[0] + end_center[0]; 
+      new_bead_pos[j][1] += t_trans[1] + end_center[1]; 
+      new_bead_pos[j][2] += t_trans[2] + end_center[2];
+    }
+
+    skip = 0;
+    for(var j = 0; j < models.length; j++) {
+      for(var k = 0; k < models[j].residueCenters.length; k++) {
+        var dist1 = calcDistance(new_bead_pos[0],models[j].residueCenters[k]);
+        var dist2 = calcDistance(new_bead_pos[1],models[j].residueCenters[k]);
+        if(dist1 < 4.0 || dist2 < 4.0) { 
+          //console.log("made it");
+          skip = 1;
+          break;
+        }
+      }
+      if(skip) continue;
+    }
+
+    if(skip) continue;
+
+    var new_origin = dotProduct(motif_entries[i].d,transpose(r_trans));
+    new_origin[0] += t_trans[0] + end_center[0]; 
+    new_origin[1] += t_trans[1] + end_center[1]; 
+    new_origin[2] += t_trans[2] + end_center[2];
+    var new_rotation = multiplyMatrices(motif_entries[i].r,transpose(r_trans));
+    new_origin.push(motif_entries[i].name);
+    new_origin.push(new_rotation);
+    new_origin.push(motif_entries[i].bend_angle);
+    centers.push(new_origin);
+  }
+
+  return centers;
+
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>hideGhostMolecules<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function toggles the display for all the ghost molecules, depending on which group is currently selected. The group index that is a parameter can be a number from 0-5, inclusive. If the index is 0, no molecules will be displayed, otherwise, only 1 group will be displayed using 1-indexing.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px;" data-lang="js">
+function hideGhostMolecules(index) {
+  ghostIndex = index;
+  for(var i = 0; i < ghostParticles.length; i++) {
+    if(ghostIndex-1 == i) {
+      ghostParticles[i].visible = true;
+      ghostArrows[i].visible = true;
+    } else {
+      ghostParticles[i].visible = false;
+      ghostArrows[i].visible = false;
+    }
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>splitArray<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This is just a utility function to split one large array into a group of arrays of close to equal size. This is used to split the ghost molecules into 5 different groups. The first parameter is the large array and the second parameter is the number of total arrays.</p>
+      <pre class="prettyprint" data-lang="js">
+// a = array, n = num arrays
+function splitArray(a, n) {
+    var len = a.length,out = [], i = 0;
+    while (i < len) {
+        var size = Math.ceil((len - i) / n--);
+        out.push(a.slice(i, i += size));
+    }
+    return out;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>resetGhostMolecules<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 20px; line-height: 25px;">This function is called every time an update is made to the ghost molecules. First it removes all the molecules, and then adds based on the most recently added motif. Afterwards, it toggles the display based on the current ghostIndex and adds the index to the startIndices array. The startIndices array is used when undoing a motif add and reverting back to those previous ghost molecules. The parameter for this function is the index of the end that we are adding upon.</p>
+      <pre class="prettyprint" data-lang="js">
+function resetGhostMolecules(startIndex) {
+  removeGhostMolecules();
+  addGhostMolecules(startIndex);
+  hideGhostMolecules(ghostIndex);
+  ghostStartIndices.push(startIndex);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>addGhostMolecules<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function adds the ghost solutions using the given motif end. First the project function is called to get the list of centers, and the centers are sorted by bondAngle. They are then split up into 5 different arrays, and a plane is calculated surronding each center that represents the base pair of that motif. The plane is represented using several lines, and the center represented using a sphere. The collision spheres for clicking are also added to the game.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function addGhostMolecules(startIndex) {
+    var projectedCenters = projectPossibleSolutions(models[models.length-1],startIndex);
+    projectedCenters.sort(function(a,b){
+        if(a[5] !== b[5]) return a[5] - b[5];
+        else return a[3].localeCompare(b[3]);
+    });
+    projectedCenters = splitArray(projectedCenters, 5); // 5 chunks for numkeys 1-5
+
+    for(var j = 0; j < projectedCenters.length; j++) {
+      ghostMotifs.push([]);
+      var ghostGeometry = new THREE.Geometry();
+      var ghostArrowsGeometry = new THREE.Geometry();
+
+      // For each of the groups
+      for(var i = 0; i < projectedCenters[j].length; i++) {
+        var vector = new THREE.Vector3(projectedCenters[j][i][0]*factor + mainOffset.x*factor,
+                                       projectedCenters[j][i][1]*factor + mainOffset.y*factor,
+                                       projectedCenters[j][i][2]*factor + mainOffset.z*factor);
+
+        var d1_x = projectedCenters[j][i][4][0][0]*factor; var d1_y = projectedCenters[j][i][4][1][0]*factor;
+        var d2_x = projectedCenters[j][i][4][0][1]*factor; var d2_y = projectedCenters[j][i][4][1][1]*factor;
+        var d3_x = projectedCenters[j][i][4][0][2]*factor; var d3_y = projectedCenters[j][i][4][1][2]*factor;
+        
+        var dtot_x = Math.sqrt((d1_x*d1_x)+(d2_x*d2_x)+(d3_x*d3_x)); 
+        var dtot_y = Math.sqrt((d1_y*d1_y)+(d2_y*d2_y)+(d3_y*d3_y));
+        var dfact_x = 150/dtot_x; d1_x *= dfact_x; d2_x *= dfact_x; d3_x *= dfact_x;
+        var dfact_y = 400/dtot_y; d1_y *= dfact_y; d2_y *= dfact_y; d3_y *= dfact_y;
+        
+        var vec1 = new THREE.Vector3(vector.x + d1_x + d1_y ,vector.y + d2_x + d2_y, vector.z + d3_x + d3_y);
+        var vec2 = new THREE.Vector3(vector.x + d1_x - d1_y ,vector.y + d2_x - d2_y, vector.z + d3_x - d3_y);
+        var vec3 = new THREE.Vector3(vector.x - d1_x + d1_y ,vector.y - d2_x + d2_y, vector.z - d3_x + d3_y);
+        var vec4 = new THREE.Vector3(vector.x - d1_x - d1_y ,vector.y - d2_x - d2_y, vector.z - d3_x - d3_y);
+
+        // Draw the collision sphere
+        ghostGeometry.vertices.push(vector);
+        var sphere = new THREE.Mesh(new THREE.SphereGeometry(80,12,12),new THREE.MeshBasicMaterial({color:0xffddee, visible:false}));
+        ghostGeometry.colors.push(new THREE.Color(0.5, 0.7, 0.85));
+
+        // Draw the plane
+        ghostArrowsGeometry.vertices.push(vec1); ghostArrowsGeometry.vertices.push(vec2);
+        ghostArrowsGeometry.vertices.push(vec2); ghostArrowsGeometry.vertices.push(vec4);
+        ghostArrowsGeometry.vertices.push(vec3); ghostArrowsGeometry.vertices.push(vec4);
+        ghostArrowsGeometry.vertices.push(vec3); ghostArrowsGeometry.vertices.push(vec1);
+
+        // Add the collision sphere
+        sphere.url = projectedCenters[j][i][3]; sphere.name = "ghost_" + i;
+        ghostMotifs[j].push(sphere);
+        sphere.position = vector;
+        scene.add(sphere);
+      }
+
+      // Add the actual sphere
+      var ghostParticle = new THREE.ParticleSystem(ghostGeometry, new THREE.ParticleSystemMaterial( { size: 350, map: sprite, vertexColors: true, transparent: true, alphaTest: 0.5, color: 0xffddee} ));
+      ghostParticle.sortParticles = true;
+      ghostParticles.push(ghostParticle); scene.add(ghostParticle);
+
+      // Add the actual plane
+      var ghostArrow = new THREE.Line(ghostArrowsGeometry, new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xC8C8FA, antialias: true }), THREE.LinePieces);
+      ghostArrows.push(ghostArrow); scene.add(ghostArrow);
+    }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Seq &amp; SS Generation</h2>
+      <h3>Related to chain-traversal and dot-bracket generation</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>generateMergedMotif<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function is taken for the most part from Joe's Python code. Given the index of the final end position of the base pair, we return the traversed sequence and secondary structure of the overall molecule. This function does not work for incomplete solutions, and it might even have bugs for complete solutions. Therefore, when submitting a puzzle, the list of motifs is also submitted: not just the sequence and secondary structure, because with the list we can re-generate them correctly.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function generateMergedMotif(final_end_index) {
+
+  var start = models[0];
+  var current_chains = [];
+  var allBasePairs = [];
+
+  for(var i = 0; i < start.chains.length; i++) {
+    var currentChain = [];
+    for(var j = 0; j < start.chains[i].length; j++) {
+      currentChain.push(start.chains[i][j]);
+    }
+    current_chains.push(convertChainToResidueArray(currentChain,start));
+  }
+
+  for(var i = 1; i < models.length; i++) {
+
+    var bp1 = models[i-1].ends[models[i-1].usedEnds[1]];
+    var bp2 = models[i].ends[models[i].usedEnds[0]];
+
+    var chainInfo1 = []; 
+    var chainInfo2 = [];
+
+    chainInfo1.push(findResidueOnChains(bp1.residue1, current_chains));
+    chainInfo1.push(findResidueOnChains(bp1.residue2, current_chains));
+
+    //current_chains = current_chains.splice(chainInfo1[0][2], 1);
+    //current_chains = current_chains.splice(chainInfo1[1][2], 1);
+
+    var new_current_chains = []
+    for (var j = 0; j < current_chains.length; j++) {
+      if(j == chainInfo1[0][2] || j == chainInfo1[1][2]) continue;
+      new_current_chains.push(current_chains[j])
+    }
+    current_chains = new_current_chains;
+
+    model_chains = []
+    for(var j = 0; j < models[i].chains.length; j++) {
+      model_chains.push(convertChainToResidueArray(models[i].chains[j],models[i]))
+    }
+
+    chainInfo2.push(findResidueOnChains(bp2.residue1, model_chains));
+    chainInfo2.push(findResidueOnChains(bp2.residue2, model_chains));
+
+    if(chainInfo1[0][0] == 1) { chainInfo1 = chainInfo1.reverse(); }
+    if(chainInfo2[0][0] == 1) { chainInfo2 = chainInfo2.reverse(); }
+
+    var tmpChain1 = chainInfo2[1][1].reverse();
+    tmpChain1.shift();
+    var tmpChain2 = chainInfo2[0][1]; 
+    tmpChain2.shift();
+
+    chainInfo1[0][1] = (chainInfo1[0][1].reverse().concat(tmpChain1)).reverse();
+    chainInfo1[1][1] = chainInfo1[1][1].concat(tmpChain2);
+
+    current_chains.push(chainInfo1[0][1]);
+    current_chains.push(chainInfo1[1][1]);
+
+  }
+  //super hacky
+  hairpin_chain = current_chains[0];
+  start_chain = null;
+  end_chain = null;
+  if(current_chains[1][0].id == "B7" || current_chains[1][0].id == "A5" || current_chains[1][0].id == "A4" || current_chains[1][0].id == "B8") { 
+    start_chain = current_chains[2];
+    end_chain = current_chains[1];
+  }
+  else {
+    start_chain = current_chains[1];
+    end_chain = current_chains[2];
+  }
+
+  var tmpChain1 = hairpin_chain;
+  tmpChain1.shift();
+  tmpChain1.pop();
+  var tmpChain2 = end_chain; 
+  //tmpChain2.shift();
+
+  start_chain = start_chain.concat(tmpChain1);
+  start_chain = start_chain.concat(tmpChain2);
+
+  seq = ""
+
+  for(var i = 0; i < start_chain.length; i++) {
+    //console.log(start_chain[i].id);
+    seq += start_chain[i].name;
+  }
+  //console.log(seq);
+
+  // get basepairs for each residue in the finished chain order
+  basepairs = [];
+
+  for(var a = 0; a < start_chain.length; a++ ) {
+    c_basepairs = [];
+    c_center = calculateCenter(start_chain[a].atoms);
+    for(var i = 0; i < models.length; i++) {
+      for(var j = 0; j < models[i].basepairs.length; j++) {
+        if(start_chain[a].id != models[i].basepairs[j].residue1.id && start_chain[a].id != models[i].basepairs[j].residue2.id) {
+          continue;
+        }
+        var center_1 = calculateCenter(models[i].basepairs[j].residue1.atoms);
+        var center_2 = calculateCenter(models[i].basepairs[j].residue2.atoms);
+
+        var dist_1 = calcDistance(c_center,center_1);
+        var dist_2 = calcDistance(c_center,center_2);
+
+        if(dist_1 < 0.01 || dist_2 < 0.01) c_basepairs.push(models[i].basepairs[j]);
+
+      }
+    }
+    basepairs.push(c_basepairs);
+  }
+
+  ss = getSecondaryStructure(start_chain,basepairs);
+  console.log(ss + " " + seq);
+  return {"seq":seq,"ss":ss};
+
+  // Stich together the 2(n) chains at the end from 5' to 3'
+
+  //console.log(allBasePairs);
+  //console.log(chainInfo1[0][1]);
+  //console.log(chainInfo2[1][1]);
+  //console.log(start_chain);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>getSecondaryStructure<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function gets the secondary structure of a given chain, given the chain we want the structure of and the basepairs. It is ported over from Joe's Python code (not sure if implemented properly or not: has the same concerns as the previous function).</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function getSecondaryStructure(chain,basepairs) {
+  var seen_bp = [];
+  var count = 1;
+  var sstructure = [];
+  var sequence = [];
+  var design_sequence = [];
+  var seen_res = [];
+
+  for(var i = 0; i < chain.length; i++) {
+    var ss = "";
+    var bps = basepairs[i];
+    var is_bp = 0;
+    var saved_bp = null;
+
+    for(var j = 0; j < bps.length; j++) {
+      partner_res = null;
+      if(bps[j].residue1.id == chain[i].id) {
+        partner_res = bps[j].residue2
+      }
+      else{
+        partner_res = bps[j].residue1;
+      }
+
+      is_bp = 1;
+      var passes = 0;
+
+      if(is_bp_wc(bps[j]) && bps[j].bp_type == "cW-W") passes = 1;
+      if(is_bp_gu(bps[j]) && bps[j].bp_type == "cW-W") passes = 1;
+
+      if(passes) {
+        saved_bp = bps[j];
+        //have we seen this bp yet
+        if(!has_seen_bp(bps[j],seen_bp) && !has_seen_res(chain[i],seen_res) && !has_seen_res(partner_res,seen_res))  {
+          var center = calculateCenter(chain[i].atoms);
+          seen_res.push([chain[i],center,1]);
+          ss = "(";
+        }
+        else if(has_seen_res(partner_res,seen_res)) {
+          var partner_res_count = has_seen_res(partner_res,seen_res);
+          if(partner_res_count > 1) {
+            ss = ".";
+          }
+          else {
+            ss = ")"
+            var center = calculateCenter(chain[i].atoms);
+            seen_res.push([chain[i],center,1]);
+            has_seen_res(partner_res,seen_res,1);
+          }
+
+        }
+
+      }
+      else {
+        ss = ".";
+      }
+    }
+
+    if(!is_bp) {
+      ss = ".";
+    }
+
+    sstructure.push(ss);
+
+  }
+
+  var string = ""
+  console.log(sstructure.length + " " + chain.length)
+  for(var i = 0; i < sstructure.length; i++) {
+    string += sstructure[i];
+    //console.log(chain[i].id + " " + sstructure[i]);
+  }
+  return string;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>has_seen_bp<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function just determines if two base pairs are the same based on the average centers of their residue atoms. If the distance is greater than 0.01 they are different, otherwise they are the same.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function has_seen_bp(bp,seen_bp) {
+  var center_1 = calculateCenter(bp.residue1.atoms);
+  var center_2 = calculateCenter(bp.residue2.atoms);
+
+  for(var k = 0; k < seen_bp.length; k++) {
+    if(!((bp.residue1.id == seen_bp[k].residue1.id && bp.residue2.id == seen_bp[k].residue2.id) || bp.residue1.id == seen_bp[k].residue2.id && bp.residue2.id == seen_bp[k].residue1.id)) {
+      continue;
+    }
+
+    var dist_1 = calcDistance(center_1,seen_bp[k][1]);
+    var dist_2 = calcDistance(center_2,seen_bp[k][2]);
+
+    if(dist_1 > 0.01 && dist_2 > 0.01) continue;
+
+    dist_1 = calcDistance(center_2,seen_bp[k][1]);
+    dist_2 = calcDistance(center_2,seen_bp[k][2]);
+
+    if(dist_1 > 0.01 && dist_2 > 0.01) continue;
+
+    return 1;
+
+  }
+  return 0;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>has_seen_res<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function just determines if residue atoms are the same based on the average centers of their atoms. If the distance is greater than 0.01 they are different, otherwise they are the same.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll;" data-lang="js">
+function has_seen_res(res,seen_res,add) {
+  var center = calculateCenter(res.atoms);
+  for (var i = 0; i < seen_res.length; i++) {
+    if(seen_res[i][0].id != res.id) continue;
+    var dist = calcDistance(center,seen_res[i][1]);
+    if(dist < 0.01) {
+
+      if(add != null) {
+        seen_res[i][2] += 1;
+      }
+      return seen_res[i][2]
+
+    }
+  }
+  return 0;
+
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>is_bp_wc<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function just checks if a base pair is a Watson Crick base pair or not (G-C, C-G, A-U, U-A). If so it returns 1, otherwise returns 0. The parameter is the base pair object.</p>
+      <pre class="prettyprint" data-lang="js">
+function is_bp_wc(bp) {
+  var bp_name = bp.residue1.name + bp.residue2.name;
+  if(bp_name == "gc" || bp_name == "cg" || bp_name == "au" || bp_name == "ua") {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>is_bp_gu<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function just checks if a base pair is a G-U base pair or not (G-U, U-G). If so it returns 1, otherwise returns 0. The parameter is the base pair object.</p>
+      <pre class="prettyprint" data-lang="js">
+function is_bp_gu(bp) {
+  var bp_name = bp.residue1.name + bp.residue2.name;
+  if(bp_name == "gu" || bp_name == "ug") {
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>convertChainToResidueArray<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">As the name suggests, this function just converts a given chain and model to an array of residue objects (chains just have the id of the residue they hold, not the actual object).</p>
+      <pre class="prettyprint" data-lang="js">
+function convertChainToResidueArray(chain,model) {
+  var residue_array = [];
+  for(var i = 0; i < chain.length; i++) {
+    residue = null;
+    for(var j = 0; j < model.residueObjs.length; j++) {
+      if(chain[i] == model.residueObjs[j].id) {
+        residue = model.residueObjs[j];
+        break;
+      }
+    }
+    residue_array.push(residue);
+  }
+  return residue_array;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>findResidueOnChains<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 20px; line-height: 25px;">This function finds the position of a given residue on a given chain. It returns an array of 3 elements: the first being which end the residue was found, the second a deep copy of the chains, and the third the position of the chain.</p>
+      <pre class="prettyprint" data-lang="js">
+// position and chain
+function findResidueOnChains(residue, chains) {
+  for(var i = 0; i < chains.length; i++) {
+    if(residue.id == chains[i][0].id) {
+      var chainscopy = [];
+      for(var j = 0; j < chains[i].length; j++) chainscopy.push(chains[i][j]);
+      return [0, chainscopy, i];
+    }
+    if(residue.id == chains[i][chains[i].length-1].id) {
+      var chainscopy = [];
+      for(var j = 0; j < chains[i].length; j++) chainscopy.push(chains[i][j]);
+      return [1, chainscopy, i];
+    }
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Matrix Manipulation</h2>
+      <h3>Utility operations on vectors and matrices</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>transpose<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function transposes a matrix by using the built in map function on each element in each row in each column. For each of these elements, the row and column value are just swapped. The parameter is a matrix and the return is also a matrix.</p>
+      <pre class="prettyprint" data-lang="js">
+function transpose(matrix) {
+    return matrix[0].map(function(uselessValue, colIndex){
+        return matrix.map(function(uselessRow, rowIndex){
+            return matrix[rowIndex][colIndex];
+        });
+    });
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>multiplyMatrices<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function multiplies two matrices together, of any size. The parameters are the two matrices (order matters), and the return is the multiplied result.</p>
+      <pre class="prettyprint" data-lang="js">
+function multiplyMatrices(m1, m2) {
+    var result = [];
+    for (var i = 0; i < m1.length; i++) {
+        result[i] = [];
+        for (var j = 0; j < m2[0].length; j++) {
+            var sum = 0;
+            for (var k = 0; k < m1[0].length; k++) {
+                sum += m1[i][k] * m2[k][j];
+            }
+            result[i][j] = sum;
+        }
+    }
+    return result;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>dotProduct<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function multiplies a given vector, the first parameter, by a given array, the second parameter, and returns the result.</p>
+      <pre class="prettyprint" data-lang="js">
+function dotProduct(m1, m2) {
+    var a = (m1[0] * m2[0][0]) + (m1[1] * m2[1][0]) + (m1[2] * m2[2][0]);
+    var b = (m1[0] * m2[0][1]) + (m1[1] * m2[1][1]) + (m1[2] * m2[2][1]);
+    var c = (m1[0] * m2[0][2]) + (m1[1] * m2[1][2]) + (m1[2] * m2[2][2]);
+    return [a, b, c];
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>subtractMatrices<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">Misnomer; this function actually subtracts two given vectors of 3 elements each and returns the resulting vector.</p>
+      <pre class="prettyprint" data-lang="js">
+function subtractMatrices(m1, m2) {
+  return [m1[0]-m2[0], m1[1]-m2[1], m1[2]-m2[2]];
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>subtractMatrices2<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function subtracts a given matrix, the first parameter, by a given vector, the second parameter, and then returns the result.</p>
+      <pre class="prettyprint" data-lang="js">
+function subtractMatrices2(m1, v1) {
+  for(var i = 0; i < m1.length; i++) {
+    m1[i][0] -= v1[0];
+    m1[i][1] -= v1[1];
+    m1[i][2] -= v1[2];
+  }
+  return m1;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>addMatrices<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function adds a given matrix, the first parameter, to a given vector, the second parameter, and then returns the result.</p>
+      <pre class="prettyprint" data-lang="js">
+function addMatrices2(m1, v1) {
+  for(var i = 0; i < m1.length; i++) {
+    m1[i][0] += v1[0];
+    m1[i][1] += v1[1];
+    m1[i][2] += v1[2];
+  }
+  return m1;
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Game Objects</h2>
+      <h3>Rendering, loading, and displaying of game objects</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>init<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function initializes the various game objects that are required to render the scene. It loads the container, creates the camera, creates the scene, loads the base texture, creates and adds the renderer, positions the camera, and then creates the controls. Next, it loads a particular puzzle, and then adds events for when the user clicks on the screen, moves the mouse, or resizes the window. Afterwards, it tries to load the unique motif data file, and then calls the animate scene function.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function init() {
+  // Load container
+  container = document.getElementById("main");
+
+  // Create camera
+  camera = new THREE.PerspectiveCamera(70, WIDTH/HEIGHT, 1, 22500);
+  camera.rotation.order = 'YXZ';
+
+  // Create scene
+  scene = new THREE.Scene();
+
+  // Load texture
+  sprite = THREE.ImageUtils.loadTexture("/workbranch_vineet/frontend/jscripts/eterna3/ball.png");
+
+  // Create & add renderer
+  renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(WIDTH, HEIGHT);
+  container.appendChild(renderer.domElement);
+
+  // Create controls
+  controls = new THREE.TrackballControls(camera, renderer.domElement);
+  controls.rotateSpeed = 0.5;
+  controls.minDistance = 50;
+  controls.maxDistance = 15000;
+  controls.addEventListener("change", render);
+
+  // Position camera
+  camera.position.z = -2417;
+  camera.position.y = -1522;
+  camera.position.x = -1261;
+
+  // Load puzzle
+  if(puzName == "Tetraloop Receptor Puzzle") loadMolecule("motifs/tetraloop_receptor/tetraloop_receptor.pdb");
+  else if(puzName == "FMN Puzzle") loadMolecule("motifs/fmn_puzzle/fmn_puzzle.pdb");
+  else if(puzName == "P4-P5 Tutorial") loadMolecule("motifs/p4p5_puzzle/p4p5_puzzle.pdb");
+  
+  // Add event handlers
+  window.addEventListener('resize', onWindowResize, false);
+  container.addEventListener('mouseup', onMouseUp, false);
+  container.addEventListener('mousedown', onMouseDown, false);
+  container.addEventListener('mousemove', onMouseMove, false);
+
+  // Load the unique motif data file
+  var xhr = new XMLHttpRequest();
+
+  xhr.onreadystatechange = function() {
+    if(xhr.readyState === xhr.DONE) {
+      if(xhr.status === 200 || xhr.status === 0) {
+        if(xhr.responseText) {
+          parseMotifGhostData(xhr.responseText);  
+        } else console.warn("GAME: [" + url + "] is unreachable or empty");
+      } else console.error("GAME: Couldn't load [" + url +"] [" + xhr.status +"]");
+    }
+  };
+
+  xhr.open("GET", "/workbranch_vineet/frontend/jscripts/eterna3/" + "unique_motif_data.dat", false);
+  xhr.overrideMimeType('text/plain');
+  xhr.send(null);
+
+  // Start rendering and animating the scene frames
+  render();
+  animate();
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>loadMolecule<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function creates the various game objects necessary for each model. First, all the loaded progress flags are set to false, everything is deselected, and a new model is created. Next, once the PDB is loaded, the line materials are created, the object is centered, the bonds and particles are created, the progress flag is updated, and the GUI is updated. Once the DSSR is loaded, the progress flag is updated, and the model's DSSR data is updated. Once the DAT file is loaded, the function waits until the other two files are also loaded, and then handles the data. The two parameters are first the path to the pdb file, and second the direction we are building in (for debugging). The direction is an optional parameter.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function loadMolecule(path, direction) {
+
+  // Deselect everything, set all our progress to incomplete
+  selectedAtom = {};
+  selectedMolecules = {};
+  loadedPDB = false;
+  loadedDSSR = false;
+  doneLoading = false;
+
+  // Create a new Model object and depending on the PDB set the "isHelix" variable
+  // isHelix: default = 0 means it is a motif
+
+  models.push(new Model(models.length));
+  if(path == "motifs/helix/helix.pdb") models[models.length-1].isHelix = 2; // 2 means it is a helix
+  else if(path == "motifs/tetraloop_receptor/tetraloop_receptor.pdb" || path == "motifs/fmn_puzzle/fmn_puzzle.pdb" || path == "motifs/p4p5_puzzle/p4p5_puzzle.pdb") models[models.length-1].isHelix = 1; // 1 means it is not a helix nor a motif
+
+  models[models.length-1].modelName = path;
+
+  loader.loadFile(path, function(loadedGeometryArray, loadedBondsArray) {
+
+      // 1st callback, this is called when the PDB file is loaded
+      // Throw away extra models, just take the first
+      var loadedGeometry = loadedGeometryArray[0];
+      var loadedBonds = loadedBondsArray[0];
+
+      // Initialize materials
+
+      var i = models.length-1;
+      models[i].lineMaterial[0] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x746f6f, antialias: true }); // white
+      models[i].lineMaterial[1] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xCC2600, antialias: true }); // (g) red
+      models[i].lineMaterial[2] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x005CB8, antialias: true }); // (u) blue
+      models[i].lineMaterial[3] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xFCF200, antialias: true }); // (a) yellow 
+      models[i].lineMaterial[4] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x00A600, antialias: true }); // (c) green
+      models[i].lineMaterial[5] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0x80FF80, antialias: true }); // (s) hgreen
+      models[i].lineMaterial[6] = new THREE.LineBasicMaterial({linewidth: 7, opacity: 0.8, color: 0xF8005F, antialias: true }); // (h) pink 0xC8C8FA
+      models[i].lineMaterial[7] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: 0xC8C8FA, antialias: true }); // (h) white
+      models[i].lineMaterial[8] = new THREE.LineBasicMaterial({linewidth: 1, opacity: 0.8, color: "rgb(99%, 99%, 50%)", antialias: true }); // (h) flashing
+
+
+      // Set the residue objects, calculate the residue centers
+      models[i].residueObjs = loadedGeometry.residueObjs;
+      for(var j = 0; j < models[i].residueObjs.length; j++) {
+        models[i].residueCenters.push(calculateCenter(models[i].residueObjs[j].atoms));
+      }
+
+      for(var j = 0; j < models[i].lineMaterial.length; j++) models[i].lineMaterial[j].transparent = true;
+      
+      models[i].material = new THREE.ParticleSystemMaterial( { size: 125, map: sprite, vertexColors: true, transparent: true } );
+      models[i].material.alphaTest = 0.5;
+
+      // Center loaded molecule
+
+      if(mainOffset == null) {
+          firstMolecule = true;
+          var offset = THREE.GeometryUtils.center(loadedGeometry);
+          loadedBonds.applyMatrix(new THREE.Matrix4().makeTranslation(offset.x, offset.y, offset.z));
+          mainOffset = offset;
+      } else firstMolecule = false;
+
+      // Load bonds 1 by 1
+      models[i].lineGeometry = [];
+      models[i].backboneGeometry = new THREE.Geometry();
+
+      // Load chain sequences 1 by 1
+      models[i].chains = loadedBonds.sequence.split("|");
+      for(var j = 0; j < models[i].chains.length; j++) {
+        models[i].chains[j] = models[i].chains[j].split(",");
+        var res1, res2 = null;
+        for(var k = 0; k < models[i].residueObjs.length; k++) {
+          if(models[i].chains[j][0] == models[i].residueObjs[k].id) res1 = models[i].residueObjs[k];
+          if(models[i].chains[j][1] == models[i].residueObjs[k].id) res2 = models[i].residueObjs[k];
+        }
+
+        var o3_atom = findAtom(res1, "o3'");
+        var p_atom = findAtom(res2, "p");
+        if(Math.sqrt(calcDistanceSquare(o3_atom, p_atom)) > 2) {
+          models[i].chains[j] = models[i].chains[j].reverse();
+        }
+
+      }
+
+      // Update the length in the GUI
+      updateLengths();
+
+      var prevRes = null; // Use this to make a new game object for each residue
+      var resCount = -1;
+
+      for(var j = 0; j < loadedBonds.vertices.length; j+= 2) {
+
+        // Get the starting and ending position
+        var start = loadedBonds.vertices[j];
+        var end = loadedBonds.vertices[j+1];
+        start.multiplyScalar(factor);
+        start.z -= 5;
+        end.multiplyScalar(factor);
+        end.z -= 5;
+
+        if(loadedBonds.types[j] != -1) { // bond type -1 means it is a backbone
+          if(loadedBonds.resNames[j] !== prevRes) {
+            prevRes = loadedBonds.resNames[j];
+            resCount++;
+            models[i].lineGeometry.push(new THREE.Geometry());
+          }
+          
+          models[i].lineGeometry[resCount].vertices.push(start);
+          models[i].lineGeometry[resCount].vertices.push(end);
+          models[i].lineGeometry[resCount].residueType = loadedBonds.residues[j];
+          models[i].lineGeometry[resCount].residueName = loadedBonds.resNames[j];
+        } else {
+          models[i].backboneGeometry.vertices.push(start);
+          models[i].backboneGeometry.vertices.push(end);
+        }
+      }
+
+      // Now create overall bond objects
+      for(var j = 0; j < models[i].lineGeometry.length; j++) {
+
+        models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], models[i].lineMaterial[0], THREE.LinePieces);
+
+        if(startingResidues.indexOf(models[i].lineGeometry[j].residueName) >= 0)
+          models[i].bonds[j].material = models[i].lineMaterial[8];
+
+        models[i].bonds[j].residueType = models[i].lineGeometry[j].residueType;
+        models[i].bonds[j].residueName = models[i].lineGeometry[j].residueName;
+        if(firstMolecule) scene.add(models[i].bonds[j]);
+      }
+
+      models[i].backboneBonds = new THREE.Line(models[i].backboneGeometry, models[i].lineMaterial[6], THREE.LinePieces);
+      if(firstMolecule) scene.add(models[i].backboneBonds);
+
+      // Load atoms 1 by 1
+      for(var j = 0; j < loadedGeometry.vertices.length; j++) {
+        loadedGeometry.vertices[j].multiplyScalar(factor);
+        models[i].residues.push(loadedGeometry.residues[j]);
+        models[i].types.push(loadedGeometry.types[j]);
+        models[i].elementcodes.push(loadedGeometry.elements[j]);
+        models[i].geometry.vertices.push(loadedGeometry.vertices[j]);
+        models[i].colors[j] = new THREE.Color();
+        models[i].colorscopy[j] = new THREE.Color();
+        models[i].colors[j].setRGB(loadedGeometry.colors[j].r, loadedGeometry.colors[j].g, loadedGeometry.colors[j].b);
+        models[i].colorscopy[j].setRGB(loadedGeometry.colors[j].r, loadedGeometry.colors[j].g, loadedGeometry.colors[j].b);
+
+        if(startingResidues.indexOf(loadedGeometry.residues[j]) >= 0) {
+          starting.push(j);
+          models[i].colors[j].setRGB(0.99, 0.99, 0.5);
+          models[i].colorscopy[j].setRGB(0.99, 0.99, 0.5);
+        }              
+      }
+
+      // Now create the overall atoms and add to the scene
+      models[i].geometry.colors = models[i].colors;
+      models[i].geometry.residues = loadedGeometry.residues;
+      models[i].particles = new THREE.ParticleSystem(models[i].geometry, models[i].material);
+      models[i].particles.sortParticles = true;
+      if(firstMolecule) scene.add(models[i].particles);
+
+      // We finished loading the PDB so set the progress to true
+      loadedPDB = true;
+
+      // If this is the first molecule then add the collision spheres as well, otherwise we will move it around so don't add yet
+      if(firstMolecule) {
+        for(var j = 0; j < loadedGeometry.vertices.length; j++) {
+            vector = new THREE.Vector3(loadedGeometry.vertices[j].x, loadedGeometry.vertices[j].y, loadedGeometry.vertices[j].z);
+            var collisionSphere = new THREE.Mesh(new THREE.SphereGeometry(30, 6, 6), new THREE.MeshBasicMaterial({color:0xffffff}));
+            collisionSphere.position = vector;
+
+            collisionSphere.name = j;
+            collisionSphere.visible = false; // troubleshoot with true
+            models[i].collisionSpheres.push(collisionSphere);
+            scene.add(collisionSphere);          
+        }
+
+        toggleBondsAtoms(displayType);
+        colorDisplay(colorType); // show normal coloring
+        toggleBackBone(backboneDisplay);
+      }
+
+    }, function(data) { // When the ref_frames file is loaded, wait for the other two to finish loading by using handleData
+      handleData(data, direction);
+    }, function(data) {
+      loadedDSSR = true; // we loaded the dssr data, so set the progress to true
+      // take the dssr data
+      // data is an array with 3 pos: id1, id2, and the bp type
+      models[models.length-1].dssr = data;
+    }
+  );
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>handleData<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function takes in the DAT data and the direction to start aligning from (the second parameter is optional) and then waits until both the PDB and the DSSR loaded. Once both of those data have been added, then this function converts the loaded data and saves it into the current model, and then tries all possibile alignments of the current model, and recalculates the score.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function handleData(data, direction) {
+
+  // First, wait until both the PDB and DSSR file are loaded.
+  if(!loadedPDB || !loadedDSSR) {
+    setTimeout(function() { handleData(data, direction);}, 100);
+    return;
+  } else { // Once they are both loaded...
+
+    // First change the residue names to actual residue objects.
+    for(var i = 0; i < data.length; i++) {
+      var r1 = data[i].residue1.trim();
+      var r2 = data[i].residue2.trim();
+      for(var j = 0; j < models[models.length-1].residueObjs.length; j++) {
+
+        if(models[models.length-1].residueObjs[j].id.trim() == r1) data[i].residue1 = models[models.length-1].residueObjs[j];
+        if(models[models.length-1].residueObjs[j].id.trim() == r2) data[i].residue2 = models[models.length-1].residueObjs[j];
+      }
+    }
+
+    // Next, combine the atoms from residue 1 and residue 2
+    for(var i = 0; i < data.length; i++) {
+      data[i].atoms = data[i].residue1.atoms.concat(data[i].residue2.atoms);
+    }
+
+    // Set the basepairs to the loaded data.
+    models[models.length-1].basepairs = data;
+
+    // Create the basepairs based on the residues
+    var pairs = [];
+    for(var i = 0; i < models[models.length-1].chains.length; i++) {
+      var chain = models[models.length-1].chains[i];
+      pairs.push(chain[0]);
+      pairs.push(chain[chain.length - 1]);
+    }
+
+    for(var i = 0; i < pairs.length; i++) {
+      for(var j = i+1; j < pairs.length; j++) {
+        for(var k = 0; k < models[models.length-1].basepairs.length; k++) {
+          var bp = models[models.length-1].basepairs[k];
+          if( (bp.residue1.id == pairs[i] && bp.residue2.id == pairs[j]) || (bp.residue2.id == pairs[i] && bp.residue1.id == pairs[j])) {
+            models[models.length-1].ends.push(bp);
+          }
+        }
+      }
+    }
+
+    //Add dssr bp types
+    console.log("dssr length " + models[models.length-1].dssr.length)
+    for(var i = 0; i < models[models.length-1].dssr.length; i++) {
+      if(models[models.length-1].dssr[i][0] == null) continue;
+      var dssr_id_1 = models[models.length-1].dssr[i][0];
+      var dssr_id_2 = models[models.length-1].dssr[i][1];
+
+      var resid1 = dssr_id_1.substring(0,1) +  dssr_id_1.substring(3);
+      var resid2 = dssr_id_2.substring(0,1) +  dssr_id_2.substring(3);
+
+      for (var j = 0; j < models[models.length-1].basepairs.length; j++) {
+        var bp = models[models.length-1].basepairs[j];
+        if((bp.residue1.id == resid1 && bp.residue2.id == resid2)  || (bp.residue2.id == resid1 && bp.residue1.id == resid2)) {
+          bp.bp_type = models[models.length-1].dssr[i][2];
+          if(bp.bp_type == null) bp.bp_type = "";
+          break;
+        } 
+      }
+    }
+
+    // If it is the first molecule reset the ghost pieces, otherwise wait until the transforms have been applied
+    if(firstMolecule) {
+      if(puzName == "Tetraloop Receptor Puzzle") resetGhostMolecules(1);
+      else if(puzName == "P4-P5 Tutorial") resetGhostMolecules(1);
+      else if(puzName == "FMN Puzzle") resetGhostMolecules(0);
+    }
+
+
+    if(!firstMolecule) {
+      // Make this so concat error is fixed, wait until load pdb as well
+      // change so loops through all the ends
+
+      var cmodel = models[models.length-1]
+      var endsIndex = direction === undefined ? 1 : direction;
+
+      var startsIndex = 0;
+
+      if(puzName == "Tetraloop Receptor Puzzle") startsIndex = 1;
+      else if(puzName == "FMN Puzzle") startsIndex = 0;
+      else if(puzName == "P4-P5 Tutorial") startsIndex = 0; // fix
+
+
+      // if(models.length == 2) endsIndex = 0;
+      if(models.length == 2 && puzName == "Tetraloop Receptor Puzzle") startsIndex = 1;
+      if(models.length == 2 && puzName == "P4-P5 Tutorial") startsIndex = 1;
+
+      // if(models.length == 3) endsIndex = 1; // just for debugging
+      var result = align3(models[models.length-2].ends[startsIndex], models[models.length-1], endsIndex, models[models.length-2].tf);
+
+      //last_center = cmodel.ends[]
+
+      // While there is a clash, reset the alignment and try a new orientation.
+      while(clashExists(models[models.length-1].ends[endsIndex])) {
+
+        var model = models[models.length-1];
+        for(var i = 0; i < model.ends.length; i++) {
+          for(var j = 0; j < model.ends[i].atoms.length; j++) {
+            var atom = model.ends[i].atoms[j];
+            atom[2] = result["oldcoords"][atom[0]][0];
+            atom[3] = result["oldcoords"][atom[0]][1];
+            atom[4] = result["oldcoords"][atom[0]][2];
+          }
+        }
+
+        for(var i = 0; i < model.residueObjs.length; i++) {
+          for(var j = 0; j < model.residueObjs[i].atoms.length; j++) {
+            var atom = model.residueObjs[i].atoms[j];
+            atom[2] = result["oldcoords"][atom[0]][0];
+            atom[3] = result["oldcoords"][atom[0]][1];
+            atom[4] = result["oldcoords"][atom[0]][2];
+          }
+        }
+
+        endsIndex--;
+        if(endsIndex < 0) break;
+        result = align3(models[models.length-2].ends[startsIndex], models[models.length-1], endsIndex, models[models.length-2].tf);
+      }
+
+      // No possible add exists.
+      if(endsIndex < 0) {
+        alert("Cannot add motif here because the structure will collide with part of the molecule.");
+        document.getElementById("undo").onclick();
+        doneLoading = true;
+        return;
+      }
+
+      models[models.length - 2].usedEnds[1] = startsIndex;
+      models[models.length-1].usedEnds[0] = endsIndex;
+
+      renderModel(models[models.length-1], result["coords"], result["oldcoords"]);
+
+      models[models.length-1].tf = result["tf"];
+      if(endsIndex > 0) resetGhostMolecules(0);
+      else resetGhostMolecules(1);
+    }
+
+    //get target end for scoring 
+    else {
+
+      for(var i = 0; i < models[0].ends.length; i++){
+        if(targetResiduesIds[0] == models[0].ends[i].residue1.id && targetResiduesIds[1] == models[0].ends[i].residue2.id ) {
+          targetEnd = models[0].ends[i];
+          targetEndIndex = i;
+          break;
+        }
+        if(targetResiduesIds[1] == models[0].ends[i].residue1.id && targetResiduesIds[0] == models[0].ends[i].residue2.id ) {
+          targetEnd = models[0].ends[i];
+          targetEndIndex = i;
+        }
+      }
+    }
+
+    valid_solution = isvalidsolution(models[models.length-1]);
+    doneLoading = true; // finally done loading this molecule, we can now start loading the rest of the molecules in the queue
+    if(valid_solution) {
+
+      // Don't allow submissions in the p4-p5 tutorial.
+      if(puzName == "P4-P5 Tutorial") {
+      document.getElementById("puzzlecompletecontainer").style.display = "block";
+          document.getElementById("puzzlecompleteoverlay").style.display = "block";
+          document.getElementById("puzzlecompletedesc").innerHTML = "Congratulations, you completed the tutorial! Now that you know how to play the game, why don't you try submitting solutions for the Tetraloop Receptor and FMN puzzles."; 
+        return;
+      }
+
+      // Generate the seq/ss and update the GUI.
+      var seq = generateMergedMotif(valid_solution);
+      var ss = seq["ss"]; seq = seq["seq"];
+
+      document.getElementById("fullsequence").innerHTML = seq;
+      document.getElementById("fullsecondarystructure").innerHTML = ss;
+
+      updateSequenceGUI(valid_solution);
+
+      document.getElementById("puzzlecompletecontainer").style.display = "block";
+      document.getElementById("puzzlecompleteoverlay").style.display = "block";
+      document.getElementById("puzzlecompletedesc").style.fontSize = "12px";
+      document.getElementById("puzzlecompletedesc").style.marginLeft = "10px";
+      document.getElementById("puzzlecompletedesc").style.marginRight = "20px";
+      document.getElementById("puzzlecompletedesc").style.overflowX = "scroll";
+      document.getElementById("puzzlecompletedesc").style.textAlign = "left";
+      document.getElementById("puzzlecompletedesc").innerHTML = "Final Solution:<br/>" + seq + "<br/>" + ss;
+    }
+
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>renderModel<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function takes in a model, the new coordinates of the atoms, and the old coordinates, and then updates the model so that it fits the new coordinates. It updates the location of the atoms, bonds, backbone bonds, and collision spheres.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" data-lang="js">
+function renderModel(model, coords, oldcoords) {
+
+  // Modify the location of the atoms
+  for(var i = 0; i < model.particles.geometry.vertices.length; i++) {
+    var v = model.particles.geometry.vertices[i];
+    v.x = coords[i][0] * factor;
+    v.y = coords[i][1] * factor; 
+    v.z = coords[i][2] * factor; 
+  }
+
+  // Add the atoms
+  scene.add(model.particles);
+  model.particles.applyMatrix(new THREE.Matrix4().makeTranslation(mainOffset.x*factor, mainOffset.y*factor, mainOffset.z*factor));
+  model.particles.material.opacity = 0;
+  model.particles.material.transparent = true;
+  fadeIn(model.particles);
+
+  // Modify the location of all of the bonds
+  for(var k = 0; k < model.bonds.length; k++) {
+    var lineGeometry = new THREE.Geometry();
+    var lineMaterial = model.lineMaterial[0];
+
+    for(var i = 0; i < model.bonds[k].geometry.vertices.length; i++) {
+      var v = model.bonds[k].geometry.vertices[i];
+      for(var j =0; j < oldcoords.length; j++) {
+        if(v.x == (oldcoords[j][0]*factor) && v.y == (oldcoords[j][1]*factor) && v.z == (oldcoords[j][2]*factor)-5) {
+          v.x = (coords[j][0] * factor) + (mainOffset.x * factor);
+          v.y = (coords[j][1] * factor) + (mainOffset.y * factor);
+          v.z = (coords[j][2] * factor) + (mainOffset.z * factor);
+          lineGeometry.vertices.push(v);
+          break;
+        }
+      }
+    }
+    
+    var bond = new THREE.Line(lineGeometry, lineMaterial, THREE.LinePieces);
+    bond.residueType = model.bonds[k].residueType;
+    bond.residueName = model.bonds[k].residueName;
+
+    if(startingResidues.indexOf(bond.residueName) >= 0)
+      bond.material = model.lineMaterial[8];
+
+    model.bonds[k] = bond;
+
+    lineGeometry.residueType = model.lineGeometry[k].residueType;
+    lineGeometry.residueName = model.lineGeometry[k].residueName;
+    model.lineGeometry[k] = lineGeometry;
+
+    scene.add(model.bonds[k]);
+    // model.bonds[k].applyMatrix(new THREE.Matrix4().makeTranslation(mainOffset.x*factor, mainOffset.y*factor, mainOffset.z*factor));
+    model.bonds[k].material.transparent = true;
+    model.bonds[k].material.opacity = 0;
+    fadeIn(model.bonds[k]);
+  }
+
+  // Modify the location of the backbone bonds
+  var backboneGeometry = new THREE.Geometry();
+  
+  for(var i = 0; i < model.backboneGeometry.vertices.length; i++) {
+    var v = model.backboneGeometry.vertices[i];
+    for(var j = 0; j < oldcoords.length; j++) {
+      if(v.x == (oldcoords[j][0]*factor) && v.y == (oldcoords[j][1]*factor) && v.z == (oldcoords[j][2]*factor)-5) {
+        v.x = (coords[j][0]*factor) + (mainOffset.x * factor);
+        v.y = (coords[j][1]*factor) + (mainOffset.y * factor);
+        v.z = (coords[j][2]*factor) + (mainOffset.z * factor);
+        backboneGeometry.vertices.push(v);
+        break;
+      }
+    }
+  }
+  var backbone = new THREE.Line(backboneGeometry, model.lineMaterial[6], THREE.LinePieces);
+  model.backboneGeometry = backboneGeometry;
+  model.backboneBonds = backbone;
+  scene.add(backbone);
+  model.backboneBonds.material.transparent = true;
+  model.backboneBonds.material.opacity = 0;
+  fadeIn(model.backboneBonds);
+
+  // Modify the location of the collision spheres for the atoms.
+  for(var j = 0; j < model.particles.geometry.vertices.length; j++) {
+    vector = new THREE.Vector3(model.particles.geometry.vertices[j].x + (mainOffset.x*factor), model.particles.geometry.vertices[j].y + (mainOffset.y*factor), model.particles.geometry.vertices[j].z + (mainOffset.z*factor));
+    
+    var collisionSphere = new THREE.Mesh(new THREE.SphereGeometry(30, 6, 6), new THREE.MeshBasicMaterial({color:0xffffff}));
+    collisionSphere.position = vector;
+
+    collisionSphere.name = j;
+    collisionSphere.visible = false; // troubleshoot with true
+    model.collisionSpheres.push(collisionSphere);
+    scene.add(collisionSphere);          
+  }
+
+  // Update the GUI based on the current display options.
+  toggleBondsAtoms(displayType);
+  colorDisplay(colorType);
+  toggleBackBone(backboneDisplay);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>animate<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function is the main animation call for the entire game. First it uses the browser's built in function to get a steady framerate going, and it updates the built in mouse controls. Then, it updates the flashing molecule/bonds, and updates the line width based on the zoom level. Finally, the GUI is updated based on the camera position.</p>
+      <pre style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" class="prettyprint" data-lang="js">
+function animate() {
+  // Get animation frames steady
+  requestAnimationFrame( animate );
+  controls.update();
+
+  // Note: linewidth does not work on Windows (Angle framework)
+  // Calculate the zoom distance and adjust the size accordingly
+  var d = Math.round(Math.pow(Math.pow(camera.position.x, 2) + Math.pow(camera.position.y, 2) + Math.pow(camera.position.z, 2), 0.5));
+  var size = 0.5;
+  if(d >= 2500) size = 0.5; else if(d >= 2000) size = 1; else if( d >= 1500) size = 1.5; else if(d >= 1000) size = 2; else size = 3;
+  if(displayType == 1) size += 1.5;
+
+  // Make strobe for the starting molecules
+  for(var i = 0; i < starting.length; i++) {
+    var c = models[0].geometry.colors[starting[i]];
+    c.setRGB(c.r + direction, c.g, c.b + direction);
+  }
+
+  // Make strobe for the starting molecules
+  for(var i = 0; i < models.length; i++) {
+    if(!models[i].lineMaterial[8]) continue;
+    var c = models[i].lineMaterial[8].color;
+    c.setRGB(c.r + direction, c.g, c.b + direction);
+  }
+
+  // Change direction of strobe
+  if(models.length > 0 && starting.length > 0 && (models[0].geometry.colors[starting[0]].r >= 1 || models[0].geometry.colors[starting[0]].b <= 0))direction *= -1;
+  
+  for(var i = 0; i < models.length; i++) { // Adjust size
+    for(var j = 0; j < models[i].lineMaterial.length; j++) {
+      models[i].lineMaterial[j].linewidth = size;
+    }
+   if(models[i].lineMaterial.length < 3) continue;
+    models[i].lineMaterial[models[i].lineMaterial.length-3].linewidth = size + 6;
+  }
+
+  // Adjust GUI
+  var x = Math.round(controls.object.position.x);
+  var y = Math.round(controls.object.position.y);
+  var z = Math.round(controls.object.position.z);
+  document.getElementById("detailsZoom").innerHTML = "Camera: (" + x + "," + y + "," + z +")";
+
+  render();
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>("undo").onclick<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function is called whenever we click the undo button or press SHIFT+Z. First it makes sure that we are not removing the game puzzle. Then, it removes the last added molecule, removes the atoms, bonds, backbone, and collision spheres from the game, and updates the various GUI components.</p>
+      <pre style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll;" class="prettyprint" data-lang="js">
+document.getElementById("undo").onclick = function() {
+  if(models.length == 1) { alert("No more motifs left to undo."); return; }
+  var m = models.pop();
+  scene.remove(m.particles);
+  scene.remove(m.backboneBonds);
+  for(var i = 0; i < m.collisionSpheres.length; i++) scene.remove(m.collisionSpheres[i]);
+  for(var i = 0; i < m.bonds.length; i++) scene.remove(m.bonds[i]);
+  updateLengths();
+  updateList( document.getElementById("scrollbar_container").style.display != "block"  );
+  ghostStartIndices.pop();
+  resetGhostMolecules(ghostStartIndices.pop());
+  valid_solution = isvalidsolution(models[models.length-1]);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>("submitbutton").onclick<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function submits the puzzle by first collecting the name, sequence, secondary structure, list of motifs, and puzzle name, and then creating and sending a POST request.</p>
+      <pre style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 20px; overflow-y: scroll; height: 400px;" class="prettyprint" data-lang="js">
+document.getElementById("submitbutton").onclick = function() {
+  document.getElementById("submitoverlay").style.display = "none";
+  document.getElementById("submitcontainer").style.display = "none"; 
+  var name = document.getElementById("submitusername").value.trim(); 
+  if(name == "") { alert("Empty username: cancelling submit."); return; } // Basic form validation
+  if(!isvalidsolution(models[models.length-1])) { alert("Invalid solution: cancelling submit."); return; }
+
+  var seq = generateMergedMotif(valid_solution);
+  var ss = seq["ss"]; seq = seq["seq"];
+  var list = "";
+  for(var i = 0; i < models.length; i++) list += models[i].modelName + ",";
+  list = list.substring(0, list.length - 1);
+
+  var formData = new FormData();
+  formData.append("name", name);
+  formData.append("seq", seq);
+  formData.append("ss", ss);
+  formData.append("list", list);
+  formData.append("type", "post_3d");
+  formData.append("puzname", document.getElementById("puzname").innerHTML);
+  var xhr = new XMLHttpRequest();
+  xhr.open("post", "/post/", true);
+  xhr.send(formData);
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="segue dark nobackground" >
+    <aside class="gdbar"><img src="images/dev.png"></aside>
+    <hgroup class="auto-fadein">
+      <h2>Game Display</h2>
+      <h3>Updating and toggling of game GUI</h3>
+    </hgroup>
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>toggleBondsAtoms<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function takes in a certain display type, sets it to the global variable, and then removes or adds the bonds and atoms based on the type. Type 0 means only atoms, type 1 means only bonds, type 2 means both.</p>
+      <pre class="prettyprint" data-lang="js">
+function toggleBondsAtoms(type) {
+  displayType = type;
+  for(var i = 0; i < models.length; i++) {
+    scene.remove(models[i].particles);
+    for(var j = 0; j < models[i].bonds.length; j++) scene.remove(models[i].bonds[j]);
+    if(displayType != 1) { scene.add(models[i].particles); }
+    if(displayType != 0) {
+      for(var j = 0; j < models[i].bonds.length; j++) scene.add(models[i].bonds[j]);
+    }
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>colorDisplay<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="font-size: 15px; line-height: 20px;">This function takes in a color display type and then adjusts the atoms and bonds accordingly. If the type is 0 then it shows GUAC coloring, but if the type is 1 it will show coloring based on the element.</p>
+      <pre class="prettyprint" style="font-size: 15px; line-height: 20px; word-wrap:break-word; padding-right: 18px; overflow-y: scroll; height: 450px;" data-lang="js">
+// 0 = default = red,green,blue,yellow for GUAC
+// 1 = set to element color
+function colorDisplay(type) {
+  colorType = type;
+  if(type == 1) {
+    for(var i = 0; i < models.length; i++) {
+      for(var j = 0; j < models[i].colors.length; j++) {
+        // if it is not selected, change the color
+        if(models[i].colors[j].r != 0.5 || models[i].colors[j].g != 1 || models[i].colors[j].b != 0.5)
+          models[i].colors[j].setRGB(models[i].colorscopy[j].r, models[i].colorscopy[j].g, models[i].colorscopy[j].b);
+      }
+      for(var j = 0; j < models[i].bonds.length; j++) {
+        if(models[i].bonds[j].material !== models[i].lineMaterial[5]) {
+          scene.remove(models[i].bonds[j]);
+          var rType = models[i].bonds[j].residueType;
+          var rName = models[i].bonds[j].residueName;
+          models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], models[i].lineMaterial[0], THREE.LinePieces); // always gray when color type is 1
+          models[i].bonds[j].residueType = rType;
+          models[i].bonds[j].residueName = rName;
+          // only re-add if we are not displaying atoms only
+          if(displayType != 0) scene.add(models[i].bonds[j]);
+        }
+      }
+    }
+  } else {
+    for(var i = 0; i < models.length; i++) {
+      for(var j = 0; j < models[i].colors.length; j++) {
+        if(models[i].colors[j].r == 0.5 && models[i].colors[j].g == 1 && models[i].colors[j].b == 0.5) continue;
+        if(models[i].types[j] == 'g')         models[i].colors[j].setRGB(0.80, 0.15, 0.00);
+        else if(models[i].types[j] == 'u')    models[i].colors[j].setRGB(0.00, 0.36, 0.72);
+        else if(models[i].types[j] == 'a')    models[i].colors[j].setRGB(0.99, 0.95, 0.00);
+        else if(models[i].types[j] == 'c')    models[i].colors[j].setRGB(0.00, 0.65, 0.00);
+      }
+      for(var j = 0; j < models[i].bonds.length; j++) {
+        if(models[i].bonds[j].material !== models[i].lineMaterial[5]) {
+          var mat = models[i].lineMaterial[0];
+          var rType = models[i].bonds[j].residueType;
+          var rName = models[i].bonds[j].residueName;
+          if(rType == 'g') mat = models[i].lineMaterial[1];
+          else if(rType == 'u') mat = models[i].lineMaterial[2];
+          else if(rType == 'a') mat = models[i].lineMaterial[3];
+          else if(rType == 'c') mat = models[i].lineMaterial[4];
+          if(startingResidues.indexOf(rName) >= 0) mat = models[i].lineMaterial[8];
+          scene.remove(models[i].bonds[j]);
+          models[i].bonds[j] = new THREE.Line(models[i].lineGeometry[j], mat, THREE.LinePieces);
+          models[i].bonds[j].residueType = rType;
+          models[i].bonds[j].residueName = rName;
+          if(displayType != 0) scene.add(models[i].bonds[j]);
+        }
+      }
+    }
+  }
+
+  // set the flashing color for the starting residues
+  for(var i = 0; i < starting.length; i++) {
+    var c = models[0].geometry.colors[starting[i]];
+    c.setRGB(0.99, 0.99, 0.5);
+  } 
+
+  // set the helices back to white
+  for(var i = 0; i < models.length; i++) {
+    if(models[i].isHelix != 2) continue;
+    for(var j = 0; j < models[i].geometry.colors.length; j++) {
+      models[i].geometry.colors[j].setRGB(0.9, 0.9, 0.9);
+    }
+    for(var j = 0; j < models[i].bonds.length; j++) {
+      models[i].bonds[j].material = models[i].lineMaterial[7];
+    }
+  }
+
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="nobackground" >
+    <hgroup>
+      <h2>toggleBackBone<a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="float: right; font-size: 20px;">&lt;&nbsp;&nbsp;Back</a></h2>
+    </hgroup>
+    <article >
+      <p style="line-height: 30px;">This function takes in a backbone display type, sets it to the global variable, and then removes and re-adds all the backbones from the scene, if the type is 1. Type 1 means backbone is enabled, type 0 is disabled.</p>
+      <pre class="prettyprint" data-lang="js">
+function toggleBackBone(type) {
+  backboneDisplay = type;
+  for(var i = 0; i < models.length; i++) {
+    scene.remove(models[i].backboneBonds);
+  }
+  if(type == 1) {
+    for(var i = 0; i < models.length; i++) {
+      scene.add(models[i].backboneBonds);
+    }
+  }
+}
+</pre>
+    </article> 
+</slide>
+
+<slide class="thank-you-slide segue nobackground">
+  <aside class="gdbar right"><img src="images/dev.png"></aside>
+  <article class="flexbox vleft auto-fadein">
+    <h2>View Repositories:</h2>
+    <p>Github: @vineetsk1/<i>EteRNA-3D-Public</i></p>
+    <p>BitBucket: @VineetKosaraju98/<i>eterna3d</i></p>
+    <p><a href="#3" target="_self" onclick="setTimeout(function(){window.location.reload();},100);" style="color: white; border: none;">&lt;&nbsp;&nbsp;Back to Function Groups</a></p>
+  </article>
+  <p class="auto-fadein" data-config-contact>
+    <!-- populated from slide_config.json -->
+  </p>
+</slide>
+
+<slide class="backdrop"></slide>
+
+</slides>
+
+</body>
+</html>
