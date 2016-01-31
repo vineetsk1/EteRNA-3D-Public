@@ -135,7 +135,7 @@ this.loadAjaxFile("/workbranch_vineet/frontend/jscripts/eterna3/" + url.substrin
   <div id="header" style="position: absolute; left: 0;">
 ```
 
-Upload all the files individually using scp. Test by accessing `http://vineet.eternadev.org/web/eterna3/`
+Upload all the files individually using scp. Test by accessing `http://vineet.eternadev.org/web/eterna3/puz1/`
 
 [View Development Build >][devbuild]
 
@@ -153,7 +153,7 @@ There are several places to check possible player feature requests.
 
 
 [getwebgl]: http://get.webgl.org/
-[devbuild]: http://vineet.eternadev.org/web/eterna3/
+[devbuild]: http://vineet.eternadev.org/web/eterna3/puz1/
 
 Documentation
 ---------------
